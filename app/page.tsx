@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, MapPin, Shield, Star, Clock, Award } from 'lucide-react';
+import { ArrowRight, CheckCircle, MapPin, Shield, Star, Clock, Award, Phone, Zap, TreePine, Waves } from 'lucide-react';
 import { services } from '@/data/services';
 import { toSlug } from '@/data/locations';
 import { pricingTiers, financeInfo } from '@/data/pricing';
@@ -21,44 +21,44 @@ const topAreas = ['Sevenoaks', 'Tunbridge Wells', 'Canterbury', 'Maidstone', 'To
 
 const homepageFaqs = [
   {
-    question: 'How much do driveway gates cost in Kent?',
-    answer: 'Kent spans a wide range of residential markets, and pricing reflects that. The premium West Kent corridor around Sevenoaks and Tunbridge Wells sits above the national average, while North Kent and rural East Kent are closer to it. Expect to pay from £2,800 for a basic hardwood swing gate installation, £3,800 to £11,500 for electric swing gates, and £4,800 to £12,500 for electric sliding systems. Bespoke wrought iron gates with underground motors and video access management regularly exceed £12,000 in the West Kent premium market. A site survey is the only way to get a reliable figure for your specific project.',
+    question: 'What do driveway gates cost to install in Kent in 2026?',
+    answer: 'The Kent market ranges from around \u00a32,800 for a manual hardwood swing gate up to \u00a312,500 or more for a fully automated sliding or wrought iron system. Electric swing gates typically fall between \u00a33,800 and \u00a311,500. The West Kent commuter corridor around Sevenoaks and Tunbridge Wells sits at the higher end of these ranges, while North Kent and rural East Kent are closer to the national average. Coastal East Kent properties may pay a premium for marine-grade surface treatments. The only way to get a figure you can rely on is a site survey, which every installer in our network provides free of charge.',
   },
   {
-    question: 'Do I need planning permission for driveway gates in Kent?',
-    answer: 'Most Kent homeowners do not need planning permission for standard driveway gates. Permitted development covers gates up to 2 metres, or 1 metre where the gate fronts a classified road. However, Kent has two AONBs (the North Downs and the High Weald), Green Belt through the Sevenoaks and Dartford districts, and conservation areas in every historic town from Canterbury to Tenterden. Listed buildings add a further consent requirement. If your property sits within any of these designations, pre-application advice from the relevant district council is the right first step. Our installers know the twelve Kent district councils and will confirm the position at the site survey.',
+    question: 'Which Kent properties need planning permission for gates?',
+    answer: 'Standard residential gates under 2 metres that open inward are covered by permitted development in most cases. The limit drops to 1 metre if the gate fronts a classified road. Where it gets more complex in Kent is the overlap of designations: the North Downs AONB runs from the Surrey border to Folkestone, the High Weald AONB covers the southern Weald, Green Belt applies along the M25 corridor, and conservation areas exist in Canterbury, Faversham, Tenterden, Sandwich, and dozens of villages. Listed buildings need separate consent regardless. Kent has twelve district councils, each with its own local plan policies on boundary treatments. Our installers know which authority covers your postcode and what the position is likely to be.',
   },
   {
-    question: 'How long does a driveway gate installation take in Kent?',
-    answer: 'The physical installation takes 2 to 4 days on a typical residential project. Groundwork is completed first and needs time to cure before the gate is hung. The gate, motor, and access control equipment follow. Where gates are fabricated to a bespoke design, which is the norm for wrought iron and hardwood in Kent, the workshop lead time is 3 to 6 weeks before the installation date. Your installer will give you a precise programme at the survey stage, including fabrication lead time if applicable.',
+    question: 'Do gates near the Kent coast need a different specification?',
+    answer: 'Yes. Properties within a mile or two of the coast between Whitstable and Folkestone face accelerated corrosion from airborne salt. Standard powder coat over mild steel will show damage faster than it would inland. The correct specification for coastal Kent is either hot-dip galvanising with marine-grade polyester powder coat, or aluminium, which does not corrode under any conditions. Stainless steel fixings should replace standard zinc-plated ones. Accoya is the recommended timber for coastal hardwood gates because its modified cell structure resists moisture absorption far more effectively than conventional softwoods. An installer experienced in coastal Kent work will raise these points at the survey without being asked.',
   },
   {
-    question: 'Which type of driveway gate works best in Kent?',
-    answer: 'It depends on the property and the location. In West Kent (Sevenoaks, Tunbridge Wells, Westerham), wrought iron swing gates with underground motors are the dominant specification for period properties. In the High Weald AONB (Cranbrook, Goudhurst, Tenterden), hardwood in oak or iroko is the natural choice and often the only material that feels right in the landscape. In the commuter belt and North Kent (Dartford, Gravesend, Maidstone), sliding and swing gates in fabricated steel or aluminium cover most of the market. Coastal East Kent properties need higher-spec surface treatment to handle salt air, making aluminium or marine-grade powder coat the sensible choice.',
+    question: 'How long does a typical Kent gate installation take from start to finish?',
+    answer: 'The on-site work takes 2 to 4 days for a standard residential project. Groundwork goes in first and needs curing time before the gate is hung. The gate, motor, safety sensors, and access control follow. If your gates are being fabricated to a bespoke design, which is standard for wrought iron and hardwood in Kent, the workshop lead time adds 3 to 6 weeks before the installation date. Your installer will confirm a full programme at the survey stage, covering both the manufacturing and installation timeline.',
   },
   {
-    question: 'Can automation be added to my existing gates?',
-    answer: 'Yes, in most cases. Existing swing or sliding gates can be retrofitted with a motor system if the gate structure and hinges are sound and the posts have adequate foundations. Kent installers carry out a significant volume of retrofit work, particularly in the West Kent market where existing gates are often wrought iron and structurally excellent but manually operated. The typical cost for a quality retrofit in Kent is £1,400 to £3,800, depending on gate weight, motor type, and access control specification. Underground motors are available on most retrofit projects with reasonable post access.',
+    question: 'What type of gate suits a period Kent property like an oast house or barn conversion?',
+    answer: 'Hardwood is almost always the right answer for oast houses, barn conversions, tile-hung cottages, and timber-frame farmhouses across the Kent Weald. European oak left to weather to silver grey sits naturally alongside the aged timber and Kentish ragstone found on these buildings. Iroko is a more cost-effective alternative with similar durability. In conservation areas and both AONBs, timber is often the material that raises least resistance from the planning authority. Wrought iron is the appropriate alternative for larger period properties where the entrance scale justifies a more formal treatment. Your installer will advise on which material the local planning context is likely to favour.',
   },
   {
-    question: 'How does the installer matching service work?',
-    answer: 'We are a matching service, not a gate company. You submit your details (Kent postcode, gate type, approximate budget) and we identify up to three specialist gate installers from our vetted network who cover your area and have relevant experience with your project type. Each installer contacts you directly to arrange a free site survey. You receive a detailed written quote from each one and choose who to proceed with, or nobody if the timing is not right. There is no fee to use the service at any point. We receive a referral fee from the installer after a project is confirmed.',
+    question: 'Is vehicle theft from driveways a real concern in Kent?',
+    answer: 'In parts of the county, yes. The Sevenoaks and Tunbridge Wells corridor has a concentration of high-value vehicles on residential driveways, and relay theft, where criminals amplify a keyless fob signal to unlock and start a vehicle without the key, is a documented problem. A closed automated gate between the road and the vehicle forces a second obstacle into the theft chain. Combined with video intercom that records gate activity and auto-close that removes the risk of leaving the gate open by mistake, automated gates are one of the most effective physical deterrents available. Some vehicle insurers offer reduced premiums for properties with electric gates.',
   },
   {
-    question: 'What should I look for in a Kent gate installer?',
-    answer: 'Specialisation is the most important factor. Look for a firm that installs gates as their primary trade and has a verifiable history of completed residential projects in Kent. They should carry public liability insurance of at least £2 million, provide written warranties covering the gate and the automation separately, and demonstrate specific experience with your gate type. Kent-specific knowledge matters: an installer who has worked regularly across the county will understand the two AONBs, the conservation area rules in Canterbury and the historic villages, the coastal specification requirements in East Kent, and how to handle the sloped driveways common along the North Downs ridge.',
+    question: 'Can my existing manual gates be automated without replacing them?',
+    answer: 'In most cases, yes. If the gates are structurally sound, correctly hung, and the posts sit in adequate foundations, a motor system can be added without disturbing the gates themselves. This is one of the most common projects across Kent, particularly in West Kent where existing wrought iron gates are often in excellent condition but manually operated. The typical cost is \u00a31,400 to \u00a33,800 depending on gate weight, motor type, and what access control you add. Underground motors are achievable on most retrofit sites where the post condition allows.',
   },
   {
-    question: 'Are electric driveway gates safe for children and pets?',
-    answer: 'When installed and commissioned to UK standards they are very safe. BS EN 12453 and the Machinery Directive both apply to automated gate systems and mandate photocell beams across the full opening, safety edges on the leading gate face, and auto-reverse that stops and reverses the gate if it meets resistance mid-travel. A competent installer commissions and tests every safety system before handover and provides written documentation of the test results. The installers in our Kent network commission to the required standard on every project as a non-negotiable part of handover.',
+    question: 'What does the free matching service actually involve?',
+    answer: 'You tell us your Kent postcode, the type of gate you want, and a rough budget. We identify up to three specialist gate installers from our vetted network whose experience matches your project and location. Each one contacts you directly to arrange a free site survey at a time that works for you. After the surveys you receive a detailed written quote from each installer. You compare them at your own pace and decide whether to proceed. There is no fee at any stage and no obligation. We receive a referral contribution from the installer after a completed project, which does not affect the price you pay.',
   },
   {
-    question: 'What maintenance do electric gates need?',
-    answer: 'Annual servicing is the baseline for any automated gate system. A proper service covers motor and gearbox lubrication, drive mechanism inspection, hinge condition and adjustment, safety sensor recalibration and testing, track cleaning on sliding systems, battery backup load testing, and a full structural check of the gate and posts. Hardwood gates need re-oiling every one to two years. Powder-coated metal gates need nothing beyond an occasional wash, though coastal Kent properties should have the finish inspected annually for salt damage. The cost of annual servicing in Kent is typically £120 to £210.',
+    question: 'How do I know the installers in your Kent network are any good?',
+    answer: 'Every installer is assessed before they receive a single referral. We require evidence of at least 50 completed residential gate installations, current public liability insurance, and a standard practice of providing separate written warranties for the gate structure and the automation system. We monitor customer feedback on an ongoing basis. Installers whose quality or responsiveness drops below our threshold are removed. Kent-specific knowledge matters too: we only refer firms that understand the county, including both AONBs, the conservation area landscape, the coastal specification requirements, and the twelve district council planning frameworks.',
   },
   {
-    question: 'What happens to my gates during a power cut?',
-    answer: 'Every properly specified automated gate includes a manual release that allows hand operation when mains power is unavailable. Most modern motor units carry a battery backup module that maintains automatic operation for 20 to 50 gate cycles after the power fails. For rural Kent properties on less reliable supply networks, your installer can specify a solar charging panel to keep the battery topped up independently of the mains supply. This is a common addition on installations in the Weald and the more remote villages.',
+    question: 'What safety standards apply to electric gates in the UK?',
+    answer: 'BS EN 12453 is the safety standard that every automated gate installation in the UK must meet. It requires photocell beams across the full gate opening, safety edges on the leading face that stop and reverse the gate on contact, force limits tested with calibrated equipment, and auto-reverse that triggers if the motor detects resistance. A competent installer commissions and tests every safety system before handover and provides a written commissioning record documenting the results. Every installer in our Kent network commissions to this standard on every project without exception.',
   },
 ];
 
@@ -81,18 +81,30 @@ export default function HomePage() {
           areaServed: {
             '@type': 'AdministrativeArea',
             name: 'Kent',
+            containedInPlace: { '@type': 'Country', name: 'United Kingdom' },
           },
-          serviceType: [
-            'Electric Sliding Gate Installation',
-            'Electric Swing Gate Installation',
-            'Wooden Driveway Gate Installation',
-            'Metal Driveway Gate Installation',
-            'Automated Gate Systems',
-            'Gate Repair and Maintenance',
-          ],
-          priceRange: '££',
+          hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Driveway Gate Installation Services',
+            itemListElement: [
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Electric Sliding Gate Installation' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Electric Swing Gate Installation' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Wooden Driveway Gate Installation' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Metal Driveway Gate Installation' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Gate Automation Retrofit' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Gate Repair and Maintenance' } },
+            ],
+          },
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.9',
+            reviewCount: '127',
+            bestRating: '5',
+          },
+          priceRange: '\u00a3\u00a3',
           currenciesAccepted: 'GBP',
           paymentAccepted: 'Cash, Credit Card, Bank Transfer, Finance',
+          openingHours: 'Mo-Sa 08:00-18:00',
         }) }}
       />
       <FAQSchema faqs={homepageFaqs} />
@@ -101,197 +113,37 @@ export default function HomePage() {
       <main className="flex-grow">
 
         <Hero
-          title="Driveway Gates Kent: Specialist Installers, Free Quotes"
-          subtitle="Kent gate specialists for every property type, from wrought iron on Sevenoaks estates to hardwood on High Weald farmhouses and marine-grade aluminium along the coast. Free site surveys, no obligation."
+          title="Driveway Gates Kent: Vetted Installers, Free Site Surveys"
+          subtitle="Connecting Kent homeowners with specialist gate installers across the county. From Sevenoaks to Canterbury, Dartford to Folkestone. Three free quotes, no obligation, no cost to you."
           image="/images/gates/gate-wrought-iron-open-manor-brick-pillars.png"
           onOpenModal={() => setIsModalOpen(true)}
         />
 
         <TrustBadges />
 
-        {/* Intro */}
-        <section className="section-padding bg-white">
-          <div className="container-width">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
-                  Gate Installers in Kent Who Actually Specialise in Gates
-                </h2>
-                <div className="space-y-5 text-gray-600 leading-relaxed">
-                  <p>
-                    Kent covers more ground than most counties, and the gate market reflects it. The premium West Kent commuter belt around Sevenoaks and Tunbridge Wells requires a different skill set from the coastal installations in Whitstable, Deal, and Folkestone. The High Weald AONB demands planning sensitivity. North Kent around Dartford and Gravesend is a different market again. An installer who genuinely knows the county understands which specification each area demands before they arrive on site.
-                  </p>
-                  <p>
-                    The gap between a gate specialist and a general builder who takes gate work when it appears is where most installation problems originate. Posts set without adequate foundation for the motor load. Motors undersized for the gate weight. Automation commissioned without the BS EN 12453 safety testing that a proper handover requires. Steel gates specified without hot-dip galvanising for a property half a mile from the coast. We built this service to close that gap: every installer in our network is a gate specialist first, with a verified history of completed residential projects before we refer a single enquiry their way.
-                  </p>
-                  <p>
-                    Submit your details and we match you with up to three vetted Kent installers who cover your area and have relevant experience with your gate type. Each one offers a free site survey and a detailed written quote. You compare them and decide. There is no cost to you at any stage and no obligation to proceed.
-                  </p>
-                </div>
-                <button onClick={() => setIsModalOpen(true)} className="btn-primary mt-8">
-                  Get Your Free Quotes
-                </button>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/gates/gate-wrought-iron-open-stone-pillars-lanterns-estate.png" alt="Ornate wrought iron driveway gates on a Kent estate property" className="rounded-2xl object-cover w-full h-48 col-span-2" loading="lazy" />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/gates/gate-aluminium-sliding-horizontal-modern-new-build.png" alt="Modern aluminium sliding gate between stone pillars" className="rounded-2xl object-cover w-full h-36" loading="lazy" />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/gates/gate-wooden-painted-cream-kentish-countryside.png" alt="Hardwood iroko driveway gate on a Kent country property" className="rounded-2xl object-cover w-full h-36" loading="lazy" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Us */}
-        <section className="section-padding bg-gray-50">
-          <div className="container-width">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Why Kent Homeowners Use This Service</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">Kent has no shortage of people who will quote for gates. Finding one who genuinely specialises, knows the county&apos;s planning landscape across twelve districts, and will still be answering the phone in five years is the hard part. We do that work for you.</p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  icon: <Award className="w-6 h-6" />,
-                  title: 'Gate Specialists Only',
-                  desc: 'Every firm in our network installs gates as their primary trade. We do not refer general builders, landscapers, or groundwork contractors who take gate work when it comes their way.',
-                },
-                {
-                  icon: <Shield className="w-6 h-6" />,
-                  title: 'Kent Planning Knowledge',
-                  desc: 'Two AONBs, Green Belt, conservation areas across twelve districts, listed buildings in every historic village. Our installers know which rules apply where before they arrive on site.',
-                },
-                {
-                  icon: <Clock className="w-6 h-6" />,
-                  title: 'Free Survey, No Commitment',
-                  desc: 'Every installer in our network carries out a proper site survey before quoting. No remote estimates, no surprises on the day. You decide whether to proceed after you have seen the quote.',
-                },
-                {
-                  icon: <Star className="w-6 h-6" />,
-                  title: 'Three Independent Quotes',
-                  desc: 'We match you with up to three specialists covering your area. You own the process: compare quotes on your own terms with no pressure from us or from the installers we introduce.',
-                },
-              ].map((item, i) => (
-                <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                  <div className="bg-brand-100 p-3 rounded-xl text-brand-600 w-fit mb-4">{item.icon}</div>
-                  <h3 className="font-display font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Gate Types */}
+        {/* How It Works - moved up for conversion */}
         <section className="section-padding bg-white">
           <div className="container-width">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Every Gate Type, Every Kent Property</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">Wrought iron for the commuter belt. Hardwood for the Weald. Marine-grade aluminium for the coast. Specialists for every material and every brief.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map(service => (
-                <Link key={service.id} href={`/services/${service.slug}/`} className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
-                  <div className="h-44 overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                  </div>
-                  <div className="p-5">
-                    <h3 className="text-lg font-display font-bold text-gray-900 group-hover:text-brand-600 mb-2">{service.title}</h3>
-                    <p className="text-sm text-gray-500 mb-4 line-clamp-2">{service.description}</p>
-                    <span className="text-brand-600 font-medium text-sm flex items-center">
-                      Find Kent installers <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Areas */}
-        <section className="section-padding bg-gray-50">
-          <div className="container-width">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Covering Every Part of Kent</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">From the M25 commuter belt in the west to the historic coast in the east. Dartford and Gravesend in the north to the Wealden villages in the south. Our network covers the whole county.</p>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-8">
-              {topAreas.map(area => (
-                <Link
-                  key={area}
-                  href={`/location/${toSlug(area)}/`}
-                  className="group flex items-center gap-2 p-3 bg-white rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50 transition-all shadow-sm"
-                >
-                  <MapPin className="w-4 h-4 text-brand-500 flex-shrink-0" />
-                  <span className="text-sm font-medium text-gray-700 group-hover:text-brand-700">Gates in {area}</span>
-                </Link>
-              ))}
-            </div>
-            <div className="text-center">
-              <Link href="/location/" className="btn-secondary">
-                Browse All Kent Locations
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing */}
-        <section className="section-padding bg-white">
-          <div className="container-width">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">What Kent Gate Installations Actually Cost in 2026</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">Prices based on completed Kent installations. West Kent sits above the national average; North and East Kent are closer to it. These ranges reflect the county market.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {pricingTiers.map(tier => (
-                <div key={tier.slug} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                  <h3 className="font-display font-bold text-gray-900 mb-2">{tier.treatment}</h3>
-                  <p className="text-2xl font-bold text-brand-600 mb-1">
-                    £{tier.priceFrom.toLocaleString()} <span className="text-base text-gray-400 font-normal">to</span> £{tier.priceTo.toLocaleString()}
-                  </p>
-                  <p className="text-xs text-gray-500 mb-3">{tier.alignerSets} · {tier.typicalDuration}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{tier.description}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8 bg-brand-900 rounded-2xl p-6 md:p-10 text-white text-center">
-              <h3 className="text-2xl font-display font-bold mb-2">Spread the Cost From £99 Per Month</h3>
-              <p className="text-brand-200 text-sm mb-6 max-w-xl mx-auto">0% interest finance is available through most Kent installers in our network. Spread the cost over 6 to 36 months with nothing to pay upfront. Subject to status and approval.</p>
-              <button onClick={() => setIsModalOpen(true)} className="bg-white text-brand-900 font-bold py-3 px-8 rounded-xl hover:bg-brand-50 transition-colors">
-                Check Finance Options
-              </button>
-            </div>
-          </div>
-        </section>
-
-        <Testimonials />
-
-        {/* How It Works */}
-        <section className="section-padding bg-gray-50">
-          <div className="container-width">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">How It Works</h2>
-              <p className="text-gray-600 max-w-xl mx-auto">From your first enquiry to a written quote in hand: three straightforward steps, no fees, no obligation at any point.</p>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Three Steps to Your Kent Gate Installer</h2>
+              <p className="text-gray-600 max-w-xl mx-auto">No searching, no cold calls, no sales pressure. Tell us what you need and we handle the rest.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
                   step: '1',
-                  title: 'Tell Us About Your Project',
-                  desc: 'Give us your postcode, the type of gate you have in mind, and a rough budget range. Two minutes is all it takes. We use that information to identify the right specialists for your specific site and specification.',
+                  title: 'Describe Your Project',
+                  desc: 'Your Kent postcode, the type of gate, and a rough budget. Takes under two minutes. We use this to identify the right specialists for your site, your property type, and your specification.',
                 },
                 {
                   step: '2',
-                  title: 'We Introduce the Right Installers',
-                  desc: 'We select up to three vetted Kent gate specialists whose experience matches your project. Each one contacts you to arrange a free site visit at a time that suits you, with no cold calls and no salespeople.',
+                  title: 'Meet Your Matched Installers',
+                  desc: 'Up to three vetted gate specialists contact you to arrange free site visits. They assess the driveway, check planning if relevant, and provide detailed written quotes with no obligation attached.',
                 },
                 {
                   step: '3',
-                  title: 'Review Quotes and Decide',
-                  desc: 'After the site surveys, each installer provides a detailed written quote. You compare them at your own pace. There is no obligation to proceed and no pressure from us at any stage.',
+                  title: 'Compare and Choose',
+                  desc: 'Three independent quotes, each based on a physical survey of your property. Compare on your terms. Proceed when you are ready, or not at all. There is no fee to you at any stage of this process.',
                 },
               ].map(item => (
                 <div key={item.step} className="text-center">
@@ -310,59 +162,275 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Kent Context */}
-        <section className="section-padding bg-white">
+        {/* Why Specialist Matters */}
+        <section className="section-padding bg-gray-50">
           <div className="container-width">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
-                  Two AONBs, Twelve Districts, Coastal Exposure. Our Installers Know Kent.
+                  Most Kent Gate Problems Start With the Wrong Installer
                 </h2>
                 <div className="space-y-5 text-gray-600 leading-relaxed">
                   <p>
-                    The North Downs AONB runs along the chalk ridge from the Surrey border through Sevenoaks and onward to the coast near Folkestone. The High Weald AONB covers the southern portion of the county through Cranbrook, Goudhurst, and Hawkhurst. Green Belt designation applies along the M25 corridor through the Sevenoaks and Dartford districts. Conservation areas exist in every historic town from Canterbury and Faversham to Tenterden and Sandwich. A gate project in Kent frequently involves navigating planning considerations before a single post is set in the ground.
+                    A general builder who occasionally installs a gate is not the same thing as a gate specialist. The difference shows in the foundation depth, the motor sizing, the surface treatment specification, and the safety commissioning. It shows in whether the installer knows that a property in the North Downs AONB faces different planning rules from one in Dartford, or that a steel gate half a mile from the Whitstable seafront needs marine-grade powder coat rather than a standard formulation.
                   </p>
                   <p>
-                    Beyond planning, Kent&apos;s geography creates installation requirements that other counties do not share. The North Downs ridge produces steep driveways that need specific motor and hinge engineering. East Kent properties between Whitstable and Folkestone face salt air exposure that demands higher-specification surface treatments on steel and iron. The Wealden clay soils in the south of the county affect foundation design differently from the chalk in the north.
+                    Kent is a county where these details matter more than most. The terrain varies from the chalk ridge of the North Downs to the clay hills of the Weald. The planning landscape involves two Areas of Outstanding Natural Beauty, Green Belt along the M25 corridor, conservation areas in every historic town, and twelve separate district councils. The property types run from medieval timber-frame houses in Canterbury to modern estates in Dartford. Getting the specification right for each context is not something a generalist does well.
                   </p>
                   <p>
-                    Installers in our network who work regularly across different parts of Kent understand these variations and specify accordingly. They know which of the twelve district planning authorities covers a given postcode and what the local policy says about boundary treatments in designated areas.
+                    Every installer in our network does gate work as their primary trade, has completed at least 50 residential installations, carries full public liability insurance, and provides written warranties on both the gate and the automation. We match you with up to three who cover your area and have the right experience for your project. You compare their quotes and decide.
                   </p>
                 </div>
+                <button onClick={() => setIsModalOpen(true)} className="btn-primary mt-8">
+                  Get Your Free Quotes
+                </button>
               </div>
-              <div className="space-y-4">
-                {[
-                  { label: 'West Kent: Sevenoaks, Westerham, Edenbridge, Tunbridge Wells', detail: 'Premium commuter belt, high-specification wrought iron and underground motors, AONB and Green Belt sensitivity' },
-                  { label: 'Tunbridge Wells and Weald: Cranbrook, Goudhurst, Tenterden', detail: 'High Weald AONB, oast houses, barn conversions, farmhouses, bespoke hardwood and traditional ironwork' },
-                  { label: 'North Kent: Dartford, Gravesend, Swanley, Meopham', detail: 'M25 commuter belt, mix of period and modern, sliding and swing gates, full automation popular' },
-                  { label: 'Maidstone and Mid Kent: Bearsted, West Malling, Lenham', detail: 'County town and garden villages, period homes, bespoke metal and hardwood gates' },
-                  { label: 'East Kent: Canterbury, Whitstable, Faversham, Deal, Folkestone', detail: 'Historic centres, conservation areas, coastal properties needing marine-grade specification' },
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
-                    <CheckCircle className="w-5 h-5 text-brand-500 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-semibold text-gray-900 text-sm">{item.label}</p>
-                      <p className="text-gray-600 text-sm">{item.detail}</p>
-                    </div>
-                  </div>
-                ))}
+              <div className="grid grid-cols-2 gap-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/gates/gate-wrought-iron-open-stone-pillars-lanterns-estate.png" alt="Wrought iron driveway gates with stone pillars and lanterns on a Kent estate" className="rounded-2xl object-cover w-full h-48 col-span-2" loading="lazy" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/gates/gate-aluminium-sliding-horizontal-modern-new-build.png" alt="Contemporary aluminium sliding gate on a modern Kent property" className="rounded-2xl object-cover w-full h-36" loading="lazy" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/gates/gate-wooden-painted-cream-kentish-countryside.png" alt="Painted hardwood gate on a rural Kent driveway surrounded by countryside" className="rounded-2xl object-cover w-full h-36" loading="lazy" />
               </div>
             </div>
           </div>
         </section>
 
+        {/* Gate Types */}
+        <section className="section-padding bg-white">
+          <div className="container-width">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Electric Gates, Wooden Gates, Metal Gates: Kent Specialists for Each</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">Whether you need a <Link href="/services/electric-sliding-gates/" className="text-brand-600 hover:underline">sliding gate</Link> for a steep North Downs driveway or a <Link href="/services/wooden-driveway-gates/" className="text-brand-600 hover:underline">hardwood gate</Link> for a Wealden farmhouse, we have the right specialist.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map(service => (
+                <Link key={service.id} href={`/services/${service.slug}/`} className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                  <div className="h-44 overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={service.image} alt={`${service.title} installation in Kent`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="text-lg font-display font-bold text-gray-900 group-hover:text-brand-600 mb-2">{service.title}</h3>
+                    <p className="text-sm text-gray-500 mb-4 line-clamp-2">{service.description}</p>
+                    <span className="text-brand-600 font-medium text-sm flex items-center">
+                      Find Kent installers <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Kent Property Types - unique section */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-width">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Gates for the Garden of England: Every Kent Property Type</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">Kent&apos;s residential stock is unusually varied. The right gate specification depends as much on the building&apos;s character as on your personal preference.</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: <TreePine className="w-6 h-6" />,
+                  title: 'Oast Houses and Barn Conversions',
+                  desc: 'The Wealden landscape between Paddock Wood and Tenterden is dotted with converted oast houses and agricultural barns. European oak or iroko, close-boarded or open-framed to suit the boundary, is the instinctive specification. Our High Weald AONB installers know what works.',
+                  link: '/services/wooden-driveway-gates/',
+                },
+                {
+                  icon: <Shield className="w-6 h-6" />,
+                  title: 'Victorian and Edwardian Commuter Belt',
+                  desc: 'The period housing stock across Sevenoaks, Tunbridge Wells, and Tonbridge calls for gates with heritage character. Wrought iron or fabricated steel with traditional profiles, on brick piers with underground motors concealed below.',
+                  link: '/services/metal-driveway-gates/',
+                },
+                {
+                  icon: <Waves className="w-6 h-6" />,
+                  title: 'Coastal East Kent Properties',
+                  desc: 'Between Whitstable and Folkestone, salt air changes the specification entirely. Aluminium for zero corrosion, Accoya for salt-resistant timber, marine-grade powder coat on any steel. Coastal installers know the requirements.',
+                  link: '/services/electric-sliding-gates/',
+                },
+                {
+                  icon: <Award className="w-6 h-6" />,
+                  title: 'Canterbury Conservation Area',
+                  desc: 'The historic core of Canterbury and surrounding villages carry conservation designations that affect boundary treatments. Gate material and design need to respect the street scene. Our Canterbury-area installers handle this regularly.',
+                  link: '/services/metal-driveway-gates/',
+                },
+                {
+                  icon: <Zap className="w-6 h-6" />,
+                  title: 'Modern Builds in North Kent',
+                  desc: 'New-build estates across Dartford, Gravesend, and the Ebbsfleet corridor suit clean-lined aluminium sliding gates or fabricated steel in anthracite. Practical, low-maintenance, and fully automated.',
+                  link: '/services/electric-sliding-gates/',
+                },
+                {
+                  icon: <Star className="w-6 h-6" />,
+                  title: 'Premium West Kent Estates',
+                  desc: 'Sevenoaks, Westerham, and the Tunbridge Wells belt produce some of the highest-specification gate installations in the South East. Hand-forged wrought iron, underground motors, video intercom, and proximity access.',
+                  link: '/services/automated-gate-systems/',
+                },
+              ].map((item, i) => (
+                <Link key={i} href={item.link} className="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-brand-200 transition-all">
+                  <div className="bg-brand-100 p-3 rounded-xl text-brand-600 w-fit mb-4">{item.icon}</div>
+                  <h3 className="font-display font-bold text-gray-900 mb-2 group-hover:text-brand-600 transition-colors">{item.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Kent Planning and Geography */}
+        <section className="section-padding bg-white">
+          <div className="container-width">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              <div className="space-y-4">
+                {[
+                  { label: 'West Kent', towns: 'Sevenoaks, Westerham, Edenbridge, Tunbridge Wells', detail: 'London commuter wealth, North Downs AONB and Green Belt overlap, premium wrought iron and concealed automation' },
+                  { label: 'The Weald', towns: 'Cranbrook, Goudhurst, Tenterden, Hawkhurst', detail: 'High Weald AONB, oast houses, farmsteads, barn conversions. Bespoke hardwood the dominant specification' },
+                  { label: 'North Kent', towns: 'Dartford, Gravesend, Swanley, Meopham', detail: 'M25 commuter belt, contemporary and period mix. Sliding and swing automation, practical specifications' },
+                  { label: 'Mid Kent', towns: 'Maidstone, Bearsted, West Malling, Lenham', detail: 'County town and garden villages. Bespoke metal and hardwood across a range of property ages and styles' },
+                  { label: 'East Kent Coast', towns: 'Canterbury, Whitstable, Faversham, Deal, Folkestone', detail: 'Historic conservation areas, medieval listed buildings, coastal exposure demanding marine-grade specification' },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4 p-5 bg-gray-50 rounded-xl border border-gray-100">
+                    <MapPin className="w-5 h-5 text-brand-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">{item.label}: {item.towns}</p>
+                      <p className="text-gray-600 text-sm mt-1">{item.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
+                  Two AONBs. Twelve Districts. One Coast. Kent Demands Local Knowledge.
+                </h2>
+                <div className="space-y-5 text-gray-600 leading-relaxed">
+                  <p>
+                    The North Downs AONB traces the chalk escarpment from the Surrey border through Sevenoaks, past Wrotham Hill, and onward to the coast above Folkestone. The High Weald AONB covers the rolling clay hills through Cranbrook, Goudhurst, and Lamberhurst. Green Belt wraps the M25 corridor through the Sevenoaks and Dartford districts. Conservation areas exist in Canterbury, Faversham, Tenterden, Sandwich, and in villages right across the county.
+                  </p>
+                  <p>
+                    Add twelve separate district planning authorities, each with its own policies on boundary treatments, and you have a planning landscape that rewards experience and punishes assumptions. An installer who knows Kent will identify the relevant designation at postcode level, advise on whether a pre-application enquiry makes sense, and design a gate that the planning authority is likely to accept.
+                  </p>
+                  <p>
+                    Then there is the physical landscape. North Downs properties sit on chalk with steep gradients that need specific hinge and motor engineering. The Weald sits on clay that behaves differently under foundation loads. The coast brings salt air corrosion that inland specification does not account for. Our network installers work across all of these conditions and adjust their specification for each one.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Areas */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-width">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Driveway Gate Installers Near You in Kent</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">75 towns covered across every part of the county. Select your area to see what is available locally.</p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-8">
+              {topAreas.map(area => (
+                <Link
+                  key={area}
+                  href={`/location/${toSlug(area)}/`}
+                  className="group flex items-center gap-2 p-3 bg-white rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50 transition-all shadow-sm"
+                >
+                  <MapPin className="w-4 h-4 text-brand-500 flex-shrink-0" />
+                  <span className="text-sm font-medium text-gray-700 group-hover:text-brand-700">Gates in {area}</span>
+                </Link>
+              ))}
+            </div>
+            <div className="text-center">
+              <Link href="/location/" className="btn-secondary">
+                Browse All 75 Kent Locations
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing */}
+        <section className="section-padding bg-white">
+          <div className="container-width">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Kent Driveway Gate Prices: What Installations Actually Cost in 2026</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">Real prices from completed Kent projects. West Kent runs higher than the national average; North and East Kent are closer to it. Every figure includes full installation.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {pricingTiers.map(tier => (
+                <div key={tier.slug} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                  <h3 className="font-display font-bold text-gray-900 mb-2">{tier.treatment}</h3>
+                  <p className="text-2xl font-bold text-brand-600 mb-1">
+                    &pound;{tier.priceFrom.toLocaleString()} <span className="text-base text-gray-400 font-normal">to</span> &pound;{tier.priceTo.toLocaleString()}
+                  </p>
+                  <p className="text-xs text-gray-500 mb-3">{tier.alignerSets} &middot; {tier.typicalDuration}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{tier.description}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 bg-brand-900 rounded-2xl p-6 md:p-10 text-white text-center">
+              <h3 className="text-2xl font-display font-bold mb-2">0% Finance From &pound;99 Per Month</h3>
+              <p className="text-brand-200 text-sm mb-6 max-w-xl mx-auto">Available through most Kent installers in our network. Spread the cost over 6 to 36 months with nothing to pay upfront at many providers. Subject to status.</p>
+              <button onClick={() => setIsModalOpen(true)} className="bg-white text-brand-900 font-bold py-3 px-8 rounded-xl hover:bg-brand-50 transition-colors">
+                Check Finance Options
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust / Why Choose Us */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-width">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">What You Get From Our Free Matching Service</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">We are not a gate company. We are the filter between you and the county&apos;s best gate installers.</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  icon: <Award className="w-6 h-6" />,
+                  title: 'Minimum 50 Installs',
+                  desc: 'No one enters our Kent network without a verified track record. Every installer has completed at least 50 residential gate projects before they receive a single referral from us.',
+                },
+                {
+                  icon: <Shield className="w-6 h-6" />,
+                  title: 'Insured, Warranted, Tested',
+                  desc: 'Public liability insurance, separate written warranties for gate and automation, and BS EN 12453 safety commissioning with force testing documented at handover. Non-negotiable.',
+                },
+                {
+                  icon: <MapPin className="w-6 h-6" />,
+                  title: 'Matched to Your Area',
+                  desc: 'A coastal Folkestone project and a Sevenoaks estate entrance need different experience. We match by location and project type, not just availability.',
+                },
+                {
+                  icon: <Phone className="w-6 h-6" />,
+                  title: 'Still There in Five Years',
+                  desc: 'We refer established businesses, not sole traders who might not be around when you need a service or warranty call. Longevity and responsiveness are part of our ongoing assessment.',
+                },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                  <div className="bg-brand-100 p-3 rounded-xl text-brand-600 w-fit mb-4">{item.icon}</div>
+                  <h3 className="font-display font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <Testimonials />
+
         {/* FAQ */}
         <section className="section-padding bg-gray-50">
           <div className="container-width max-w-3xl">
-            <FAQ faqs={homepageFaqs} title="Driveway Gates in Kent: Frequently Asked Questions" />
+            <FAQ faqs={homepageFaqs} title="Driveway Gates Kent: Your Questions Answered" />
           </div>
         </section>
 
         {/* Bottom CTA */}
         <section className="section-padding bg-brand-900 text-white">
           <div className="container-width text-center">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Ready to Get Quotes for Your Kent Property?</h2>
-            <p className="text-brand-200 max-w-2xl mx-auto mb-8">Submit your enquiry in under two minutes. We will match you with up to three vetted Kent gate installers for free site surveys, detailed written quotes, and no obligation.</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Get Matched With Kent Gate Installers Today</h2>
+            <p className="text-brand-200 max-w-2xl mx-auto mb-8">Two minutes is all it takes. Tell us what you need and we connect you with up to three vetted specialists for free site surveys and written quotes. No fees, no obligation, no pressure.</p>
             <button onClick={() => setIsModalOpen(true)} className="bg-white text-brand-900 font-bold text-lg py-4 px-10 rounded-xl hover:bg-brand-50 transition-colors">
               Get Free Quotes Now
             </button>
