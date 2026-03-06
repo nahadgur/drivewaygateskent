@@ -17,7 +17,6 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { LeadFormModal } from '@/components/LeadFormModal';
 import { HeroLeadForm } from '@/components/HeroLeadForm';
 import { PricingSection } from '@/components/PricingSection';
-import { FAQSchema } from '@/components/FAQSchema';
 
 const serviceContent: Record<string, { intro: string[]; benefits: { title: string; desc: string }[]; candidateIntro: string; candidates: string[]; process: { title: string; desc: string }[] }> = {
   'electric-sliding': {
@@ -214,7 +213,6 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
 
   return (
     <>
-      <FAQSchema faqs={combinedFaqs} />
       <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Header onOpenModal={() => setIsModalOpen(true)} />
       <main className="flex-grow">

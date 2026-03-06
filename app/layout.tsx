@@ -53,35 +53,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: siteConfig.name,
     url: siteConfig.url,
     logo: `${siteConfig.url}/android-chrome-512x512.png`,
-  };
-
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'HomeAndConstructionBusiness',
-    name: siteConfig.name,
-    url: siteConfig.url,
-    logo: `${siteConfig.url}/android-chrome-512x512.png`,
     description: siteConfig.description,
     areaServed: {
-      '@type': 'State',
+      '@type': 'AdministrativeArea',
       name: 'Kent',
-      containedInPlace: {
-        '@type': 'Country',
-        name: 'United Kingdom',
-      },
+      containedInPlace: { '@type': 'Country', name: 'United Kingdom' },
     },
-    serviceType: [
-      'Electric Sliding Gate Installation',
-      'Electric Swing Gate Installation',
-      'Wooden Driveway Gate Installation',
-      'Metal Driveway Gate Installation',
-      'Gate Automation Installation',
-      'Gate Repair and Maintenance',
-    ],
-    priceRange: '££',
-    currenciesAccepted: 'GBP',
-    paymentAccepted: 'Cash, Credit Card, Bank Transfer',
-    openingHours: 'Mo-Sa 08:00-18:00',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      availableLanguage: 'English',
+    },
   };
 
   return (
@@ -89,7 +71,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       </head>
       <body className="min-h-screen flex flex-col">
         {/* Replace G-XXXXXXXXXX with your GA4 measurement ID */}

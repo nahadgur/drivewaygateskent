@@ -14,7 +14,6 @@ import { TrustBadges } from '@/components/TrustBadges';
 import { Testimonials } from '@/components/Testimonials';
 import { FAQ } from '@/components/FAQ';
 import { LeadFormModal } from '@/components/LeadFormModal';
-import { FAQSchema } from '@/components/FAQSchema';
 import { siteConfig } from '@/data/site';
 
 const topAreas = ['Sevenoaks', 'Tunbridge Wells', 'Canterbury', 'Maidstone', 'Tonbridge', 'Dartford', 'Folkestone', 'Cranbrook', 'Whitstable', 'Gravesend', 'Faversham', 'Tenterden'];
@@ -95,19 +94,12 @@ export default function HomePage() {
               { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Gate Repair and Maintenance' } },
             ],
           },
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: '4.9',
-            reviewCount: '127',
-            bestRating: '5',
-          },
           priceRange: '\u00a3\u00a3',
           currenciesAccepted: 'GBP',
           paymentAccepted: 'Cash, Credit Card, Bank Transfer, Finance',
           openingHours: 'Mo-Sa 08:00-18:00',
         }) }}
       />
-      <FAQSchema faqs={homepageFaqs} />
       <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Header onOpenModal={() => setIsModalOpen(true)} />
       <main className="flex-grow">

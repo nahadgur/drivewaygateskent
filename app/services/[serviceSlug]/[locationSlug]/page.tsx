@@ -17,7 +17,6 @@ import { LeadFormModal } from '@/components/LeadFormModal';
 import { PricingSection } from '@/components/PricingSection';
 import { NearbyAreasGrid } from '@/components/NearbyAreasGrid';
 import { siteConfig } from '@/data/site';
-import { FAQSchema } from '@/components/FAQSchema';
 
 
 const serviceLocationContent: Record<string, {
@@ -182,7 +181,7 @@ export default function ServiceLocationPage({ params }: { params: { serviceSlug:
     areaServed: {
       '@type': 'City',
       name: cityName,
-      containedInPlace: { '@type': 'State', name: 'Kent' },
+      containedInPlace: { '@type': 'AdministrativeArea', name: 'Kent' },
     },
     serviceType: service.title,
     priceRange: '\u00a3\u00a3',
@@ -190,7 +189,6 @@ export default function ServiceLocationPage({ params }: { params: { serviceSlug:
 
   return (
     <>
-      <FAQSchema faqs={service.faqs} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Header onOpenModal={() => setIsModalOpen(true)} />

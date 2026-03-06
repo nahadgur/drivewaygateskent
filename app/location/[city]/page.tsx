@@ -17,7 +17,6 @@ import { LeadFormModal } from '@/components/LeadFormModal';
 import { PricingSection } from '@/components/PricingSection';
 import { NearbyAreasGrid } from '@/components/NearbyAreasGrid';
 import { Testimonials } from '@/components/Testimonials';
-import { FAQSchema } from '@/components/FAQSchema';
 import { siteConfig } from '@/data/site';
 
 export default function CityPage({ params }: { params: { city: string } }) {
@@ -36,7 +35,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
     areaServed: {
       '@type': 'City',
       name: cityName,
-      containedInPlace: { '@type': 'State', name: 'Kent' },
+      containedInPlace: { '@type': 'AdministrativeArea', name: 'Kent' },
     },
     serviceType: [
       'Electric Sliding Gate Installation',
@@ -51,7 +50,6 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
   return (
     <>
-      <FAQSchema faqs={cityFaqs} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Header onOpenModal={() => setIsModalOpen(true)} />

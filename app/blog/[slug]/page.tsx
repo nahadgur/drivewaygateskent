@@ -8,6 +8,7 @@ import { blogArticles, getArticleBySlug, type ContentBlock } from '@/data/blog';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { LeadFormModal } from '@/components/LeadFormModal';
+import { siteConfig } from '@/data/site';
 
 // Update these to match your actual live service x location pages
 const SIDEBAR_SERVICE_LINKS = [
@@ -208,8 +209,39 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
     })
     .slice(0, 3);
 
+  const blogPostingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: article.title,
+    description: article.metaDescription,
+    image: article.featuredImage.startsWith('http') ? article.featuredImage : `${siteConfig.url}${article.featuredImage}`,
+    datePublished: article.publishDate,
+    dateModified: article.publishDate,
+    author: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.url}/android-chrome-512x512.png`,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteConfig.url}/blog/${article.slug}/`,
+    },
+    articleSection: article.category,
+    inLanguage: 'en-GB',
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }} />
       <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Header onOpenModal={() => setIsModalOpen(true)} />
       <main className="flex-grow">
