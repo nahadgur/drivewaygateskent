@@ -70,7 +70,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
                   Driveway Gates in <span className="text-brand-400">{cityName}</span>
                 </h1>
                 <p className="text-xl text-gray-300 leading-relaxed">
-                  Kent gate specialists serving {cityName}. Every installer in our network focuses on residential gates as their primary trade, with a verified project history before we refer a single enquiry their way.
+                  Specialist driveway gate installers covering {cityName} and the surrounding area. Vetted, insured, and experienced with the property types and planning landscape across this part of Kent.
                 </p>
               </div>
               <div>
@@ -86,14 +86,14 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
               <section className="mb-12">
                 <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-4">
-                  Driveway Gate Installers in {cityName}
+                  Why {cityName} Homeowners Need a Gate Specialist, Not a General Builder
                 </h2>
                 <div className="prose prose-gray max-w-none text-gray-600 space-y-4">
                   <p>
-                    Kent has a more complex gate market than most counties. The North Downs ridge and the Wealden hills create sloped driveways that require specific motor and hinge engineering. The AONB and the county's dense network of conservation areas add a planning dimension that many installers are not equipped to handle. The premium West Kent market around Sevenoaks, Tunbridge Wells, and Westerham sets expectations around wrought iron, underground motors, and access management that general builders cannot meet. Every installer we refer in {cityName} specialises in residential gates, carries full public liability insurance, and has the project history to back their experience up.
+                    Driveway gate installation in Kent involves variables that a general builder is unlikely to anticipate. Two AONBs, twelve district planning authorities, clay and chalk subsoils that behave differently under post foundations, coastal salt exposure on East Kent properties, and a terrain that ranges from flat estuarine land in the north to steep chalk escarpment and Wealden hillside further south. An installer who works regularly in the {cityName} area understands how these factors affect the specification for your specific site. Every firm we refer has gate installation as their core trade, a minimum of 50 completed residential projects, and current public liability insurance.
                   </p>
                   <p>
-                    Each installer we introduce offers a free site survey with no commitment required. They visit the property, assess the driveway geometry and ground conditions, confirm the planning position if relevant, and provide a fully itemised written quote. You compare quotes from up to three specialists and decide whether and when to proceed. There is no fee to use the service at any stage.
+                    The process is straightforward: each installer we introduce arranges a free site visit at a time that suits you, walks the driveway, checks any planning considerations, and provides a fully itemised written quote. You receive up to three independent quotes and decide on your own terms. There is no cost to you at any point and no obligation to proceed with any of them.
                   </p>
                 </div>
               </section>
@@ -120,13 +120,13 @@ export default function CityPage({ params }: { params: { city: string } }) {
               <PricingSection cityName={cityName} />
 
               <section className="mb-16">
-                <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-6">Why {cityName} Homeowners Use Our Service</h2>
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-6">What the {cityName} Matching Service Gives You</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
-                    { icon: <Star className="w-5 h-5" />, title: 'Specialists, Not Generalists', desc: `Every installer we refer in ${cityName} focuses on residential gate work. No general builders, no occasional gate fitters. Gate installation is what they do every day, and the quality of their work reflects that.` },
-                    { icon: <Shield className="w-5 h-5" />, title: 'Insured and Under Warranty', desc: `Public liability cover is mandatory for every installer in our ${cityName} network. Written warranties on the gate structure and the automation system are provided separately on every job, not as a combined catch-all.` },
-                    { icon: <Clock className="w-5 h-5" />, title: 'Survey Booked Within the Week', desc: `Most installers covering ${cityName} can offer a free site survey slot within 7 days. Evening and Saturday appointments are available for homeowners who cannot take time off during the week.` },
-                    { icon: <CheckCircle className="w-5 h-5" />, title: 'No Cost, No Obligation', desc: `The matching service is free at every stage. The site survey is free. The written quote is free. You choose whether and when to proceed with no pressure from us or the installer at any point.` },
+                    { icon: <Star className="w-5 h-5" />, title: 'Gate-Only Firms', desc: `We only refer firms in ${cityName} whose primary trade is residential gate installation. That means they specify, fabricate, install, and commission gates every week, not as a sideline to general building or landscaping work.` },
+                    { icon: <Shield className="w-5 h-5" />, title: 'Separate Gate and Motor Warranties', desc: `Every ${cityName} installer provides written warranties for the gate structure and the automation system as two distinct documents. If a motor fails in year three, the warranty covers it without ambiguity about what is and is not included.` },
+                    { icon: <Clock className="w-5 h-5" />, title: 'Survey Within 7 Days', desc: `Installers covering ${cityName} typically offer a free site survey slot within a week of your enquiry. Evening and Saturday appointments are available if weekdays do not work for your schedule.` },
+                    { icon: <CheckCircle className="w-5 h-5" />, title: 'Zero Cost at Every Stage', desc: `The matching is free. The site surveys are free. The written quotes are free. You pay nothing unless you choose to go ahead with an installer, and then you pay them directly under your own contract.` },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4 p-5 bg-gray-50 rounded-xl border border-gray-100">
                       <div className="bg-brand-100 p-2 rounded-lg text-brand-600 flex-shrink-0 h-fit">{item.icon}</div>
@@ -152,14 +152,14 @@ export default function CityPage({ params }: { params: { city: string } }) {
             <aside className="lg:col-span-1">
               <div className="sticky top-28 space-y-8">
                 <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                  <h3 className="text-lg font-display font-bold text-gray-900 mb-4">Get Matched in {cityName}</h3>
-                  <p className="text-gray-600 text-sm mb-6">Tell us what you need and we will connect you with up to 3 vetted installers near {cityName}. Completely free, no strings attached.</p>
+                  <h3 className="text-lg font-display font-bold text-gray-900 mb-4">Find Installers in {cityName}</h3>
+                  <p className="text-gray-600 text-sm mb-6">Describe your project and we match you with up to 3 vetted gate specialists covering {cityName}. Free, no strings.</p>
                   <button onClick={() => setIsModalOpen(true)} className="block w-full btn-primary text-center">Find an Installer</button>
                   <div className="mt-6 pt-6 border-t border-gray-100 space-y-4">
                     {[
-                      { icon: <Clock className="w-4 h-4 text-brand-500" />, text: "Surveys available this week" },
-                      { icon: <Shield className="w-4 h-4 text-brand-500" />, text: "50+ installs per installer" },
-                      { icon: <Star className="w-4 h-4 text-brand-500" />, text: "Full insurance and warranties" },
+                      { icon: <Clock className="w-4 h-4 text-brand-500" />, text: "Survey slots within 7 days" },
+                      { icon: <Shield className="w-4 h-4 text-brand-500" />, text: "Min. 50 completed installs" },
+                      { icon: <Star className="w-4 h-4 text-brand-500" />, text: "Insured with written warranties" },
                     ].map((item, i) => (
                       <div key={i} className="flex items-center gap-3">
                         <div className="bg-brand-100 p-1.5 rounded-full">{item.icon}</div>
@@ -169,8 +169,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
                   </div>
                 </div>
                 <div className="bg-brand-900 text-white p-6 rounded-2xl shadow-lg">
-                  <h3 className="text-lg font-display font-bold mb-3">From &pound;99/month</h3>
-                  <p className="text-brand-100 text-sm mb-4">0% finance available at most {cityName} installers. Spread the cost over 6 to 36 months with nothing to pay upfront at many providers.</p>
+                  <h3 className="text-lg font-display font-bold mb-3">0% Finance Available</h3>
+                  <p className="text-brand-100 text-sm mb-4">Most {cityName} installers offer interest-free payment plans. Spread over 6 to 36 months, from £99 per month. Subject to status.</p>
                   <button onClick={() => setIsModalOpen(true)} className="block w-full bg-white text-brand-900 text-center font-bold py-3 px-6 rounded-xl hover:bg-brand-50 transition-colors text-sm">Check Eligibility</button>
                 </div>
               </div>
@@ -178,8 +178,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
           </div>
 
           <div className="bg-brand-900 rounded-2xl p-8 md:p-12 text-center mt-12">
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">Get Matched With Gate Installers in {cityName}</h2>
-            <p className="text-brand-200 mb-8 max-w-2xl mx-auto">Submit your enquiry in under two minutes. We will identify up to three vetted installers covering {cityName} and connect you directly. Free site surveys, written quotes, no obligation at any stage.</p>
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">Find Your Gate Installer in {cityName}</h2>
+            <p className="text-brand-200 mb-8 max-w-2xl mx-auto">Tell us what you need and we handle the matching. Up to three vetted Kent specialists, each offering a free site survey and a written quote. Takes two minutes to start, costs nothing, and commits you to nothing.</p>
             <button onClick={() => setIsModalOpen(true)} className="bg-white text-brand-900 font-bold text-lg py-4 px-10 rounded-xl hover:bg-brand-50 transition-colors">Get Your Free Quotes</button>
           </div>
         </div>

@@ -45,10 +45,10 @@ export default function BlogIndexPage() {
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
             <p className="text-[10px] font-bold uppercase tracking-widest text-brand-400 mb-3">Expert Advice</p>
             <h1 className="text-3xl md:text-5xl font-display font-bold text-white max-w-3xl leading-tight mb-4">
-              Kent Driveway Gate Advice and Guides
+              Kent Gate Guides: Planning, Pricing, and Specification
             </h1>
             <p className="text-brand-100 text-sm md:text-base max-w-xl">
-              Planning rules, material choices, automation options, pricing, and installer selection. Written for Kent properties.
+              AONB planning rules, coastal material specification, cost breakdowns by area, and how to tell a specialist from a generalist. Written specifically for Kent homeowners.
             </p>
           </div>
         </div>
@@ -194,10 +194,10 @@ export default function BlogIndexPage() {
                 <div className="flex-1">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-brand-400 mb-2">Free Service</p>
                   <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-2">
-                    Ready to Find a Kent Gate Installer?
+                    Need a Gate Installer in Kent?
                   </h3>
                   <p className="text-brand-200 text-sm">
-                    Free site surveys, written quotes, up to three specialists. No fees, no obligation.
+                    Vetted specialists, free site surveys, up to three written quotes. No fees at any stage.
                   </p>
                 </div>
                 <div className="flex-shrink-0">

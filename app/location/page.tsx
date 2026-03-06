@@ -32,8 +32,8 @@ export default function LocationIndexPage() {
       <Header onOpenModal={() => setIsModalOpen(true)} />
       <main className="flex-grow">
         <Hero
-          title="Gate Installers Across Kent"
-          subtitle="75 towns covered across every part of the county. Find a specialist for your area and get free quotes with no obligation."
+          title="Find a Gate Installer Near You in Kent"
+          subtitle="75 Kent towns from Sevenoaks to Folkestone, Dartford to Tenterden. Search your area below and get matched with vetted local specialists."
           image="/images/gates/gate-aerial-wrought-iron-closed-topiary-gravel-circle.png"
           onOpenModal={() => setIsModalOpen(true)}
         />

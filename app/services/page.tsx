@@ -19,8 +19,8 @@ export default function ServicesIndexPage() {
       <Header onOpenModal={() => setIsModalOpen(true)} />
       <main className="flex-grow">
         <Hero
-          title="Kent Driveway Gate Services"
-          subtitle="Wrought iron, hardwood, fabricated steel, aluminium sliding, full automation, and repair. Specialists for every gate type and every Kent property."
+          title="Driveway Gate Services Across Kent"
+          subtitle="From bespoke hardwood for Wealden farmhouses to marine-grade aluminium for the East Kent coast. Sliding, swing, automated, and manual. Pick your gate type below and find a vetted Kent installer."
           image="/images/gates/gate-aluminium-sliding-horizontal-modern-new-build.png"
           showCta={false}
           showTrust={false}
