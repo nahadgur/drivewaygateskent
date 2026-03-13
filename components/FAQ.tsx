@@ -8,19 +8,8 @@ type FAQItem = { question: string; answer: string };
 export function FAQ({ faqs, title = "Frequently Asked Questions" }: { faqs: FAQItem[]; title?: string }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(f => ({
-      "@type": "Question",
-      "name": f.question,
-      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
-    }))
-  };
-
   return (
     <section>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-6">{title}</h2>
       <div className="space-y-3">
         {faqs.map((faq, i) => (
