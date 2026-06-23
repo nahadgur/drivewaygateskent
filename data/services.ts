@@ -159,3 +159,16 @@ export const services: Service[] = [
 
 export const getAllServiceSlugs = (): string[] => services.map(s => s.slug);
 export const getServiceBySlug = (slug: string): Service | undefined => services.find(s => s.slug === slug);
+
+/* Down-links from each service pillar to its supporting blog spokes (the silo
+   DOWN links). Keyed by service slug; slugs reference data/blog.ts. Rendered as
+   a "Guides and articles" block on each service page so the indexed pillars pass
+   crawl and authority into the blog. */
+export const serviceRelatedPosts: Record<string, string[]> = {
+  'electric-sliding-gates': ['electric-sliding-vs-swing-gates-kent', 'can-you-install-driveway-gates-on-a-sloped-driveway', 'how-wide-should-driveway-gates-be-measuring-guide'],
+  'electric-swing-gates': ['electric-sliding-vs-swing-gates-kent', 'driveway-gates-west-kent-sevenoaks-tunbridge-wells', 'do-electric-gates-add-value-to-your-house'],
+  'wooden-driveway-gates': ['wooden-vs-metal-driveway-gates-pros-and-cons', 'how-to-look-after-wooden-driveway-gates', 'driveway-gate-ideas-for-older-houses-and-period-properties'],
+  'metal-driveway-gates': ['best-gate-material-kent-wood-steel-aluminium', 'coastal-gate-corrosion-protection', 'driveway-gates-home-security-kent'],
+  'automated-gate-systems': ['electric-gate-automation-retrofit-kent', 'best-electric-gate-motor-brands-uk-compared', 'how-much-do-driveway-gates-cost-kent-2026'],
+  'gate-repair-and-maintenance': ['electric-gate-maintenance-kent', 'what-to-do-when-electric-gates-stop-working', 'how-long-do-electric-gates-last-before-replacing'],
+};

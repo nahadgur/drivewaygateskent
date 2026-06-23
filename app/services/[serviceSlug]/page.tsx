@@ -5,7 +5,8 @@ import { useState, useMemo } from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { MapPin, Clock, Shield, Star, Search, CheckCircle, ArrowRight, ChevronDown, Award, Users, CreditCard, Sparkles } from 'lucide-react';
-import { services, getServiceBySlug } from '@/data/services';
+import { services, getServiceBySlug, serviceRelatedPosts } from '@/data/services';
+import { blogArticles } from '@/data/blog';
 import { LOCATIONS, toSlug } from '@/data/locations';
 import { FAQS_SERVICES } from '@/data/site';
 import { Header } from '@/components/Header';
@@ -193,6 +194,11 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
 
   const content = serviceContent[service.id] || serviceContent['electric-swing'];
   const relatedServices = services.filter(s => s.id !== service.id);
+
+  // Silo down-links: resolve this pillar's supporting blog spokes to render as cards.
+  const relatedPosts = (serviceRelatedPosts[service.slug] ?? [])
+    .map(slug => blogArticles.find(b => b.slug === slug))
+    .filter((b): b is NonNullable<typeof b> => Boolean(b));
 
   const filteredLocations = useMemo(() => {
     if (!searchQuery) return LOCATIONS;
@@ -423,6 +429,36 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
             </aside>
           </div>
         </div>
+
+        {relatedPosts.length > 0 && (
+          <section className="bg-gray-50 border-t border-gray-100 py-16">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6">
+              <p className="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Guides &amp; Articles</p>
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-8">{service.title} guides and advice</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {relatedPosts.map(post => (
+                  <Link key={post.slug} href={`/blog/${post.slug}/`}
+                    className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+                    <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
+                      {post.featuredImage
+                        // eslint-disable-next-line @next/next/no-img-element
+                        ? <img src={post.featuredImage} alt={post.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        : <div className="w-full h-full bg-gray-100" />}
+                      <span className="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-brand-600">{post.category}</span>
+                    </div>
+                    <div className="p-5 flex-1 flex flex-col">
+                      <h3 className="font-display font-bold text-gray-900 leading-snug group-hover:text-brand-600 transition-colors">{post.title}</h3>
+                      <span className="mt-auto pt-3 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-brand-500">
+                        Read <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       </main>
       <Footer />
     </>
