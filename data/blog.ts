@@ -837,12 +837,58 @@ const article21: BlogArticle = {
 };
 
 
+const article22: BlogArticle = {
+  slug: 'pedestrian-gate-alongside-driveway-gates-kent',
+  title: 'Adding a Pedestrian Gate Alongside Your Driveway Gates in Kent',
+  metaTitle: 'Pedestrian Gate Alongside Driveway Gates Kent | 2026 Guide',
+  metaDescription: 'Why fit a matching pedestrian gate next to your driveway gates in Kent. Materials, lock and access options, post and delivery access, safety, and rough cost considerations.',
+  category: 'Buying Guide',
+  publishDate: '2026-06-23',
+  featuredImage: '/images/gates/gate-wrought-iron-open-stone-pillars-lanterns-estate.png',
+  excerpt: 'A separate pedestrian gate keeps people on foot away from the swing or slide path of the main gates and saves you cycling the motor every time someone walks in. Here is how to plan one for a Kent property.',
+  content: [
+    { type: 'p', text: 'Most Kent homeowners plan their driveway gates around the car and only think about people on foot once the gates are in. A matching pedestrian gate, sometimes called a side gate or wicket gate, solves a set of everyday problems that a single vehicle entrance cannot. It gives visitors, postal staff, and family members a way in and out without operating the main gates, and it keeps anyone on foot clear of a moving swing leaf or sliding panel. On a busy household it quickly proves its worth, and it is far cheaper to design in at the start than to add later.' },
+    { type: 'h2', text: 'Why a Separate Pedestrian Gate Is Worth Fitting' },
+    { type: 'p', text: 'Cycling an automated gate open and shut for a single person walking in puts unnecessary cycles on the motor and slows everyone down. A pedestrian gate lets people pass through directly while the driveway gates stay closed and secure. It also removes a genuine safety concern, because people no longer need to walk through the arc of a swing gate or alongside the path of a sliding gate. For families with children or pets, having a defined walk-through entrance that does not involve the powered gate is a sensible separation of foot traffic from vehicle traffic.' },
+    { type: 'p', text: 'There is a security benefit too. If the pedestrian gate carries its own lock, you can let someone in on foot without leaving the main vehicle entrance standing open. That matters on properties where the driveway gates take several seconds to travel and would otherwise sit open while a visitor crosses the threshold.' },
+    { type: 'h2', text: 'Matching Materials and Finish to Your Driveway Gates' },
+    { type: 'p', text: 'A pedestrian gate looks best when it reads as part of the same set rather than an afterthought. The usual approach is to build it in the same material, infill style, and colour as the driveway gates, scaled down to a single leaf around 900mm to 1000mm wide. If your main gates are powder-coated steel in anthracite, the side gate should match that exact finish. If they are hardwood, the side gate should use the same timber and the same close-boarded or palisade pattern.' },
+    { type: 'list', items: [
+      'Match the infill style so vertical bars, close-boarding, or panel design carries across both gates',
+      'Specify the identical paint or powder-coat colour, and for coastal Kent properties the same marine-grade finish',
+      'Keep the top profile consistent, whether flat-topped, arched, or with a decorative head',
+      'Set the pedestrian gate height to align with the driveway gates rather than standing noticeably taller or shorter',
+    ]},
+    { type: 'h2', text: 'Lock and Access Options' },
+    { type: 'p', text: 'A pedestrian gate gives you more lock choices than an automated vehicle gate. A simple mechanical latch with a thumb-turn on the inside suits households that mainly want to keep the gate closed against pets and wind. For controlled access, a keypad lock or an electric strike released by an intercom lets you admit visitors from inside the house. On installations that already include a video intercom for the driveway gates, it is common to wire the pedestrian gate release into the same system so a single panel controls both.' },
+    { type: 'p', text: 'If you want the pedestrian gate to fail safe in a power cut, discuss this with your installer, because the choice between a fail-open and fail-locked release affects both security and how you get in and out when the electricity is off. A mechanical key override on the lock is a sensible backup whichever electric option you choose.' },
+    { type: 'h2', text: 'Access for Post and Deliveries' },
+    { type: 'p', text: 'Deliveries are the single most common reason Kent households add a pedestrian gate. Couriers and postal staff need a reliable way to reach the door without you having to open the main gates remotely each time. A keypad or a simple latch that a delivery driver can operate, combined with clear signage, keeps parcels coming to the door rather than being left at the gate or taken away. Some owners fit a secure parcel box just inside the pedestrian gate so deliveries can be left safely even when nobody is home. Plan the path from the pedestrian gate to the front door at the same time, since a level, well-lit route matters as much as the gate itself.' },
+    { type: 'h2', text: 'Safety and Standards' },
+    { type: 'p', text: 'A manually operated pedestrian gate is straightforward, but it should still be hung on robust hinges, fitted with a self-closing latch where children or pets are a concern, and positioned so it does not open into the path of the moving driveway gates. Where the pedestrian gate is automated or power-assisted, the same force-limitation and safety principles that govern powered driveway gates apply, and the installation should be commissioned to the recognised standard for powered gates. A reputable installer will assess crushing and shearing points and confirm the gate is safe before handover.' },
+    { type: 'h2', text: 'Rough Cost Considerations' },
+    { type: 'p', text: 'A matching manual pedestrian gate is a modest addition relative to the driveway gates themselves, and the cost depends mainly on the material, the finish, and whether you add electric access control. As an indicative guide only, a simple matching side gate with a mechanical latch sits at the lower end, while a powder-coated or hardwood gate with a keypad or intercom-released lock costs more once wiring and access hardware are included. Treat any figure you see online as a starting point and get a site-specific quote, because pillar work, ground conditions, and the lock specification all move the price.' },
+    { type: 'internal-link', href: '/blog/best-gate-material-kent-wood-steel-aluminium/', text: 'Best Gate Material for Kent: Wood, Steel, or Aluminium?', context: 'Choose a material for the pedestrian gate that matches your driveway gates and suits your part of Kent.' },
+    { type: 'internal-link', href: '/blog/driveway-gates-home-security-kent/', text: 'Driveway Gates and Home Security in Kent', context: 'A locked pedestrian gate is part of how a well-specified entrance keeps a property secure.' },
+    { type: 'internal-link', href: '/blog/choosing-gate-installer-kent/', text: 'How to Choose a Driveway Gate Installer in Kent', context: 'Use an installer who can design the pedestrian gate and driveway gates as one coordinated set.' },
+    { type: 'external-link', href: 'https://www.gatesafe.org/', text: 'Gate Safe guidance on safe automated gates', source: 'Gate Safe', rel: 'noopener noreferrer' },
+    { type: 'external-link', href: 'https://www.hse.gov.uk/work-equipment-machinery/electric-gates.htm', text: 'HSE advice on powered gate safety', source: 'Health and Safety Executive', rel: 'noopener noreferrer' },
+    { type: 'cta' },
+    { type: 'related-articles', articles: [
+      { slug: 'best-gate-material-kent-wood-steel-aluminium', title: 'Best Gate Material for Kent: Wood, Steel, or Aluminium?', category: 'Materials' },
+      { slug: 'driveway-gates-home-security-kent', title: 'Driveway Gates and Home Security in Kent: What Actually Works', category: 'Security' },
+      { slug: 'choosing-gate-installer-kent', title: 'How to Choose a Driveway Gate Installer in Kent', category: 'Buying Guide' },
+    ]},
+  ],
+};
+
+
 export const blogArticles: BlogArticle[] = [
   article1, article2, article3, article4, article5,
   article6, article7, article8, article9, article10,
   article11, article12, article13, article14, article15,
   article16, article17, article18, article19, article20,
-  article21,
+  article21, article22,
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
