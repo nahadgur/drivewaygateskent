@@ -869,11 +869,6 @@ const article22: BlogArticle = {
     { type: 'h2', text: 'Rough Cost Considerations' },
     { type: 'p', text: 'A matching manual pedestrian gate is a modest addition relative to the driveway gates themselves, and the cost depends mainly on the material, the finish, and whether you add electric access control. As an indicative guide only, a simple matching side gate with a mechanical latch sits at the lower end, while a powder-coated or hardwood gate with a keypad or intercom-released lock costs more once wiring and access hardware are included. Treat any figure you see online as a starting point and get a site-specific quote, because pillar work, ground conditions, and the lock specification all move the price.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'best-gate-material-kent-wood-steel-aluminium', title: 'Best Gate Material for Kent: Wood, Steel, or Aluminium?', category: 'Materials' },
-      { slug: 'driveway-gates-home-security-kent', title: 'Driveway Gates and Home Security in Kent: What Actually Works', category: 'Security' },
-      { slug: 'choosing-gate-installer-kent', title: 'How to Choose a Driveway Gate Installer in Kent', category: 'Buying Guide' },
-    ]},
   ],
 };
 
