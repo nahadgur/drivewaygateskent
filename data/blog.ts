@@ -921,7 +921,7 @@ const article24: BlogArticle = {
   category: 'Planning',
   publishDate: '2026-07-02',
   featuredImage: '/images/gates/gate-wooden-oak-open-interior-tree-lined-lane.png',
-  draft: true,
+  draft: false,
   excerpt: 'A driveway gate on a listed Kent property, or even one within its curtilage, can need listed building consent that ordinary permitted development rules never trigger. Here is when consent bites and how the process works.',
   content: [
     { type: 'p', text: 'Kent carries one of the heaviest concentrations of listed buildings in England, and a great many are not grand houses but working rural stock: oast houses with their brick roundels and white cowls, Wealden hall houses, timber-frame farmhouses, and the barn and cart-lodge conversions that now serve as family homes across the countryside from Cranbrook and Tenterden to the Faversham fruit belt. If your property is listed, or sits within the grounds of a listed building, the rules that govern a new driveway gate are stricter than most homeowners expect, and getting them wrong carries consequences that a normal gate installation never does. When consent bites, how curtilage listing catches gates nowhere near the main house, and how the approval runs are all worth understanding before you order anything.' },
