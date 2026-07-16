@@ -145,7 +145,7 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
 
   const labelClass = "block text-xs font-bold text-gray-600 mb-1 ml-1";
   const inputClass =
-    "w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition";
+    "w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition";
 
   return (
     <div
