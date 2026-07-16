@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services/`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/location/`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/blog/`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
+    { url: `${base}/privacy/`, lastModified: new Date('2026-07-16'), changeFrequency: 'yearly', priority: 0.3 },
   ];
 
   const servicePages: MetadataRoute.Sitemap = services.map(s => ({

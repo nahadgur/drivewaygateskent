@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import Script from 'next/script';
 
 const GA_ID = 'G-V1791YT0S9';
@@ -71,7 +72,11 @@ export function ConsentBanner() {
         >
           <div className="mx-auto max-w-3xl bg-brand-950 text-white rounded-2xl shadow-2xl border border-white/10 p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
             <div className="flex-1 text-[13px] sm:text-[13.5px] leading-[1.55] text-white/85">
-              We use a small cookie to remember this choice. With your permission we&apos;d also like to use Google Analytics to see which pages help Kent homeowners. No advertising, no tracking across other sites.
+              We use a small cookie to remember this choice. With your permission we&apos;d also like to use Google Analytics to see which pages help Kent homeowners. No advertising, no tracking across other sites.{' '}
+              <Link href="/privacy/" className="underline text-white hover:text-brand-300 whitespace-nowrap">
+                Read our privacy notice
+              </Link>
+              .
             </div>
             <div className="flex gap-2 sm:gap-3 w-full sm:w-auto">
               <button
