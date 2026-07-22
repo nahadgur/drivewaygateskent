@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Script from 'next/script';
 
-const GA_ID = 'G-445FETL4B0';
+const GA_ID = 'G-V1791YT0S9';
 const STORAGE_KEY = 'cookie-consent-v1';
 type Consent = 'accepted' | 'rejected' | null;
 

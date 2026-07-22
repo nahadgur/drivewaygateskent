@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: siteConfig.url },
   robots: { index: true, follow: true },
   verification: {
-    google: 'BWjEwP5OqIw0Xr1MTkBUN-qpZs9nJag1makzVghev7A',
+    google: 'JsWCQ9uKg4SvXuH4AqWT2bZpmDqUxrChRSSqL6JGm4c',
   },
   icons: {
     icon: [
