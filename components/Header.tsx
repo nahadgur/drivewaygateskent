@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { services } from '@/data/services';
@@ -38,7 +39,15 @@ export function Header({ onOpenModal }: HeaderProps) {
         <div className="container-width">
           <div className="flex justify-between items-center h-[78px]">
             {/* Logo */}
-            <Link href="/" className="flex items-center group rounded-sm" aria-label="Driveway Gates Kent home">
+            <Link href="/" className="flex items-center gap-3 group rounded-sm" aria-label="Driveway Gates Kent home">
+              <Image
+                src="/logo-120px.png"
+                alt=""
+                width={52}
+                height={52}
+                priority
+                className="h-11 w-11 md:h-[52px] md:w-[52px] object-contain"
+              />
               <div className="flex flex-col">
                 <span className="font-body font-bold text-lg leading-none tracking-tight text-brand-950 uppercase">Driveway Gates</span>
                 <span className="text-[10px] text-brand-700 font-semibold tracking-[0.18em] uppercase mt-1.5">Kent specialists</span>
