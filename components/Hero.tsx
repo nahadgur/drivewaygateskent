@@ -8,46 +8,49 @@ interface HeroProps {
   showCta?: boolean;
   showTrust?: boolean;
   onOpenModal?: () => void;
+  eyebrow?: string;
 }
 
-export function Hero({ title, subtitle, image, showCta = true, showTrust = true, onOpenModal }: HeroProps) {
+export function Hero({ title, subtitle, image, showCta = true, showTrust = true, onOpenModal, eyebrow = 'Kent gate specialists' }: HeroProps) {
   return (
-    <section className="relative bg-gray-900 text-white overflow-hidden">
+    <section className="relative bg-brand-950 text-white overflow-hidden min-h-[620px] flex items-center">
       <div className="absolute inset-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={image} alt="" className="w-full h-full object-cover opacity-80" loading="eager" />
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 via-gray-900/50 to-gray-900/20" />
+        <img src={image} alt="" className="w-full h-full object-cover opacity-90" loading="eager" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-950/95 via-brand-950/75 to-brand-950/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-950/45 via-transparent to-transparent" />
       </div>
 
-      <div className="relative container-width py-24 md:py-32">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6 text-white">
+      <div className="relative container-width pt-24 pb-32 md:pt-28 md:pb-40 w-full">
+        <div className="max-w-[700px]">
+          <p className="text-brand-300 text-xs font-bold uppercase tracking-[0.2em] mb-6">{eyebrow}</p>
+          <h1 className="text-5xl md:text-6xl lg:text-[76px] font-display font-medium tracking-tight leading-[1.01] mb-6 text-white text-balance">
             {title}
           </h1>
-          <p className="text-xl text-gray-200 mb-8 leading-relaxed">{subtitle}</p>
+          <p className="text-lg md:text-xl text-brand-50/90 mb-8 leading-relaxed max-w-2xl">{subtitle}</p>
 
           {showCta && (
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               {onOpenModal ? (
                 <button onClick={onOpenModal} className="btn-primary text-lg !px-8 !py-4 text-center">
-                  Get Free Quotes
+                  Get three free quotes
                 </button>
               ) : (
                 <Link href="/services/" className="btn-primary text-lg !px-8 !py-4 text-center">
-                  Get Free Quotes
+                  Get three free quotes
                 </Link>
               )}
-              <Link href="/services/" className="btn-secondary !bg-white/10 !border-white/30 !text-white hover:!bg-white/20 text-lg !px-8 !py-4 text-center">
-                View Gate Types
+              <Link href="/services/" className="btn-secondary !bg-transparent !border-brand-200/60 !text-white hover:!bg-white/10 text-lg !px-8 !py-4 text-center">
+                Explore gate styles
               </Link>
             </div>
           )}
 
           {showTrust && (
-            <div className="flex flex-wrap gap-6 text-sm font-medium text-gray-300">
+            <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-semibold text-brand-50/90 border-t border-white/20 pt-6">
               {['50+ Installs Per Installer', 'Free Site Surveys', '4.9 Star Rated'].map(item => (
                 <div key={item} className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-brand-400" />
+                  <CheckCircle className="w-5 h-5 text-brand-300" />
                   <span>{item}</span>
                 </div>
               ))}

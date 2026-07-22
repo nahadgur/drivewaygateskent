@@ -105,19 +105,21 @@ export default function HomePage() {
       <main className="flex-grow">
 
         <Hero
-          title="Driveway Gates Kent: Vetted Installers, Free Site Surveys"
-          subtitle="Connecting Kent homeowners with specialist gate installers across the county. From Sevenoaks to Canterbury, Dartford to Folkestone. Three free quotes, no obligation, no cost to you."
+          title="A better entrance starts with the right specialist."
+          subtitle="Meet vetted Kent gate installers who understand your property, your setting and the standard of finish you expect."
           image="/images/gates/gate-wrought-iron-open-manor-brick-pillars.png"
           onOpenModal={() => setIsModalOpen(true)}
+          eyebrow="Craftsmanship · Security · Character"
+          showTrust={false}
         />
 
         <TrustBadges />
 
         {/* How It Works - moved up for conversion */}
-        <section className="section-padding bg-white">
+        <section id="how-it-works" className="section-padding bg-white scroll-mt-24">
           <div className="container-width">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Three Steps to Your Kent Gate Installer</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-4">Three Steps to Your Kent Gate Installer</h2>
               <p className="text-gray-600 max-w-xl mx-auto">No searching, no cold calls, no sales pressure. Tell us what you need and we handle the rest.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -140,7 +142,7 @@ export default function HomePage() {
               ].map(item => (
                 <div key={item.step} className="text-center">
                   <div className="w-14 h-14 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-5">{item.step}</div>
-                  <h3 className="text-lg font-display font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <h3 className="text-lg font-display font-semibold text-brand-950 mb-3">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -155,11 +157,11 @@ export default function HomePage() {
         </section>
 
         {/* Why Specialist Matters */}
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-brand-50">
           <div className="container-width">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-6">
                   Most Kent Gate Problems Start With the Wrong Installer
                 </h2>
                 <div className="space-y-5 text-gray-600 leading-relaxed">
@@ -179,11 +181,11 @@ export default function HomePage() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/gates/gate-wrought-iron-open-stone-pillars-lanterns-estate.png" alt="Wrought iron driveway gates with stone pillars and lanterns on a Kent estate" className="rounded-2xl object-cover w-full h-48 col-span-2" loading="lazy" />
+                <img src="/images/gates/gate-wrought-iron-open-stone-pillars-lanterns-estate.png" alt="Wrought iron driveway gates with stone pillars and lanterns on a Kent estate" className="rounded-sm object-cover w-full h-48 col-span-2" loading="lazy" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/gates/gate-aluminium-sliding-horizontal-modern-new-build.png" alt="Contemporary aluminium sliding gate on a modern Kent property" className="rounded-2xl object-cover w-full h-36" loading="lazy" />
+                <img src="/images/gates/gate-aluminium-sliding-horizontal-modern-new-build.png" alt="Contemporary aluminium sliding gate on a modern Kent property" className="rounded-sm object-cover w-full h-36" loading="lazy" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/gates/gate-wooden-painted-cream-kentish-countryside.png" alt="Painted hardwood gate on a rural Kent driveway surrounded by countryside" className="rounded-2xl object-cover w-full h-36" loading="lazy" />
+                <img src="/images/gates/gate-wooden-painted-cream-kentish-countryside.png" alt="Painted hardwood gate on a rural Kent driveway surrounded by countryside" className="rounded-sm object-cover w-full h-36" loading="lazy" />
               </div>
             </div>
           </div>
@@ -193,18 +195,18 @@ export default function HomePage() {
         <section className="section-padding bg-white">
           <div className="container-width">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Electric Gates, Wooden Gates, Metal Gates: Kent Specialists for Each</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-4">Electric Gates, Wooden Gates, Metal Gates: Kent Specialists for Each</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">Whether you need a <Link href="/services/electric-sliding-gates/" className="text-brand-600 hover:underline">sliding gate</Link> for a steep North Downs driveway or a <Link href="/services/wooden-driveway-gates/" className="text-brand-600 hover:underline">hardwood gate</Link> for a Wealden farmhouse, we have the right specialist.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map(service => (
-                <Link key={service.id} href={`/services/${service.slug}/`} className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <Link key={service.id} href={`/services/${service.slug}/`} className="group bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-brand-100">
                   <div className="h-44 overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={service.image} alt={`${service.title} installation in Kent`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                   </div>
                   <div className="p-5">
-                    <h3 className="text-lg font-display font-bold text-gray-900 group-hover:text-brand-600 mb-2">{service.title}</h3>
+                    <h3 className="text-lg font-display font-semibold text-brand-950 group-hover:text-brand-600 mb-2">{service.title}</h3>
                     <p className="text-sm text-gray-500 mb-4 line-clamp-2">{service.description}</p>
                     <span className="text-brand-600 font-medium text-sm flex items-center">
                       Find Kent installers <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -217,10 +219,10 @@ export default function HomePage() {
         </section>
 
         {/* Kent Property Types - unique section */}
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-brand-50">
           <div className="container-width">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Gates for the Garden of England: Every Kent Property Type</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-4">Gates for the Garden of England: Every Kent Property Type</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">Kent&apos;s residential stock is unusually varied. The right gate specification depends as much on the building&apos;s character as on your personal preference.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -262,9 +264,9 @@ export default function HomePage() {
                   link: '/services/automated-gate-systems/',
                 },
               ].map((item, i) => (
-                <Link key={i} href={item.link} className="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-brand-200 transition-all">
-                  <div className="bg-brand-100 p-3 rounded-xl text-brand-600 w-fit mb-4">{item.icon}</div>
-                  <h3 className="font-display font-bold text-gray-900 mb-2 group-hover:text-brand-600 transition-colors">{item.title}</h3>
+                <Link key={i} href={item.link} className="group bg-white rounded-sm p-6 border border-brand-100 shadow-sm hover:shadow-lg hover:border-brand-200 transition-all">
+                  <div className="bg-brand-100 p-3 rounded-sm text-brand-600 w-fit mb-4">{item.icon}</div>
+                  <h3 className="font-display font-semibold text-brand-950 mb-2 group-hover:text-brand-600 transition-colors">{item.title}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
                 </Link>
               ))}
@@ -284,17 +286,17 @@ export default function HomePage() {
                   { label: 'Mid Kent', towns: 'Maidstone, Bearsted, West Malling, Lenham', detail: 'County town and garden villages. Bespoke metal and hardwood across a range of property ages and styles' },
                   { label: 'East Kent Coast', towns: 'Canterbury, Whitstable, Faversham, Deal, Folkestone', detail: 'Historic conservation areas, medieval listed buildings, coastal exposure demanding marine-grade specification' },
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-4 p-5 bg-gray-50 rounded-xl border border-gray-100">
+                  <div key={i} className="flex gap-4 p-5 bg-brand-50 rounded-sm border border-brand-100">
                     <MapPin className="w-5 h-5 text-brand-500 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-semibold text-gray-900 text-sm">{item.label}: {item.towns}</p>
+                      <p className="font-semibold text-brand-950 text-sm">{item.label}: {item.towns}</p>
                       <p className="text-gray-600 text-sm mt-1">{item.detail}</p>
                     </div>
                   </div>
                 ))}
               </div>
               <div>
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-6">
                   Two AONBs. Twelve Districts. One Coast. Kent Demands Local Knowledge.
                 </h2>
                 <div className="space-y-5 text-gray-600 leading-relaxed">
@@ -314,10 +316,10 @@ export default function HomePage() {
         </section>
 
         {/* Areas */}
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-brand-50">
           <div className="container-width">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Driveway Gate Installers Near You in Kent</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-4">Driveway Gate Installers Near You in Kent</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">75 towns covered across every part of the county. Select your area to see what is available locally.</p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-8">
@@ -325,7 +327,7 @@ export default function HomePage() {
                 <Link
                   key={area}
                   href={`/location/${toSlug(area)}/`}
-                  className="group flex items-center gap-2 p-3 bg-white rounded-xl border border-gray-100 hover:border-brand-300 hover:bg-brand-50 transition-all shadow-sm"
+                  className="group flex items-center gap-2 p-3 bg-white rounded-sm border border-brand-100 hover:border-brand-300 hover:bg-brand-50 transition-all shadow-sm"
                 >
                   <MapPin className="w-4 h-4 text-brand-500 flex-shrink-0" />
                   <span className="text-sm font-medium text-gray-700 group-hover:text-brand-700">Gates in {area}</span>
@@ -344,13 +346,13 @@ export default function HomePage() {
         <section className="section-padding bg-white">
           <div className="container-width">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Kent Driveway Gate Prices: What Installations Actually Cost in 2026</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-4">Kent Driveway Gate Prices: What Installations Actually Cost in 2026</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">Real prices from completed Kent projects. West Kent runs higher than the national average; North and East Kent are closer to it. Every figure includes full installation.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {pricingTiers.map(tier => (
-                <div key={tier.slug} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                  <h3 className="font-display font-bold text-gray-900 mb-2">{tier.treatment}</h3>
+                <div key={tier.slug} className="bg-brand-50 rounded-sm p-6 border border-brand-100">
+                  <h3 className="font-display font-semibold text-brand-950 mb-2">{tier.treatment}</h3>
                   <p className="text-2xl font-bold text-brand-600 mb-1">
                     &pound;{tier.priceFrom.toLocaleString()} <span className="text-base text-gray-400 font-normal">to</span> &pound;{tier.priceTo.toLocaleString()}
                   </p>
@@ -359,10 +361,10 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 bg-brand-900 rounded-2xl p-6 md:p-10 text-white text-center">
-              <h3 className="text-2xl font-display font-bold mb-2">0% Finance From &pound;99 Per Month</h3>
+            <div className="mt-8 bg-brand-900 rounded-sm p-6 md:p-10 text-white text-center">
+              <h3 className="text-2xl font-display font-semibold mb-2">0% Finance From &pound;99 Per Month</h3>
               <p className="text-brand-200 text-sm mb-6 max-w-xl mx-auto">Available through most Kent installers in our network. Spread the cost over 6 to 36 months with nothing to pay upfront at many providers. Subject to status.</p>
-              <button onClick={() => setIsModalOpen(true)} className="bg-white text-brand-900 font-bold py-3 px-8 rounded-xl hover:bg-brand-50 transition-colors">
+              <button onClick={() => setIsModalOpen(true)} className="bg-white text-brand-900 font-bold py-3 px-8 rounded-sm hover:bg-brand-50 transition-colors">
                 Check Finance Options
               </button>
             </div>
@@ -370,10 +372,10 @@ export default function HomePage() {
         </section>
 
         {/* Trust / Why Choose Us */}
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-brand-50">
           <div className="container-width">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">What You Get From Our Free Matching Service</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-4">What You Get From Our Free Matching Service</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">We are not a gate company. We are the filter between you and the county&apos;s best gate installers.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -399,9 +401,9 @@ export default function HomePage() {
                   desc: 'We refer established businesses, not sole traders who might not be around when you need a service or warranty call. Longevity and responsiveness are part of our ongoing assessment.',
                 },
               ].map((item, i) => (
-                <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                  <div className="bg-brand-100 p-3 rounded-xl text-brand-600 w-fit mb-4">{item.icon}</div>
-                  <h3 className="font-display font-bold text-gray-900 mb-2">{item.title}</h3>
+                <div key={i} className="bg-white rounded-sm p-6 border border-brand-100 shadow-sm">
+                  <div className="bg-brand-100 p-3 rounded-sm text-brand-600 w-fit mb-4">{item.icon}</div>
+                  <h3 className="font-display font-semibold text-brand-950 mb-2">{item.title}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -412,7 +414,7 @@ export default function HomePage() {
         <Testimonials />
 
         {/* FAQ */}
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-brand-50">
           <div className="container-width max-w-3xl">
             <FAQ faqs={homepageFaqs} title="Driveway Gates Kent: Your Questions Answered" />
           </div>
@@ -421,9 +423,9 @@ export default function HomePage() {
         {/* Bottom CTA */}
         <section className="section-padding bg-brand-900 text-white">
           <div className="container-width text-center">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Get Matched With Kent Gate Installers Today</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-semibold mb-4">Get Matched With Kent Gate Installers Today</h2>
             <p className="text-brand-200 max-w-2xl mx-auto mb-8">Two minutes is all it takes. Tell us what you need and we connect you with up to three vetted specialists for free site surveys and written quotes. No fees, no obligation, no pressure.</p>
-            <button onClick={() => setIsModalOpen(true)} className="bg-white text-brand-900 font-bold text-lg py-4 px-10 rounded-xl hover:bg-brand-50 transition-colors">
+            <button onClick={() => setIsModalOpen(true)} className="bg-white text-brand-900 font-bold text-lg py-4 px-10 rounded-sm hover:bg-brand-50 transition-colors">
               Get Free Quotes Now
             </button>
           </div>

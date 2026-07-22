@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { siteConfig } from '@/data/site';
 import { ConsentBanner } from '@/components/ConsentBanner';
+import { MobileStickyCta } from '@/components/MobileStickyCta';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -75,9 +76,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col pb-20 md:pb-0">
         {/* GA4 is loaded inside ConsentBanner only after the visitor opts in (UK PECR) */}
         {children}
+        <MobileStickyCta />
         <ConsentBanner />
       </body>
     </html>

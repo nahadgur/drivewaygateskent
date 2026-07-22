@@ -70,15 +70,15 @@ export function HeroLeadForm({ city, service }: HeroLeadFormProps) {
   };
 
   const inputClass =
-    "w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition";
+    "w-full px-4 py-3 rounded-sm border border-gray-200 bg-brand-50 text-brand-950 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition";
 
   if (isSuccess) {
     return (
-      <div className="bg-white text-gray-900 rounded-2xl p-8 shadow-2xl border border-gray-100 flex flex-col items-center justify-center text-center gap-4 min-h-[340px]">
+      <div className="bg-white text-brand-950 rounded-sm p-8 shadow-lg border border-brand-100 flex flex-col items-center justify-center text-center gap-4 min-h-[340px]">
         <div className="w-16 h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center">
           <CheckCircle className="w-10 h-10" />
         </div>
-        <h3 className="text-2xl font-display font-bold">Request Received!</h3>
+        <h3 className="text-2xl font-display font-semibold">Request Received!</h3>
         <p className="text-gray-600">
           We&apos;ve matched you with a vetted installer{city ? ` in ${city}` : ''}. Check your email for next steps.
         </p>
@@ -87,12 +87,12 @@ export function HeroLeadForm({ city, service }: HeroLeadFormProps) {
   }
 
   return (
-    <div className="bg-white text-gray-900 rounded-2xl p-6 md:p-8 shadow-2xl border border-gray-100">
+    <div className="bg-white text-brand-950 rounded-sm p-6 md:p-8 shadow-lg border border-brand-100">
       <div className="mb-6">
         <span className="inline-block px-3 py-1 bg-brand-50 text-brand-600 text-xs font-bold uppercase tracking-wider rounded-full mb-3">
           Free Matching Service
         </span>
-        <h3 className="text-2xl font-display font-bold leading-tight">
+        <h3 className="text-2xl font-display font-semibold leading-tight">
           Get Matched{city ? ` in ${city}` : ''}
         </h3>
         <p className="text-gray-600 text-sm mt-1">
@@ -122,7 +122,7 @@ export function HeroLeadForm({ city, service }: HeroLeadFormProps) {
         <button
           disabled={isSubmitting}
           type="submit"
-          className="w-full bg-brand-500 hover:bg-brand-600 disabled:opacity-60 text-white font-semibold py-3 px-6 rounded-xl transition-colors text-sm mt-1"
+          className="w-full bg-brand-500 hover:bg-brand-600 disabled:opacity-60 text-white font-semibold py-3 px-6 rounded-sm transition-colors text-sm mt-1"
         >
           {isSubmitting ? 'Sending...' : 'Get 3 Free Quotes'}
         </button>

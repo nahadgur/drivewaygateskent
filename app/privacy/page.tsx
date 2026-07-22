@@ -19,7 +19,7 @@ const LAST_UPDATED = '16 July 2026';
 // Helper to keep the H2 pattern consistent across sections.
 function LegalH2({ n, children }: { n: string; children: React.ReactNode }) {
   return (
-    <h2 className="font-display font-bold text-xl md:text-2xl tracking-tight text-gray-900 mt-10 mb-3 flex items-baseline gap-3">
+    <h2 className="font-display font-semibold text-xl md:text-2xl tracking-tight text-brand-950 mt-10 mb-3 flex items-baseline gap-3">
       <span className="text-sm text-brand-500 font-semibold tracking-wider">{n}</span>
       <span>{children}</span>
     </h2>
@@ -31,12 +31,12 @@ export default function PrivacyPage() {
     <>
       <Header />
 
-      <main className="flex-grow">
-        <section className="bg-gray-50 border-b border-gray-200">
+      <main className="flex-grow heritage-inner">
+        <section className="bg-brand-50 border-b border-gray-200">
           <div className="container-width py-12 md:py-16">
             <Breadcrumbs items={[{ label: 'Privacy Policy' }]} />
             <div className="max-w-3xl mt-6">
-              <h1 className="font-display font-bold text-3xl md:text-4xl text-gray-900 leading-tight mb-4">
+              <h1 className="font-display font-semibold text-3xl md:text-4xl text-brand-950 leading-tight mb-4">
                 Privacy Policy
               </h1>
               <p className="text-gray-500 text-sm uppercase tracking-wider">

@@ -3,45 +3,32 @@
 import React, { useState } from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { Calendar, ArrowLeft, ArrowRight, ExternalLink, MapPin } from 'lucide-react';
-import { blogArticles, getArticleBySlug, type ContentBlock } from '@/data/blog';
+import { Calendar, ArrowLeft, ArrowRight } from 'lucide-react';
+import { getArticleBySlug, type ContentBlock } from '@/data/blog';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { LeadFormModal } from '@/components/LeadFormModal';
 import { siteConfig } from '@/data/site';
 
-// Update these to match your actual live service x location pages
-const SIDEBAR_SERVICE_LINKS = [
-  { label: 'Electric Sliding Gates in Sevenoaks', href: '/services/electric-sliding-gates/sevenoaks/' },
-  { label: 'Electric Swing Gates in Tunbridge Wells', href: '/services/electric-swing-gates/tunbridge-wells/' },
-  { label: 'Wooden Driveway Gates in Cranbrook', href: '/services/wooden-driveway-gates/cranbrook/' },
-  { label: 'Metal Driveway Gates in Canterbury', href: '/services/metal-driveway-gates/canterbury/' },
-  { label: 'Automated Gate Systems in Maidstone', href: '/services/automated-gate-systems/maidstone/' },
-  { label: 'Electric Sliding Gates in Dartford', href: '/services/electric-sliding-gates/dartford/' },
-  { label: 'Electric Swing Gates in Tonbridge', href: '/services/electric-swing-gates/tonbridge/' },
-  { label: 'Gate Repair and Maintenance in Folkestone', href: '/services/gate-repair-and-maintenance/folkestone/' },
-  { label: 'Metal Driveway Gates in Faversham', href: '/services/metal-driveway-gates/faversham/' },
-];
-
 function BlogCtaBanner({ onOpenModal }: { onOpenModal: () => void }) {
   return (
-    <div className="my-10 rounded-2xl overflow-hidden border border-brand-800 bg-gradient-to-r from-brand-900 to-brand-800 shadow-xl relative">
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-brand-400 via-brand-500 to-transparent" />
-      <div className="px-8 py-8 md:px-10 flex flex-col md:flex-row items-center gap-6">
-        <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-500/20 flex items-center justify-center">
+    <div className="my-12 rounded-sm overflow-hidden border border-brand-600 bg-brand-950 shadow-lg relative not-prose">
+      <div className="absolute inset-y-0 left-0 w-1.5 bg-brand-500" />
+      <div className="px-7 py-8 md:px-10 md:py-10 flex flex-col md:flex-row items-center gap-6">
+        <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-brand-500/20 flex items-center justify-center">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-brand-400">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           </svg>
         </div>
         <div className="flex-1 text-center md:text-left">
           <p className="text-[10px] font-bold uppercase tracking-widest text-brand-400 mb-1">No Cost, No Obligation</p>
-          <h3 className="text-lg md:text-xl font-bold text-white leading-snug mb-1">Looking for a Kent gate installer?</h3>
-          <p className="text-brand-200 text-sm">We match you with up to three vetted specialists. Free site surveys, written quotes, zero fees.</p>
+          <h3 className="text-xl md:text-2xl font-display font-semibold !text-white leading-snug mb-2">Looking for a Kent gate installer?</h3>
+          <p className="!text-brand-100 text-sm md:text-base leading-6">We match you with up to three vetted specialists. Free site surveys, written quotes, zero fees.</p>
         </div>
         <div className="flex-shrink-0">
           <button
             onClick={onOpenModal}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-bold text-sm transition-all hover:scale-105 active:scale-95 whitespace-nowrap"
+            className="inline-flex min-h-12 items-center gap-2 px-7 py-3 rounded-sm bg-brand-500 hover:bg-brand-400 !text-brand-950 font-bold text-sm transition-colors whitespace-nowrap"
           >
             Get 3 Free Quotes
             <ArrowRight className="w-4 h-4" />
@@ -118,7 +105,7 @@ function ContentRenderer({ blocks, onOpenModal }: { blocks: ContentBlock[]; onOp
         switch (block.type) {
           case 'h2':
             elements.push(
-              <h2 key={i} className="text-2xl md:text-3xl font-display font-bold text-gray-900 mt-10 mb-4">
+              <h2 key={i} className="text-2xl md:text-3xl font-display font-semibold text-brand-950 mt-10 mb-4">
                 {block.text}
               </h2>
             );
@@ -126,7 +113,7 @@ function ContentRenderer({ blocks, onOpenModal }: { blocks: ContentBlock[]; onOp
             if (imageQueue[i]) {
               imageQueue[i].forEach((img, imgIdx) => {
                 elements.push(
-                  <div key={`img-${i}-${imgIdx}`} className="my-6 rounded-2xl overflow-hidden border border-gray-200 shadow-lg aspect-[16/9]">
+                  <div key={`img-${i}-${imgIdx}`} className="my-6 rounded-sm overflow-hidden border border-gray-200 shadow-lg aspect-[16/9]">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={img.src} alt={img.alt} className="w-full h-full object-cover" loading="lazy" />
                   </div>
@@ -137,7 +124,7 @@ function ContentRenderer({ blocks, onOpenModal }: { blocks: ContentBlock[]; onOp
 
           case 'h3':
             elements.push(
-              <h3 key={i} className="text-xl md:text-2xl font-display font-bold text-gray-900 mt-8 mb-3">
+              <h3 key={i} className="text-xl md:text-2xl font-display font-semibold text-brand-950 mt-8 mb-3">
                 {block.text}
               </h3>
             );
@@ -163,47 +150,6 @@ function ContentRenderer({ blocks, onOpenModal }: { blocks: ContentBlock[]; onOp
             );
             break;
 
-          case 'related-articles':
-            elements.push(
-              <div key={i} className="mt-12 pt-8 border-t border-gray-200 not-prose">
-                <h3 className="text-lg font-display font-bold text-gray-900 mb-6">Related articles</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  {block.articles.map((a) => {
-                    const fullArticle = blogArticles.find(art => art.slug === a.slug);
-                    return (
-                      <Link
-                        key={a.slug}
-                        href={`/blog/${a.slug}/`}
-                        className="group flex flex-col rounded-xl border border-gray-100 overflow-hidden hover:shadow-md hover:border-brand-200 transition-all bg-white"
-                      >
-                        {fullArticle?.featuredImage && (
-                          <div className="relative h-32 overflow-hidden">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                              src={fullArticle.featuredImage}
-                              alt={a.title}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                              loading="lazy"
-                            />
-                            <div className="absolute top-2 left-2 w-6 h-1 rounded-full bg-brand-500" />
-                          </div>
-                        )}
-                        <div className="p-4 flex-grow flex flex-col">
-                          <h4 className="text-sm font-bold text-gray-900 group-hover:text-brand-600 transition-colors leading-snug line-clamp-2 mb-3">
-                            {a.title}
-                          </h4>
-                          <span className="text-brand-600 text-xs font-bold uppercase tracking-wide flex items-center gap-1 mt-auto">
-                            Read article <ArrowRight className="w-3 h-3" />
-                          </span>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-            break;
-
           default:
             break;
         }
@@ -218,11 +164,6 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
   const [isModalOpen, setIsModalOpen] = useState(false);
   const article = getArticleBySlug(params.slug);
   if (!article) notFound();
-
-  // Collect external-link blocks from article content for sidebar Further Reading
-  const furtherReading = article.content.filter(
-    (b): b is Extract<ContentBlock, { type: 'external-link' }> => b.type === 'external-link'
-  );
 
   const blogPostingSchema = {
     '@context': 'https://schema.org',
@@ -259,13 +200,13 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }} />
       <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Header onOpenModal={() => setIsModalOpen(true)} />
-      <main className="flex-grow">
+      <main className="flex-grow heritage-inner">
 
         {/* Hero */}
         <div className="relative h-[400px] md:h-[500px] overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={article.featuredImage} alt={article.title} className="w-full h-full object-cover" loading="eager" />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/40 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 container-width pb-10">
             <Link href="/blog/" className="inline-flex items-center gap-1 text-brand-300 text-xs font-bold uppercase tracking-wider mb-4 hover:text-brand-200 transition-colors">
               <ArrowLeft className="w-3 h-3" /> Back to blog
@@ -274,83 +215,23 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
               <span className="px-3 py-1 bg-brand-500/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider rounded-full">
                 {article.category}
               </span>
-              <span className="flex items-center gap-1 text-gray-300 text-xs">
+              <span className="flex items-center gap-1 text-brand-100 text-xs">
                 <Calendar className="w-3 h-3" />
                 {new Date(article.publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
               </span>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white max-w-4xl leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-white max-w-4xl leading-tight">
               {article.title}
             </h1>
           </div>
         </div>
 
-        {/* Content + Sidebar */}
+        {/* Long-form content */}
         <div className="container-width py-12 md:py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-
-            <article className="lg:col-span-2">
+          <div className="max-w-4xl mx-auto">
+            <article>
               <ContentRenderer blocks={article.content} onOpenModal={() => setIsModalOpen(true)} />
             </article>
-
-            <aside className="lg:col-span-1">
-              <div className="sticky top-28 space-y-6">
-
-                {/* CTA */}
-                <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                  <h3 className="text-lg font-display font-bold text-gray-900 mb-3">Get matched with Kent installers</h3>
-                  <p className="text-gray-500 text-sm mb-5">Up to 3 vetted specialists, free site surveys, no obligation at any stage.</p>
-                  <button onClick={() => setIsModalOpen(true)} className="block w-full btn-primary text-center">
-                    Find Installers
-                  </button>
-                </div>
-
-                {/* Service x Location links */}
-                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                  <div className="flex items-center gap-2 mb-4">
-                    <MapPin className="w-4 h-4 text-brand-500 flex-shrink-0" />
-                    <h3 className="font-bold text-gray-900 text-sm">Our Services</h3>
-                  </div>
-                  <ul className="space-y-2.5">
-                    {SIDEBAR_SERVICE_LINKS.map(link => (
-                      <li key={link.href}>
-                        <Link
-                          href={link.href}
-                          className="text-sm text-brand-600 hover:text-brand-800 hover:underline underline-offset-2 transition-colors leading-snug"
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Further Reading: external links from article */}
-                {furtherReading.length > 0 && (
-                  <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                    <div className="flex items-center gap-2 mb-4">
-                      <ExternalLink className="w-4 h-4 text-gray-400 flex-shrink-0" />
-                      <h3 className="font-bold text-gray-900 text-sm">Further Reading</h3>
-                    </div>
-                    <ul className="space-y-2.5">
-                      {furtherReading.map((link, i) => (
-                        <li key={i}>
-                          <a
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm text-brand-600 hover:text-brand-800 hover:underline underline-offset-2 transition-colors leading-snug block"
-                          >
-                            {link.source}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-              </div>
-            </aside>
           </div>
         </div>
 

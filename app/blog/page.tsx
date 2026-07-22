@@ -31,30 +31,30 @@ export default function BlogIndexPage() {
     <>
       <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Header onOpenModal={() => setIsModalOpen(true)} />
-      <main className="flex-grow">
+      <main className="flex-grow heritage-inner">
 
         {/* Hero */}
-        <div className="relative h-[340px] md:h-[420px] overflow-hidden">
+        <div className="relative h-[440px] md:h-[540px] overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000&auto=format&fit=crop"
             alt="Driveway gate guides and advice"
             className="w-full h-full object-cover"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-gray-900/20" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/50 to-brand-950/20" />
+          <div className="absolute inset-0 flex flex-col items-start justify-end text-left px-6 md:px-[max(2rem,calc((100vw-80rem)/2))] pb-14 md:pb-20">
             <p className="text-[10px] font-bold uppercase tracking-widest text-brand-400 mb-3">Expert Advice</p>
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-white max-w-3xl leading-tight mb-4">
+            <h1 className="text-4xl md:text-6xl font-display font-medium text-white max-w-4xl leading-[1.05] mb-4">
               Kent Gate Guides: Planning, Pricing, and Specification
             </h1>
-            <p className="text-brand-100 text-sm md:text-base max-w-xl">
+            <p className="text-brand-100 text-sm md:text-lg max-w-2xl leading-7">
               AONB planning rules, coastal material specification, cost breakdowns by area, and how to tell a specialist from a generalist. Written specifically for Kent homeowners.
             </p>
           </div>
         </div>
 
         {/* Search + Filter Bar */}
-        <div className="bg-white border-b border-gray-100 sticky top-0 z-30 shadow-sm">
+        <div className="bg-white border-b border-brand-100 sticky top-0 z-30 shadow-sm">
           <div className="container-width py-4 flex flex-col sm:flex-row gap-3 items-center justify-between">
 
             {/* Category pills */}
@@ -107,7 +107,7 @@ export default function BlogIndexPage() {
                 {featured && (
                   <Link
                     href={`/blog/${featured.slug}/`}
-                    className="group block mb-12 rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:border-brand-200 transition-all bg-white"
+                    className="group block mb-12 rounded-sm overflow-hidden border border-brand-100 hover:shadow-lg hover:border-brand-200 transition-all bg-white"
                   >
                     <div className="grid grid-cols-1 md:grid-cols-2">
                       <div className="relative h-60 md:h-auto overflow-hidden">
@@ -117,14 +117,14 @@ export default function BlogIndexPage() {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-900/10" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-brand-950/10" />
                         <span className="absolute top-4 left-4 px-3 py-1 bg-brand-500/90 text-white text-[10px] font-bold uppercase tracking-wider rounded-full">
                           {featured.category}
                         </span>
                       </div>
                       <div className="p-8 md:p-10 flex flex-col justify-center">
                         <span className="text-[10px] font-bold uppercase tracking-widest text-brand-500 mb-3">Featured Guide</span>
-                        <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 group-hover:text-brand-700 transition-colors leading-tight mb-4">
+                        <h2 className="text-2xl md:text-3xl font-display font-semibold text-brand-950 group-hover:text-brand-700 transition-colors leading-tight mb-4">
                           {featured.title}
                         </h2>
                         <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">{featured.excerpt}</p>
@@ -149,7 +149,7 @@ export default function BlogIndexPage() {
                       <Link
                         key={article.slug}
                         href={`/blog/${article.slug}/`}
-                        className="group flex flex-col bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-brand-200 transition-all"
+                        className="group flex flex-col bg-white rounded-sm border border-brand-100 overflow-hidden hover:shadow-lg hover:border-brand-200 transition-all"
                       >
                         <div className="relative h-44 overflow-hidden">
                           <img
@@ -158,19 +158,19 @@ export default function BlogIndexPage() {
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             loading="lazy"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-brand-950/50 to-transparent" />
                           <span className="absolute top-3 left-3 px-2 py-0.5 bg-brand-500/90 text-white text-[9px] font-bold uppercase tracking-wide rounded-full">
                             {article.category}
                           </span>
                         </div>
                         <div className="p-5 flex-grow flex flex-col">
-                          <h3 className="text-base font-display font-bold text-gray-900 group-hover:text-brand-600 transition-colors mb-2 leading-snug line-clamp-2">
+                          <h3 className="text-base font-display font-semibold text-brand-950 group-hover:text-brand-600 transition-colors mb-2 leading-snug line-clamp-2">
                             {article.title}
                           </h3>
                           <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2 flex-grow">
                             {article.excerpt}
                           </p>
-                          <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                          <div className="flex items-center justify-between pt-3 border-t border-brand-100">
                             <span className="flex items-center gap-1 text-[11px] text-gray-400">
                               <Calendar className="w-3 h-3" />
                               {new Date(article.publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
@@ -188,12 +188,12 @@ export default function BlogIndexPage() {
             )}
 
             {/* CTA Banner */}
-            <div className="mt-16 rounded-2xl overflow-hidden bg-gradient-to-r from-brand-900 to-brand-800 border border-brand-700 shadow-xl relative">
+            <div className="mt-16 rounded-sm overflow-hidden bg-gradient-to-r from-brand-900 to-brand-800 border border-brand-700 shadow-lg relative">
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-brand-400 via-brand-500 to-transparent" />
               <div className="px-8 py-10 md:px-12 flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
                 <div className="flex-1">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-brand-400 mb-2">Free Service</p>
-                  <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-2">
+                  <h3 className="text-xl md:text-2xl font-display font-semibold text-white mb-2">
                     Need a Gate Installer in Kent?
                   </h3>
                   <p className="text-brand-200 text-sm">
@@ -203,7 +203,7 @@ export default function BlogIndexPage() {
                 <div className="flex-shrink-0">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-bold text-sm transition-all hover:scale-105 active:scale-95 whitespace-nowrap"
+                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-sm bg-brand-500 hover:bg-brand-400 text-white font-bold text-sm transition-all hover:scale-105 active:scale-95 whitespace-nowrap"
                   >
                     Get 3 Free Quotes
                     <ArrowRight className="w-4 h-4" />

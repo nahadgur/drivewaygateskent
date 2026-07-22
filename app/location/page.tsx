@@ -30,7 +30,7 @@ export default function LocationIndexPage() {
     <>
       <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Header onOpenModal={() => setIsModalOpen(true)} />
-      <main className="flex-grow">
+      <main className="flex-grow heritage-inner">
         <Hero
           title="Find a Gate Installer Near You in Kent"
           subtitle="75 Kent towns from Sevenoaks to Folkestone, Dartford to Tenterden. Search your area below and get matched with vetted local specialists."
@@ -40,6 +40,13 @@ export default function LocationIndexPage() {
 
         <section className="section-padding">
           <div className="container-width">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-12">
+              <div>
+                <p className="text-brand-600 text-xs font-bold uppercase tracking-[0.2em] mb-4">County-wide network</p>
+                <h2 className="text-4xl md:text-5xl">Local knowledge matters.</h2>
+              </div>
+              <p className="text-gray-600 text-lg leading-8">Kent’s coast, AONBs, conservation areas and varied ground conditions all affect the right specification. Start with your area.</p>
+            </div>
             <div className="max-w-xl mx-auto mb-12">
               <div className="relative">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -48,21 +55,21 @@ export default function LocationIndexPage() {
                   placeholder="Search your town or area..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
+                  className="w-full pl-12 pr-4 py-4 rounded-sm border border-gray-200 bg-brand-50 text-brand-950 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
                 />
               </div>
             </div>
 
             <div className="space-y-12">
               {Object.entries(filteredLocations).map(([region, cities]) => (
-                <div key={region}>
-                  <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">{region}</h2>
+                <div key={region} className="border-t border-brand-300 pt-8">
+                  <h2 className="text-3xl font-display font-semibold text-brand-950 mb-6">{region}</h2>
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                     {cities.map(city => (
                       <Link
                         key={city}
                         href={`/location/${toSlug(city)}/`}
-                        className="group block bg-gray-50 hover:bg-brand-50 border border-gray-100 hover:border-brand-200 rounded-xl p-4 transition-all"
+                        className="group block bg-white hover:bg-brand-50 border border-brand-200 hover:border-brand-500 rounded-sm p-4 transition-all"
                       >
                         <div className="flex items-center gap-2">
                           <MapPin className="w-4 h-4 text-brand-500 flex-shrink-0" />
@@ -77,7 +84,7 @@ export default function LocationIndexPage() {
           </div>
         </section>
 
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-brand-50">
           <div className="container-width max-w-3xl">
             <FAQ faqs={FAQS_LOCATION} />
           </div>

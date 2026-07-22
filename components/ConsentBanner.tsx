@@ -70,7 +70,7 @@ export function ConsentBanner() {
           aria-label="Cookie notice"
           className="fixed bottom-0 inset-x-0 z-40 px-3 sm:px-4 pb-3 sm:pb-4"
         >
-          <div className="mx-auto max-w-3xl bg-brand-950 text-white rounded-2xl shadow-2xl border border-white/10 p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
+          <div className="mx-auto max-w-3xl bg-brand-950 text-white rounded-sm shadow-lg border border-white/10 p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
             <div className="flex-1 text-[13px] sm:text-[13.5px] leading-[1.55] text-white/85">
               We use a small cookie to remember this choice. With your permission we&apos;d also like to use Google Analytics to see which pages help Kent homeowners. No advertising, no tracking across other sites.{' '}
               <Link href="/privacy/" className="underline text-white hover:text-brand-300 whitespace-nowrap">

@@ -221,21 +221,21 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
     <>
       <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Header onOpenModal={() => setIsModalOpen(true)} />
-      <main className="flex-grow">
-        <section className="bg-gray-900 text-white relative overflow-hidden">
+      <main className="flex-grow heritage-inner">
+        <section className="bg-brand-950 text-white relative overflow-hidden">
           <div className="absolute inset-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={service.image} alt="" className="w-full h-full object-cover opacity-40" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/80 to-gray-900/40" />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-950/95 via-brand-950/80 to-brand-950/40" />
           </div>
-          <div className="container-width py-12 md:py-20 relative z-10">
+          <div className="container-width py-20 md:py-28 relative z-10">
             <Breadcrumbs items={[{ label: 'Gate Types', href: '/services/' }, { label: service.title }]} />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-6">
               <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight leading-[1.02] mb-6">
                   {service.title}
                 </h1>
-                <p className="text-xl text-gray-300 mb-8 leading-relaxed">{service.description}</p>
+                <p className="text-xl text-brand-100 mb-8 leading-relaxed">{service.description}</p>
                 <div className="space-y-3">
                   {['Compare up to 3 free quotes', 'Every installer vetted and insured', `${totalCities}+ Kent locations covered`].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
@@ -259,22 +259,22 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
             <div className="lg:col-span-2">
 
               <section className="mb-14">
-                <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-6">{service.title}: What You Need to Know</h2>
+                <h2 className="text-2xl md:text-3xl font-display font-semibold text-brand-950 mb-6">{service.title}: What You Need to Know</h2>
                 <div className="prose prose-gray max-w-none text-gray-600 space-y-4">
                   {content.intro.map((p, i) => <p key={i}>{p}</p>)}
                 </div>
               </section>
 
               <section className="mb-14">
-                <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">Benefits of {service.title}</h2>
+                <h2 className="text-2xl font-display font-semibold text-brand-950 mb-6">Benefits of {service.title}</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {content.benefits.map((b, i) => (
-                    <div key={i} className="flex gap-4 p-5 bg-gray-50 rounded-xl border border-gray-100">
-                      <div className="bg-brand-100 p-2 rounded-lg text-brand-600 flex-shrink-0 h-fit">
+                    <div key={i} className="flex gap-4 p-5 bg-brand-50 rounded-sm border border-brand-100">
+                      <div className="bg-brand-100 p-2 rounded-sm text-brand-600 flex-shrink-0 h-fit">
                         <CheckCircle className="w-5 h-5" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-gray-900 mb-1">{b.title}</h3>
+                        <h3 className="font-bold text-brand-950 mb-1">{b.title}</h3>
                         <p className="text-sm text-gray-600">{b.desc}</p>
                       </div>
                     </div>
@@ -285,7 +285,7 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
               <section className="mb-14">
                 <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
                   <div>
-                    <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-2">Find {service.title} Installers Across Kent</h2>
+                    <h2 className="text-2xl md:text-3xl font-display font-semibold text-brand-950 mb-2">Find {service.title} Installers Across Kent</h2>
                     <p className="text-gray-600">
                       Kent specialists for {service.title.toLowerCase()} covering {totalCities} towns and areas across the county.
                     </p>
@@ -307,7 +307,7 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
                       placeholder="Search your town or area..."
                       value={searchQuery}
                       onChange={(e) => { setSearchQuery(e.target.value); if (!showLocations) setShowLocations(true); }}
-                      className="w-full pl-11 pr-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
+                      className="w-full pl-11 pr-4 py-3 rounded-sm border border-gray-200 bg-brand-50 text-brand-950 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
                     />
                   </div>
                 </div>
@@ -319,13 +319,13 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
                   <div className="space-y-8 pb-4">
                     {Object.entries(filteredLocations).map(([region, cities]) => (
                       <div key={region}>
-                        <h3 className="text-lg font-display font-bold text-gray-900 mb-3">{region}</h3>
+                        <h3 className="text-lg font-display font-semibold text-brand-950 mb-3">{region}</h3>
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
                           {cities.map(city => (
                             <Link
                               key={city}
                               href={`/services/${service.slug}/${toSlug(city)}/`}
-                              className="group flex items-center gap-2 p-2.5 bg-gray-50 rounded-lg hover:bg-brand-50 transition-all border border-gray-100 hover:border-brand-200"
+                              className="group flex items-center gap-2 p-2.5 bg-brand-50 rounded-sm hover:bg-brand-50 transition-all border border-brand-100 hover:border-brand-200"
                             >
                               <MapPin className="w-3 h-3 text-brand-400 flex-shrink-0" />
                               <span className="text-gray-700 group-hover:text-brand-700 text-xs font-medium truncate">{city}</span>
@@ -345,9 +345,9 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
               </section>
 
               <section className="mb-14">
-                <h2 className="text-2xl font-display font-bold text-gray-900 mb-4">Are {service.title} Right for Your Property?</h2>
+                <h2 className="text-2xl font-display font-semibold text-brand-950 mb-4">Are {service.title} Right for Your Property?</h2>
                 <p className="text-gray-600 mb-4">{content.candidateIntro}</p>
-                <div className="bg-brand-50 rounded-xl p-6 border border-brand-100">
+                <div className="bg-brand-50 rounded-sm p-6 border border-brand-100">
                   <ul className="space-y-3">
                     {content.candidates.map((c, i) => (
                       <li key={i} className="flex items-start gap-3 text-gray-700">
@@ -363,13 +363,13 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
               </section>
 
               <section className="mb-14">
-                <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">The Installation Process</h2>
+                <h2 className="text-2xl font-display font-semibold text-brand-950 mb-6">The Installation Process</h2>
                 <div className="space-y-4">
                   {content.process.map((step, i) => (
-                    <div key={i} className="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                    <div key={i} className="flex gap-4 p-4 bg-white rounded-sm shadow-sm border border-brand-100">
                       <div className="flex-shrink-0 w-8 h-8 bg-brand-500 text-white rounded-full flex items-center justify-center font-bold text-sm">{i + 1}</div>
                       <div>
-                        <h3 className="font-bold text-gray-900 mb-0.5">{step.title}</h3>
+                        <h3 className="font-bold text-brand-950 mb-0.5">{step.title}</h3>
                         <p className="text-sm text-gray-600">{step.desc}</p>
                       </div>
                     </div>
@@ -384,18 +384,18 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
               </div>
 
               <section className="mb-14">
-                <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">What Homeowners Say</h2>
+                <h2 className="text-2xl font-display font-semibold text-brand-950 mb-6">What Homeowners Say</h2>
                 <Testimonials limit={3} />
               </section>
             </div>
 
             <aside className="lg:col-span-1">
               <div className="sticky top-28 space-y-6">
-                <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                  <h3 className="text-lg font-display font-bold text-gray-900 mb-3">Get Matched for {service.title}</h3>
+                <div className="bg-white p-6 rounded-sm shadow-lg border border-brand-100">
+                  <h3 className="text-lg font-display font-semibold text-brand-950 mb-3">Get Matched for {service.title}</h3>
                   <p className="text-gray-600 mb-5 text-sm">Free, no-obligation match with vetted installers in your Kent area.</p>
                   <button onClick={() => setIsModalOpen(true)} className="block w-full btn-primary text-center">Find an Installer</button>
-                  <div className="mt-5 pt-5 border-t border-gray-100 space-y-3">
+                  <div className="mt-5 pt-5 border-t border-brand-100 space-y-3">
                     {[
                       { icon: <Clock className="w-4 h-4 text-brand-500" />, text: "Surveys available this week" },
                       { icon: <Shield className="w-4 h-4 text-brand-500" />, text: "50+ installs per installer" },
@@ -409,14 +409,14 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
                   </div>
                 </div>
 
-                <div className="bg-brand-900 text-white p-6 rounded-2xl">
-                  <h3 className="font-display font-bold mb-2">From &pound;99/month</h3>
+                <div className="bg-brand-900 text-white p-6 rounded-sm">
+                  <h3 className="font-display font-semibold mb-2">From &pound;99/month</h3>
                   <p className="text-brand-100 text-sm mb-4">0% finance available. Spread the cost over 6 to 36 months.</p>
-                  <button onClick={() => setIsModalOpen(true)} className="block w-full bg-white text-brand-900 text-center font-bold py-3 px-6 rounded-xl hover:bg-brand-50 transition-colors text-sm">Get Free Quotes</button>
+                  <button onClick={() => setIsModalOpen(true)} className="block w-full bg-white text-brand-900 text-center font-bold py-3 px-6 rounded-sm hover:bg-brand-50 transition-colors text-sm">Get Free Quotes</button>
                 </div>
 
-                <div className="bg-gray-50 p-5 rounded-2xl border border-gray-100">
-                  <h3 className="font-bold text-gray-900 text-sm mb-3">Other Gate Types</h3>
+                <div className="bg-brand-50 p-5 rounded-sm border border-brand-100">
+                  <h3 className="font-bold text-brand-950 text-sm mb-3">Other Gate Types</h3>
                   <div className="space-y-2">
                     {relatedServices.map(s => (
                       <Link key={s.id} href={`/services/${s.slug}/`} className="flex items-center gap-2 text-sm text-gray-600 hover:text-brand-600 transition-colors">
@@ -431,14 +431,14 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
         </div>
 
         {relatedPosts.length > 0 && (
-          <section className="bg-gray-50 border-t border-gray-100 py-16">
+          <section className="bg-brand-50 border-t border-brand-100 py-16">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <p className="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Guides &amp; Articles</p>
-              <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-8">{service.title} guides and advice</h2>
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-brand-950 mb-8">{service.title} guides and advice</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {relatedPosts.map(post => (
                   <Link key={post.slug} href={`/blog/${post.slug}/`}
-                    className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+                    className="group bg-white rounded-sm border border-brand-100 overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
                     <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
                       {post.featuredImage
                         // eslint-disable-next-line @next/next/no-img-element
@@ -448,7 +448,7 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
                       <span className="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-brand-600">{post.category}</span>
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="font-display font-bold text-gray-900 leading-snug group-hover:text-brand-600 transition-colors">{post.title}</h3>
+                      <h3 className="font-display font-semibold text-brand-950 leading-snug group-hover:text-brand-600 transition-colors">{post.title}</h3>
                       <span className="mt-auto pt-3 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-brand-500">
                         Read <ArrowRight className="w-3 h-3" />
                       </span>

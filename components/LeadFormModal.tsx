@@ -145,11 +145,11 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
 
   const labelClass = "block text-xs font-bold text-gray-600 mb-1 ml-1";
   const inputClass =
-    "w-full px-4 py-2.5 sm:py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition";
+    "w-full px-4 py-2.5 sm:py-3 rounded-sm border border-gray-200 bg-brand-50 text-brand-950 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition";
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/60 backdrop-blur-sm
+      className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-950/60 backdrop-blur-sm
         ${animationState === 'entering' ? 'animate-backdrop-in' : animationState === 'exiting' ? 'animate-backdrop-out' : 'opacity-100'}`}
       onClick={handleBackdropClick}
       onKeyDown={handleKeyDown}
@@ -159,7 +159,7 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
         role="dialog"
         aria-modal="true"
         aria-label="Get free gate installation quotes"
-        className={`relative w-full max-w-lg max-h-[calc(100dvh-2rem)] overflow-y-auto overflow-x-hidden bg-white rounded-2xl shadow-2xl
+        className={`relative w-full max-w-lg max-h-[calc(100dvh-2rem)] overflow-y-auto overflow-x-hidden bg-white rounded-sm shadow-lg
           ${animationState === 'entering' ? 'animate-modal-in' : 'animate-modal-out'}`}
       >
         <button
@@ -176,11 +176,11 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
               <div className="w-16 h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center">
                 <CheckCircle className="w-10 h-10" />
               </div>
-              <h2 className="text-2xl font-display font-bold text-gray-900">Request Received!</h2>
+              <h2 className="text-2xl font-display font-semibold text-brand-950">Request Received!</h2>
               <p className="text-gray-600">We&apos;ve matched you with a vetted installer. Expect a call back within <strong className="text-gray-800">2 hours</strong>. Check your email for confirmation.</p>
               <button
                 onClick={() => { setIsSuccess(false); onClose(); }}
-                className="mt-2 bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-8 rounded-xl transition-colors text-sm shadow-md shadow-brand-500/20"
+                className="mt-2 bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-8 rounded-sm transition-colors text-sm shadow-md shadow-brand-500/20"
               >
                 Done
               </button>
@@ -191,13 +191,13 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                 <span className="hidden sm:inline-block px-3 py-1 bg-brand-50 text-brand-600 text-xs font-bold uppercase tracking-wider rounded-full mb-3">
                   Free Matching Service
                 </span>
-                <h2 className="text-xl sm:text-2xl font-display font-bold text-gray-900">Find Your Gate Installer</h2>
+                <h2 className="text-xl sm:text-2xl font-display font-semibold text-brand-950">Find Your Gate Installer</h2>
                 <p className="hidden sm:block text-gray-600 text-sm mt-1">Complete the form to get matched with vetted Kent gate installers.</p>
               </div>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-2.5 sm:gap-3">
                 {errorMessage && (
-                  <div role="alert" className="flex items-start gap-3 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+                  <div role="alert" className="flex items-start gap-3 bg-red-50 border border-red-200 rounded-sm px-4 py-3">
                     <span className="text-red-500 text-lg leading-none mt-0.5">!</span>
                     <div className="flex-1">
                       <p className="text-red-800 text-sm font-medium">{errorMessage}</p>
@@ -236,7 +236,7 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-brand-500 hover:bg-brand-600 active:scale-[0.98] disabled:opacity-60 text-white font-bold py-3.5 px-6 rounded-xl transition-all text-base mt-1 shadow-md shadow-brand-500/20"
+                  className="w-full bg-brand-500 hover:bg-brand-600 active:scale-[0.98] disabled:opacity-60 text-white font-bold py-3.5 px-6 rounded-sm transition-all text-base mt-1 shadow-md shadow-brand-500/20"
                 >
                   {isSubmitting ? 'Sending…' : 'Request a Free Call Back →'}
                 </button>

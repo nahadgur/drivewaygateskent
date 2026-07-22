@@ -192,14 +192,14 @@ export default function ServiceLocationPage({ params }: { params: { serviceSlug:
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Header onOpenModal={() => setIsModalOpen(true)} />
-      <main className="flex-grow">
-        <section className="bg-gray-900 text-white relative overflow-hidden">
+      <main className="flex-grow heritage-inner">
+        <section className="bg-brand-950 text-white relative overflow-hidden">
           <div className="absolute inset-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={service.image} alt="" className="w-full h-full object-cover opacity-50" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/70 to-gray-900/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-950/95 via-brand-950/70 to-brand-950/30" />
           </div>
-          <div className="container-width py-12 md:py-20 relative z-10">
+          <div className="container-width py-20 md:py-28 relative z-10">
             <Breadcrumbs items={[
               { label: 'Gate Types', href: '/services/' },
               { label: service.title, href: `/services/${service.slug}/` },
@@ -210,10 +210,10 @@ export default function ServiceLocationPage({ params }: { params: { serviceSlug:
                 <div className="inline-flex items-center gap-2 bg-brand-500/20 text-brand-300 px-3 py-1 rounded-full text-sm font-medium mb-6 border border-brand-500/30">
                   <MapPin className="w-4 h-4" /> Vetted Installers in {cityName}
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight leading-[1.02] mb-6">
                   {service.title} in <span className="text-brand-400">{cityName}</span>
                 </h1>
-                <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                <p className="text-xl text-brand-100 mb-8 leading-relaxed">
                   Kent {service.title.toLowerCase()} specialists covering {cityName}. Site survey at no charge, written quotes, no obligation to proceed.
                 </p>
                 <div className="space-y-4 mb-8">
@@ -243,10 +243,10 @@ export default function ServiceLocationPage({ params }: { params: { serviceSlug:
         <div className="container-width py-16">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {benefits.map((benefit, idx) => (
-              <div key={idx} className="flex items-start gap-4 p-5 bg-gray-50 rounded-xl border border-gray-100">
-                <div className="bg-brand-100 p-2 rounded-lg text-brand-600">{benefit.icon}</div>
+              <div key={idx} className="flex items-start gap-4 p-5 bg-brand-50 rounded-sm border border-brand-100">
+                <div className="bg-brand-100 p-2 rounded-sm text-brand-600">{benefit.icon}</div>
                 <div>
-                  <h3 className="font-bold text-gray-900">{benefit.title}</h3>
+                  <h3 className="font-bold text-brand-950">{benefit.title}</h3>
                   <p className="text-sm text-gray-600">{benefit.desc}</p>
                 </div>
               </div>
@@ -257,7 +257,7 @@ export default function ServiceLocationPage({ params }: { params: { serviceSlug:
             <div className="lg:col-span-2">
 
               <section className="mb-12">
-                <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-4">
+                <h2 className="text-2xl md:text-3xl font-display font-semibold text-brand-950 mb-4">
                   {service.title} in {cityName}: What to Expect
                 </h2>
                 <div className="prose prose-gray max-w-none text-gray-600 space-y-4">
@@ -268,10 +268,10 @@ export default function ServiceLocationPage({ params }: { params: { serviceSlug:
               <NearbyAreasGrid cityName={cityName} serviceSlug={service.slug} serviceName={service.title} />
 
               <section className="mb-12">
-                <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">How {service.title} Installation Works in {cityName}</h2>
+                <h2 className="text-2xl font-display font-semibold text-brand-950 mb-6">How {service.title} Installation Works in {cityName}</h2>
                 <div className="space-y-4">
                   {steps.map((step, i) => (
-                    <div key={i} className="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                    <div key={i} className="flex gap-4 p-4 bg-white rounded-sm shadow-sm border border-brand-100">
                       <div className="flex-shrink-0 w-8 h-8 bg-brand-500 text-white rounded-full flex items-center justify-center font-bold text-sm">{i + 1}</div>
                       <p className="text-gray-700 font-medium pt-1">{step}</p>
                     </div>
@@ -282,10 +282,10 @@ export default function ServiceLocationPage({ params }: { params: { serviceSlug:
               <PricingSection cityName={cityName} serviceId={service.id} serviceName={service.title} />
 
               <section className="mb-12">
-                <h3 className="text-2xl font-display font-bold text-gray-900 mb-4">Why Get {service.title} in {cityName} Through Us?</h3>
+                <h3 className="text-2xl font-display font-semibold text-brand-950 mb-4">Why Get {service.title} in {cityName} Through Us?</h3>
                 <div className="space-y-3">
                   {whyPoints.map((point, i) => (
-                    <div key={i} className="flex items-start gap-3 bg-brand-50 p-4 rounded-xl border border-brand-100">
+                    <div key={i} className="flex items-start gap-3 bg-brand-50 p-4 rounded-sm border border-brand-100">
                       <CheckCircle className="w-5 h-5 text-brand-600 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-800 font-medium text-sm">{point}</span>
                     </div>
@@ -300,31 +300,31 @@ export default function ServiceLocationPage({ params }: { params: { serviceSlug:
               )}
 
               <section className="mt-12 mb-12">
-                <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">What Homeowners Are Saying</h2>
+                <h2 className="text-2xl font-display font-semibold text-brand-950 mb-6">What Homeowners Are Saying</h2>
                 <Testimonials limit={2} />
               </section>
             </div>
 
             <aside className="lg:col-span-1">
               <div className="sticky top-28 space-y-8">
-                <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                  <h3 className="text-lg font-display font-bold text-gray-900 mb-4">Other Gate Types in {cityName}</h3>
+                <div className="bg-white p-6 rounded-sm shadow-lg border border-brand-100">
+                  <h3 className="text-lg font-display font-semibold text-brand-950 mb-4">Other Gate Types in {cityName}</h3>
                   <ul className="space-y-2 mb-8">
                     {services.filter(s => s.id !== service.id).map(s => (
                       <li key={s.id}>
-                        <Link href={`/services/${s.slug}/${params.locationSlug}/`} className="block px-4 py-3 rounded-lg bg-gray-50 border border-gray-100 hover:border-brand-300 hover:bg-brand-50 text-gray-700 hover:text-brand-700 transition-all text-sm font-medium">
+                        <Link href={`/services/${s.slug}/${params.locationSlug}/`} className="block px-4 py-3 rounded-sm bg-brand-50 border border-brand-100 hover:border-brand-300 hover:bg-brand-50 text-gray-700 hover:text-brand-700 transition-all text-sm font-medium">
                           {s.title} in {cityName}
                         </Link>
                       </li>
                     ))}
                   </ul>
-                  <h3 className="text-lg font-display font-bold text-gray-900 mb-4">{service.title} Elsewhere in Kent</h3>
+                  <h3 className="text-lg font-display font-semibold text-brand-950 mb-4">{service.title} Elsewhere in Kent</h3>
                   <ul className="space-y-2">
                     {allCities.filter(c => c !== cityName).slice(0, 5).map(city => {
                       const slug = city.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
                       return (
                         <li key={city}>
-                          <Link href={`/services/${service.slug}/${slug}/`} className="block px-4 py-3 rounded-lg bg-gray-50 border border-gray-100 hover:border-brand-300 hover:bg-brand-50 text-gray-700 hover:text-brand-700 transition-all text-sm font-medium">
+                          <Link href={`/services/${service.slug}/${slug}/`} className="block px-4 py-3 rounded-sm bg-brand-50 border border-brand-100 hover:border-brand-300 hover:bg-brand-50 text-gray-700 hover:text-brand-700 transition-all text-sm font-medium">
                             {service.title} in {city}
                           </Link>
                         </li>
@@ -332,19 +332,19 @@ export default function ServiceLocationPage({ params }: { params: { serviceSlug:
                     })}
                   </ul>
                 </div>
-                <div className="bg-brand-900 text-white p-6 rounded-2xl shadow-lg">
-                  <h3 className="text-lg font-display font-bold mb-3">From &pound;99/month</h3>
+                <div className="bg-brand-900 text-white p-6 rounded-sm shadow-lg">
+                  <h3 className="text-lg font-display font-semibold mb-3">From &pound;99/month</h3>
                   <p className="text-brand-100 text-sm mb-4">0% finance available at most {cityName} installers. Spread the cost of {service.title.toLowerCase()} over 6 to 36 months with nothing to pay upfront.</p>
-                  <button onClick={() => setIsModalOpen(true)} className="block w-full bg-white text-brand-900 text-center font-bold py-3 px-6 rounded-xl hover:bg-brand-50 transition-colors text-sm">Get Free Quotes</button>
+                  <button onClick={() => setIsModalOpen(true)} className="block w-full bg-white text-brand-900 text-center font-bold py-3 px-6 rounded-sm hover:bg-brand-50 transition-colors text-sm">Get Free Quotes</button>
                 </div>
               </div>
             </aside>
           </div>
 
-          <div className="bg-brand-900 rounded-2xl p-8 md:p-12 text-center mt-12">
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">Get {service.title} Quotes in {cityName}</h2>
+          <div className="bg-brand-900 rounded-sm p-8 md:p-12 text-center mt-12">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-white mb-4">Get {service.title} Quotes in {cityName}</h2>
             <p className="text-brand-200 mb-8 max-w-2xl mx-auto">Submit your enquiry in under two minutes. We will match you with up to three vetted {cityName} installers for free site surveys, written quotes, and no obligation at any stage.</p>
-            <button onClick={() => setIsModalOpen(true)} className="bg-white text-brand-900 font-bold text-lg py-4 px-10 rounded-xl hover:bg-brand-50 transition-colors">Get Your Free Quotes</button>
+            <button onClick={() => setIsModalOpen(true)} className="bg-white text-brand-900 font-bold text-lg py-4 px-10 rounded-sm hover:bg-brand-50 transition-colors">Get Your Free Quotes</button>
           </div>
         </div>
       </main>
