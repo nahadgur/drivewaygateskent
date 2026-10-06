@@ -34,6 +34,14 @@ const faqs = [
     question: 'Who approves a new dropped kerb for a Whitstable driveway?',
     answer: 'Kent County Council is the highway authority and handles dropped kerb applications. If the new access is onto a classified road, such as the A2990 corridor, you also need planning permission from Canterbury City Council.',
   },
+  {
+    question: 'How often should a seafront gate in Whitstable be serviced?',
+    answer: 'At least once a year, and more often on the most exposed frontages. Salt builds up on photocell lenses, hinge pins and motor seals, so a service should clean and test the safety devices, check the force settings and look for corrosion starting at cut edges and fixings.',
+  },
+  {
+    question: 'Can I put gates on a new-build house at Brooklands Farm?',
+    answer: 'Check the title deeds and the planning permission for the estate first. Developers often fix front garden layouts or remove permitted development rights on new estates, in which case a gate would need the developer\'s consent or a planning application.',
+  },
 ];
 
 export default function WhitstablePage() {
@@ -54,13 +62,13 @@ export default function WhitstablePage() {
       />
 
       <div className="container-width py-14">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto">
           <TownSection title="Salt Air on Tankerton and the West Beach Frontage">
             <p>
               Homes on Marine Parade, Tankerton Road, West Beach, Island Wall and the Joy Lane end of Seasalter take the full force of onshore wind. Salt carried on that wind settles on every exposed surface of a gate, and a standard powder coat over bare steel will chip and rust from the edges within a few winters.
             </p>
             <p>
-              The specification that lasts here is hot-dip galvanised steel under a marine-grade powder coat, or <Link href="/services/metal-driveway-gates/" className={linkClass}>aluminium</Link>, which cannot rust at all. Hinges, bolts and motor brackets should be A4 stainless rather than zinc plated. Our <Link href="/blog/coastal-gate-corrosion-protection/" className={linkClass}>guide to coastal gate corrosion</Link> explains how each finish holds up by the sea.
+              The specification that lasts here is <Link href="/blog/coastal-gate-corrosion-protection/" className={linkClass}>hot-dip galvanised steel under a marine-grade powder coat</Link>, or <Link href="/services/metal-driveway-gates/" className={linkClass}>aluminium</Link>, which cannot rust at all. Hinges, bolts and motor brackets should be A4 stainless rather than zinc plated.
             </p>
           </TownSection>
 
@@ -94,6 +102,30 @@ export default function WhitstablePage() {
           <TownSection title="Car Key Burglaries Along the North Kent Coast">
             <p>
               In 2026 Kent Police reported jailing a group who broke into homes in Whitstable, Faversham and nearby villages to take car keys and drive high-value cars off the drive. A closed, automated gate does not stop a burglary, but it slows a car leaving the property, and an intercom with a camera records who came to the entrance. Keep keys well away from the front door as well.
+            </p>
+          </TownSection>
+
+          <TownSection title="Brooklands Farm and the South Whitstable Growth Area">
+            <p>
+              Canterbury City Council&apos;s draft Local Plan proposes Brooklands Farm in South Whitstable for up to 1,350 homes (Policy W4), with further draft allocations around Chestfield Road and Golden Hill that drew resident objections in the 2025 consultation. New estates bring their own rules. Many developers fix front garden layouts in the planning permission or the title deeds, so a buyer on a new street should read the transfer and any estate management terms before ordering a gate.
+            </p>
+            <p>
+              Older South Whitstable roads such as Joy Lane are a different picture: detached houses on larger plots, and South Whitstable has its own conservation area. Here a pair of automated gates set well back from the road is common, and the generous frontage leaves room for a car to wait off the carriageway while the gates open.
+            </p>
+          </TownSection>
+
+          <TownSection title="Motors and Maintenance by the Sea">
+            <p>
+              Salt does not only attack the gate leaf. It works into motor housings, photocell lenses, hinge pins and the control box, so a seafront installation needs kit chosen for exposure. Look for motors with a high ingress protection rating, sealed cable glands and stainless fixings, and ask where the control board will sit; a box tucked behind a wall or inside a garage lasts far longer than one bolted to the pier facing the beach.
+            </p>
+            <p>
+              Maintenance matters more here than inland. Rinsing the gate and motor covers with fresh water after winter storms, checking the photocells for salt film, and a <Link href="/services/gate-repair-and-maintenance/" className={linkClass}>service visit at least once a year</Link> keep the safety devices working. A photocell clouded by salt can stop the gate closing, or worse, fail to see a child or a car in the opening.
+            </p>
+          </TownSection>
+
+          <TownSection title="Dropped Kerbs and the Main Roads Into Town">
+            <p>
+              Kent County Council is the highway authority for Whitstable and handles dropped kerb applications. On a classified road, including the A2990 corridor along Canterbury Road and the Thanet Way approaches, a new vehicle access also needs planning permission from Canterbury City Council. Permitted development limits a gate beside any road used by vehicles to 1 metre in height, and the <a href="https://www.legislation.gov.uk/ukpga/1980/66/section/153" className={linkClass} rel="noopener noreferrer" target="_blank">Highways Act 1980</a> forbids gates that open outwards over the road or pavement, so inward-swinging or sliding gates are the only legal options on a front boundary.
             </p>
           </TownSection>
 

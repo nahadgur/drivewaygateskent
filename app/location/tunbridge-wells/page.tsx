@@ -34,6 +34,14 @@ const faqs = [
     question: 'Did the new Local Plan change anything for gates?',
     answer: 'The Local Plan adopted in December 2025 does not change permitted development for gates. It matters more for new homes on land released from the Green Belt, where the estate permission may set its own rules on front boundaries.',
   },
+  {
+    question: 'Why does my gate keep drifting out of line in Tunbridge Wells?',
+    answer: 'Clay ground shrinks in dry summers and swells in wet winters, and that movement can shift a gate post. Deeper post foundations and adjustable hinges help, and a service visit can realign the leaves and reset the motor limits.',
+  },
+  {
+    question: 'Can an underground motor be fitted in a valley-bottom garden?',
+    answer: 'Only if the chamber can drain. Where the sandstone meets the clay, springs keep the ground wet, and a chamber without a soakaway or drain can flood. Above-ground arm motors are the safer choice on those sites.',
+  },
 ];
 
 export default function TunbridgeWellsPage() {
@@ -54,7 +62,7 @@ export default function TunbridgeWellsPage() {
       />
 
       <div className="container-width py-14">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto">
           <TownSection title="Sandstone Ridges and Wadhurst Clay Valleys">
             <p>
               The town is built on the Tunbridge Wells Sand Formation, a hard sandstone over the softer Wadhurst Clay (<a href="https://www.bgs.ac.uk/lexicon/lexicon.cfm?pub=TWS" className={linkClass} rel="noopener noreferrer" target="_blank">British Geological Survey</a>). The sandstone forms high ridges and the clay sits in spring-fed valleys, which is why so many drives here slope and why valley-bottom sites can stay wet.
@@ -87,7 +95,43 @@ export default function TunbridgeWellsPage() {
 
           <TownSection title="High Weald and Green Belt Beyond the Town">
             <p>
-              The High Weald National Landscape and the Green Belt together cover about three quarters of the borough. The Local Plan adopted on 10 December 2025 released a small share of Green Belt for housing. For villages such as Langton Green, Speldhurst and Pembury, timber gates are often what the landscape and the planning officer expect; our guide to <Link href="/blog/driveway-gates-kent-aonb-high-weald-north-downs/" className={linkClass}>gates in the Kent Downs and High Weald</Link> explains why.
+              The <Link href="/blog/driveway-gates-kent-aonb-high-weald-north-downs/" className={linkClass}>High Weald National Landscape</Link> and the Green Belt together cover about three quarters of the borough. The Local Plan adopted on 10 December 2025 released a small share of Green Belt for housing. For villages such as Langton Green, Speldhurst and Pembury, timber gates are often what the landscape and the planning officer expect.
+            </p>
+          </TownSection>
+
+          <TownSection title="Southborough, Rusthall and the Common Edges">
+            <p>
+              Southborough Common and Denny Bottom with Rusthall Common are conservation areas where cottages and villas face open common land. Frontages there are often short and sloping, and the character of the common edge means a low timber or painted metal gate usually sits better than a tall solid one. Langton Green and Speldhurst, further west in the High Weald, have their own village conservation areas with larger plots and long drives.
+            </p>
+            <p>
+              Pembury, east of the town, is another village conservation area. Its older houses line the main road, where highways officers will look closely at any new access.
+            </p>
+          </TownSection>
+
+          <TownSection title="Springs, Clay and Motor Chambers">
+            <p>
+              Where the sandstone meets the Wadhurst Clay, water comes to the surface as springs. That is why valley-bottom gardens in Tunbridge Wells stay wet long after rain. An underground gate motor sits in a buried chamber, and on a spring line the chamber can flood unless it drains into a soakaway or a drain run. Arm motors fixed above ground avoid the problem, and a <Link href="/services/gate-repair-and-maintenance/" className={linkClass}>regular service</Link> catches water damage before it kills the motor.
+            </p>
+            <p>
+              Clay also shrinks and swells with the seasons, which can move a gate post enough to throw the leaves out of line. Deeper concrete foundations for the posts, and hinges with some adjustment, keep a gate closing cleanly year after year.
+            </p>
+          </TownSection>
+
+          <TownSection title="New Access Onto the A26 and A264">
+            <p>
+              Kent County Council is the highway authority. New access onto a classified road such as the A26, A264, A267 or A21 needs planning permission as well as dropped kerb approval. Permitted development limits a gate beside a road used by vehicles to 1 metre (<a href="https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/2" className={linkClass} rel="noopener noreferrer" target="_blank">GPDO Schedule 2, Part 2</a>), and gates may not open outwards over the pavement.
+            </p>
+          </TownSection>
+
+          <TownSection title="Burglary Series Across West Kent">
+            <p>
+              Kent Police charged three people over a series of 12 burglaries across Tonbridge, Sevenoaks and Tunbridge Wells between October 2023 and January 2024, in which car keys and cars were taken on three occasions. A gate will not stop a determined burglar on foot, but an automated gate that closes behind you and a <Link href="/services/automated-gate-systems/" className={linkClass}>video intercom</Link> that records the entrance make a driveway a slower, more visible target.
+            </p>
+          </TownSection>
+
+          <TownSection title="Stone Piers, Sandstone and Matching Materials">
+            <p>
+              Local sandstone has been the building stone of Tunbridge Wells since the Regency villas went up, and the listed walls on Calverley Road set the standard for the town&apos;s boundaries. Where a new gate goes into an old wall, a matching stone pier usually looks right and is what planning officers expect in a conservation area. Brick piers with stone copings are a common compromise on Victorian streets. Ask the installer whether they will build the piers themselves or bring in a mason, and whether new footings are needed to carry an automated gate.
             </p>
           </TownSection>
 

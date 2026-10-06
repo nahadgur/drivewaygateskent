@@ -34,6 +34,14 @@ const faqs = [
     question: 'Does a new access onto the A25 need planning permission?',
     answer: 'Yes. A new vehicle access onto a classified road such as the A25, A224 or A225 needs planning permission as well as a dropped kerb approval from Kent County Council, the highway authority.',
   },
+  {
+    question: 'How far back should a gate be from the A25?',
+    answer: 'There is no single published figure, but highways officers look for enough space for a car to pull fully off the road before the gate opens. On a busy classified road that usually means setting the gate well back from the pavement, and a new access there also needs planning permission.',
+  },
+  {
+    question: 'Is solar power an option for a long Wildernesse drive?',
+    answer: 'Yes, where the gate is far from the house and trenching would cross a mature garden. A solar panel and battery can run a gate with light to moderate use. Size the system for winter, when short days give the least charge.',
+  },
 ];
 
 export default function SevenoaksPage() {
@@ -54,7 +62,7 @@ export default function SevenoaksPage() {
       />
 
       <div className="container-width py-14">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto">
           <TownSection title="Green Belt and the Kent Downs Around the Town">
             <p>
               The council&apos;s 2025 summary of its emerging Local Plan puts 93% of the district in the Metropolitan Green Belt and more than 60% in the Kent Downs or High Weald National Landscape (<a href="https://engagement.sevenoaks.gov.uk/strategic-planning/emerginglocalplan/user_uploads/06-non-technical-summary-2025_web.pdf" className={linkClass} rel="noopener noreferrer" target="_blank">Sevenoaks District Council</a>). Inside the town that rarely matters for a replacement gate. Outside it, on lanes towards Knockholt, Ide Hill and Shoreham, it can decide whether a new entrance is allowed at all.
@@ -91,6 +99,33 @@ export default function SevenoaksPage() {
           <TownSection title="Keys Taken From Hallways">
             <p>
               Kent Police charged two people over keyless car thefts after a burglary near Brittains Lane in April 2025, and in 2026 charged a man over car thefts in Sevenoaks and Otford where keys were taken from inside the home first. A shut gate slows a stolen car leaving the drive, and a camera intercom records the attempt. Keep keys out of sight of the front door too.
+            </p>
+          </TownSection>
+
+          <TownSection title="Riverhead, Chipstead and Bessels Green">
+            <p>
+              West of the town centre, Riverhead, Chipstead, Bessels Green and Dunton Green have their own conservation areas or character areas in the council&apos;s guidance, with a mix of village cores, inter-war houses and post-war estates. The same principle applies as in town: keep the front boundary where you can, and use materials that match the street. A post-war house on a wide plot can take a modern aluminium sliding gate without looking out of place, while a cottage in the Chipstead village core suits a simple timber gate.
+            </p>
+            <p>
+              Otford and Seal, to the north and east, are village conservation areas too. Both sit close to the Kent Downs scarp, and drives off the lanes there often rise or fall sharply from the road.
+            </p>
+          </TownSection>
+
+          <TownSection title="A New Local Plan and 1,145 Homes a Year">
+            <p>
+              Sevenoaks District Council consulted on its draft Local Plan between 23 October and 11 December 2025, with a revised plan due in 2026. It is planning under a government target of 1,145 homes a year, a rise of 63% on the old figure, for a plan period running from 2027 to 2042. With most of the district in the Green Belt, some of that growth will come from land released at the edge of settlements.
+            </p>
+            <p>
+              For homeowners the practical point is that new estates arrive with their own planning conditions. If you buy on one, check whether the permission removed permitted development rights for front boundaries before you plan a gate.
+            </p>
+          </TownSection>
+
+          <TownSection title="Main Roads, Dropped Kerbs and Set-Back">
+            <p>
+              Kent County Council is the highway authority, and any new vehicle access onto the A25, A224 or A225 also needs planning permission. On busy roads, highways officers look for space for a car to pull fully off the carriageway before the gate, so a gate set close to the pavement on the main approaches into town can be refused even where the gate itself is modest. The <a href="https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/2" className={linkClass} rel="noopener noreferrer" target="_blank">permitted development rules</a> still cap a roadside gate at 1 metre without permission.
+            </p>
+            <p>
+              Long drives in Wildernesse and Kippington also mean long cable runs. Ask whether the installer will trench mains power to the gate, use an existing supply in an outbuilding, or fit a <Link href="/blog/off-grid-power-for-gates-on-rural-kent-farm-drives/" className={linkClass}>solar and battery system</Link> where trenching would cross a mature garden.
             </p>
           </TownSection>
 

@@ -245,7 +245,7 @@ export default function HomeClient() {
           <div className="container-width">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-4">Driveway Gate Guide Prices in Kent for 2026</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">Indicative ranges for a fully installed gate, not quotes. West Kent usually sits higher than North and East Kent. See the <Link href="/blog/how-much-do-driveway-gates-cost-kent-2026/" className="text-brand-600 hover:underline">full Kent cost guide</Link> for what moves the price.</p>
+              <p className="text-gray-600 max-w-2xl mx-auto">Indicative ranges for a fully installed gate, not quotes. <Link href="/blog/how-much-do-driveway-gates-cost-kent-2026/" className="text-brand-600 hover:underline">West Kent usually sits higher</Link> than North and East Kent.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {pricingTiers.map(tier => (

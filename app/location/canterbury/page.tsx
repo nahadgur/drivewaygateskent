@@ -34,6 +34,14 @@ const faqs = [
     question: 'Are underground gate motors a risk near the Stour?',
     answer: 'They can be. Kent County Council\'s flood profile for the district identifies river, groundwater and surface water risk, sometimes combined. On low ground near the Stour, choose above-ground arm motors or make sure an underground chamber drains properly.',
   },
+  {
+    question: 'Who approves a new access onto New Dover Road?',
+    answer: 'Kent County Council approves the dropped kerb as highway authority, and because New Dover Road is a classified route, a new vehicle access also needs planning permission from Canterbury City Council.',
+  },
+  {
+    question: 'What gate suits a house in Harbledown or Fordwich?',
+    answer: 'Both are village conservation areas, so a timber gate or a simple painted metal gate on brick piers is what planning officers usually expect. On low ground in the Stour valley at Fordwich, choose a motor that will not sit in standing water.',
+  },
 ];
 
 export default function CanterburyPage() {
@@ -54,7 +62,7 @@ export default function CanterburyPage() {
       />
 
       <div className="container-width py-14">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto">
           <TownSection title="The 1985 Article 4 Streets">
             <p>
               The national planning register records 98 conservation areas and 463 Article 4 entries for Canterbury City Council&apos;s district (<a href="https://www.planning.data.gov.uk/entity.json?dataset=article-4-direction-area&organisation_entity=75" className={linkClass} rel="noopener noreferrer" target="_blank">planning data register</a>). Many come from a single direction made on 29 November 1985 that lists individual houses street by street across the city: Whitstable Road, Pound Lane, St Peter&apos;s Grove, Black Griffin Lane, North Lane, London Road, Ivy Lane, Cossington Road and Havelock Street among them.
@@ -81,7 +89,7 @@ export default function CanterburyPage() {
 
           <TownSection title="Kent Downs Villages South of the City">
             <p>
-              Bridge, Bekesbourne, Petham and Chartham sit in or on the edge of the Kent Downs National Landscape, with village conservation areas of their own. Hardwood is the usual choice there. See our <Link href="/blog/planning-permission-driveway-gates-kent/" className={linkClass}>Kent planning guide for gates</Link> for how the designations interact.
+              Bridge, Bekesbourne, Petham and Chartham sit in or on the edge of the Kent Downs National Landscape, with <Link href="/blog/planning-permission-driveway-gates-kent/" className={linkClass}>village conservation areas</Link> of their own. Hardwood is the usual choice there.
             </p>
           </TownSection>
 
@@ -94,6 +102,41 @@ export default function CanterburyPage() {
           <TownSection title="Key Thefts in Chartham">
             <p>
               In July 2026 Kent Police warned motorists after keys were taken from a house in Chartham overnight and the car driven away, and arrested three teenagers. A closed automated gate slows a car leaving the drive, and keeping keys away from the door matters as much.
+            </p>
+          </TownSection>
+
+          <TownSection title="Mountfield Park and New Homes South of the City">
+            <p>
+              The council&apos;s planning committee resolved in December 2022 to grant permission for Mountfield Park in South Canterbury: around 4,000 homes, employment space and a new A2 junction. The scheme has been slow to start, and the district is now planning for 1,215 homes a year under its final draft Local Plan, published in early 2026 with examination due later in the year.
+            </p>
+            <p>
+              New estates set their own rules on front gardens through the planning permission and the title deeds, so a buyer on a new street should check both before planning a gate. Thanington and Wincheap, on the south-west side, already mix post-war houses with newer estates where a simple aluminium sliding gate is the usual choice.
+            </p>
+          </TownSection>
+
+          <TownSection title="Harbledown, Sturry and Fordwich">
+            <p>
+              West of the city, Harbledown and Upper Harbledown are village conservation areas on the approach from London. To the north-east, Sturry and Fordwich sit in the Stour valley with conservation areas of their own. In all of these, timber gates and painted metal on brick piers are what planning officers expect, and low ground near the river makes drainage for any underground motor important.
+            </p>
+          </TownSection>
+
+          <TownSection title="Main Roads Into the City">
+            <p>
+              Kent County Council is the highway authority. New access onto a classified road such as the A28, A290, A291 or A257, or onto New Dover Road and Old Dover Road, needs planning permission as well as dropped kerb approval. Permitted development caps a gate beside a road used by vehicles at 1 metre, and the <a href="https://www.legislation.gov.uk/ukpga/1980/66/section/153" className={linkClass} rel="noopener noreferrer" target="_blank">Highways Act 1980</a> does not allow gates to open outwards over the road or pavement.
+            </p>
+          </TownSection>
+
+          <TownSection title="Checks Before Ordering a Gate in the City">
+            <p>Because so much of Canterbury is designated, the order of work matters. Before you sign a quote:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Confirm with the council whether your house is listed, sits in one of the conservation areas, or is named in the 1985 Article 4 direction.</li>
+              <li>If any of those apply, get planning permission or listed building consent in place before the gate is fabricated, not after.</li>
+              <li>Measure the depth of the frontage. If a car cannot stand clear of the pavement, rule out swing gates and look at a sliding gate or a pedestrian gate.</li>
+              <li>On low ground near the Stour, ask how a motor chamber will drain or choose an above-ground motor.</li>
+              <li>On a classified road, apply for planning permission for the access before the dropped kerb.</li>
+            </ul>
+            <p>
+              An installer who has worked in the city before will raise these points at the survey. One who does not mention them is a reason to get another quote. Ask too for the commissioning record and Declaration of Conformity that every <Link href="/services/automated-gate-systems/" className={linkClass}>automated gate</Link> should come with at handover.
             </p>
           </TownSection>
 
