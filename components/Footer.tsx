@@ -16,7 +16,7 @@ export function Footer() {
               <span className="font-display font-semibold text-lg text-white">Driveway Gates Kent</span>
             </div>
             <p className="text-sm text-brand-100/75 leading-relaxed mb-4">
-              Independent matching service connecting Kent homeowners with vetted, experienced driveway gate installers across every corner of the county.
+              Free quote service connecting Kent homeowners with driveway gate installers across every corner of the county.
             </p>
             <p className="text-xs text-brand-200/55 italic border-l-2 border-brand-700 pl-3">
               Driveway Gates Kent is a referral service. We connect you with independent gate installers. We do not carry out installations ourselves.

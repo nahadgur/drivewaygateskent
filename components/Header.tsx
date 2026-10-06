@@ -30,7 +30,7 @@ export function Header({ onOpenModal }: HeaderProps) {
       {/* Top Bar */}
       <div className="bg-brand-500 text-brand-950 py-2.5 px-4 text-[11px] font-bold uppercase tracking-[0.16em] hidden md:block">
         <div className="container-width flex justify-center items-center">
-          <span>Vetted driveway gate specialists across Kent</span>
+          <span>Driveway gate installers across Kent</span>
         </div>
       </div>
 

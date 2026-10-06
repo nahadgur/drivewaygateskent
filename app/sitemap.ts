@@ -36,18 +36,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const serviceLocationPages: MetadataRoute.Sitemap = [];
-  for (const service of services) {
-    for (const city of allCities) {
-      serviceLocationPages.push({
-        url: `${base}/services/${service.slug}/${toSlug(city)}/`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.9,
-      });
-    }
-  }
-
   // Drip-fed blog posts: only those whose release date has arrived.
   const blogPages: MetadataRoute.Sitemap = blogArticles
     .filter(a => released.has(a.slug))
@@ -58,5 +46,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     }));
 
-  return [...staticPages, ...servicePages, ...locationPages, ...serviceLocationPages, ...blogPages];
+  return [...staticPages, ...servicePages, ...locationPages, ...blogPages];
 }

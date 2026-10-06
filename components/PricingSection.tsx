@@ -1,7 +1,7 @@
 'use client';
 
 import { PoundSterling, CheckCircle, CreditCard } from 'lucide-react';
-import { pricingTiers, treatmentIncludes, financeInfo, getPricingForService, type PricingTier } from '@/data/pricing';
+import { pricingTiers, treatmentIncludes, getPricingForService, type PricingTier } from '@/data/pricing';
 
 interface PricingSectionProps {
   cityName?: string;
@@ -21,8 +21,8 @@ export function PricingSection({ cityName, serviceId, serviceName }: PricingSect
     : 'Driveway Gate Pricing Guide';
 
   const intro = cityName
-    ? `Driveway gate prices in ${cityName} vary depending on the gate type, material, and level of automation. Below are typical costs from vetted installers in the ${cityName} area. All prices are in GBP and include full installation.`
-    : 'Driveway gate prices across Kent vary depending on the gate type, material, automation requirements, and design complexity. Below are typical costs from installers in our network. All prices are in GBP and include installation.';
+    ? `Driveway gate prices in ${cityName} vary depending on the gate type, material, and level of automation. Below are guide prices for Kent installations. All prices are in GBP, include installation, and are indicative until a site survey.`
+    : 'Driveway gate prices across Kent vary depending on the gate type, material, automation requirements, and design complexity. Below are guide prices for Kent installations. All prices are in GBP, include installation, and are indicative until a site survey.';
 
   return (
     <section className="mb-16">
@@ -56,7 +56,7 @@ export function PricingSection({ cityName, serviceId, serviceName }: PricingSect
                   <span className="font-bold text-brand-600 text-base">&pound;{tier.priceFrom.toLocaleString()} to &pound;{tier.priceTo.toLocaleString()}</span>
                 </td>
                 <td className="px-5 py-4 text-gray-700 hidden md:table-cell">{tier.typicalDuration}</td>
-                <td className="px-5 py-4 text-gray-700 hidden lg:table-cell">{tier.alignerSets}</td>
+                <td className="px-5 py-4 text-gray-700 hidden lg:table-cell">{tier.includes}</td>
               </tr>
             ))}
           </tbody>
@@ -73,14 +73,14 @@ export function PricingSection({ cityName, serviceId, serviceName }: PricingSect
             </div>
             <div className="flex gap-4 text-xs text-gray-500">
               <span>{tier.typicalDuration}</span>
-              <span>{tier.alignerSets}</span>
+              <span>{tier.includes}</span>
             </div>
           </div>
         ))}
       </div>
 
       {/* What's Included + Finance */}
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid gap-6">
         <div className="bg-brand-50 rounded-sm p-6 border border-brand-100">
           <h3 className="font-display font-semibold text-brand-950 mb-4">What&apos;s Included in the Price</h3>
           <ul className="space-y-2.5">
@@ -93,26 +93,13 @@ export function PricingSection({ cityName, serviceId, serviceName }: PricingSect
           </ul>
         </div>
 
-        <div className="bg-brand-50 rounded-sm p-6 border border-gray-200">
-          <div className="flex items-center gap-2 mb-4">
-            <CreditCard className="w-5 h-5 text-brand-600" />
-            <h3 className="font-display font-semibold text-brand-950">0% Finance Available</h3>
-          </div>
-          <p className="text-sm text-gray-600 leading-relaxed mb-3">
-            {financeInfo.description}
-          </p>
-          <div className="bg-white rounded-sm p-4 border border-brand-100">
-            <div className="text-2xl font-display font-semibold text-brand-600">From &pound;{financeInfo.monthlyFrom}/month</div>
-            <span className="text-xs text-gray-500">Spread over {financeInfo.spreadOver} at 0% APR representative</span>
-          </div>
-        </div>
       </div>
 
       {/* SEO paragraph */}
       {cityName && (
         <div className="mt-8 prose prose-sm max-w-none text-gray-600">
           <p>
-            The cost of driveway gates in {cityName} depends on several factors: the material (wood, steel, aluminium, or wrought iron), whether you want automation, the width of your driveway entrance, and any bespoke design requirements. Prices vary across Kent depending on site conditions and specification, but the installers in our {cityName} network are competitively priced for the quality of work they deliver. Every installer offers a free site survey so you can get an accurate, itemised quote before making any commitment.
+            The cost of driveway gates in {cityName} depends on several factors: the material (wood, steel, aluminium, or wrought iron), whether you want automation, the width of your driveway entrance, and any bespoke design requirements. Prices vary across Kent depending on site conditions and specification. Ask for an itemised written quote after a site survey before you commit to anything.
           </p>
         </div>
       )}

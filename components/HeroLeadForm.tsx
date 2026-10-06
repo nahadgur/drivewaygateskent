@@ -80,7 +80,7 @@ export function HeroLeadForm({ city, service }: HeroLeadFormProps) {
         </div>
         <h3 className="text-2xl font-display font-semibold">Request Received!</h3>
         <p className="text-gray-600">
-          We&apos;ve matched you with a vetted installer{city ? ` in ${city}` : ''}. Check your email for next steps.
+          Thanks, your enquiry has been sent. Up to three installers{city ? ` covering ${city}` : ''} will be in touch to arrange a survey.
         </p>
       </div>
     );
@@ -89,14 +89,11 @@ export function HeroLeadForm({ city, service }: HeroLeadFormProps) {
   return (
     <div className="bg-white text-brand-950 rounded-sm p-6 md:p-8 shadow-lg border border-brand-100">
       <div className="mb-6">
-        <span className="inline-block px-3 py-1 bg-brand-50 text-brand-600 text-xs font-bold uppercase tracking-wider rounded-full mb-3">
-          Free Matching Service
-        </span>
         <h3 className="text-2xl font-display font-semibold leading-tight">
-          Get Matched{city ? ` in ${city}` : ''}
+          Get Free Quotes{city ? ` in ${city}` : ''}
         </h3>
         <p className="text-gray-600 text-sm mt-1">
-          Up to 3 vetted installers will contact you within 24 hours
+          Up to three Kent installers will contact you
         </p>
       </div>
 
@@ -128,7 +125,7 @@ export function HeroLeadForm({ city, service }: HeroLeadFormProps) {
         </button>
 
         <div className="flex items-center justify-center gap-4 pt-1">
-          {['100% Free', 'No Spam', '24hr Response'].map(item => (
+          {['100% Free', 'No Spam', 'No Obligation'].map(item => (
             <span key={item} className="flex items-center gap-1 text-xs text-green-600 font-medium">
               <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
               {item}

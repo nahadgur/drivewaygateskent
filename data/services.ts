@@ -59,7 +59,7 @@ export const services: Service[] = [
       },
       {
         question: 'Do electric swing gates require planning permission in Kent?',
-        answer: 'In most cases, no. Permitted development rights cover gates up to 2 metres in height that open inward and are not adjacent to a classified road. The limit reduces to 1 metre for gates fronting a highway. Listed buildings and conservation area properties require consent regardless of height. Kent has a high concentration of planning designations: the North Downs AONB, the High Weald AONB, extensive Green Belt coverage along the M25 corridor, and conservation areas across every district. Your installer will flag any planning considerations at the site survey and can recommend a pre-application enquiry where there is any doubt.',
+        answer: 'In most cases, no. Permitted development rights cover gates up to 2 metres in height that open inward and are not adjacent to a classified road. The limit reduces to 1 metre for gates fronting a highway. Listed buildings and conservation area properties require consent regardless of height. Kent has a high concentration of planning designations: the Kent Downs National Landscape, the High Weald National Landscape, extensive Green Belt coverage along the M25 corridor, and conservation areas across every district. Your installer will flag any planning considerations at the site survey and can recommend a pre-application enquiry where there is any doubt.',
       },
     ],
   },
@@ -82,7 +82,7 @@ export const services: Service[] = [
       },
       {
         question: 'Which timber species works best for Kent conditions?',
-        answer: 'Iroko is the most reliable all-round choice for Kent residential gates. It is naturally durable to Use Class 3 without treatment, resists surface checking in warm dry summers, and holds its shape through damp winters. European oak is equally durable and preferred where the grain and character of the timber are a design priority, often the right choice in High Weald AONB and conservation area contexts where material authenticity carries weight. Accoya is the right specification for homeowners who want a documented 50-year lifespan with minimal annual maintenance, particularly on coastal East Kent properties between Whitstable and Folkestone where salt air exposure accelerates the weathering of untreated softwoods.',
+        answer: 'Iroko is the most reliable all-round choice for Kent residential gates. It is naturally durable to Use Class 3 without treatment, resists surface checking in warm dry summers, and holds its shape through damp winters. European oak is equally durable and preferred where the grain and character of the timber are a design priority, often the right choice in High Weald National Landscape and conservation area contexts where material authenticity carries weight. Accoya is the right specification for homeowners who want a documented 50-year lifespan with minimal annual maintenance, particularly on coastal East Kent properties between Whitstable and Folkestone where salt air exposure accelerates the weathering of untreated softwoods.',
       },
     ],
   },
@@ -105,7 +105,7 @@ export const services: Service[] = [
       },
       {
         question: 'Can I commission a bespoke design for a metal gate in Kent?',
-        answer: 'Yes. Bespoke fabrication is standard practice for metal gates in Kent, and the majority of installations in our network involve a custom design rather than an off-the-shelf product. Installers work with specialist fabricators who can produce anything from a straightforward horizontal-bar contemporary gate to an ornate estate gate with scrollwork, a family crest, and gilded finials. Most fabricators provide detailed CAD drawings and, for larger projects, 3D renders showing the gate in position on your property. The design and approval process typically adds 2 to 4 weeks before fabrication begins.',
+        answer: 'Yes. Bespoke fabrication is standard practice for metal gates in Kent, and most metal gate installations involve a custom design rather than an off-the-shelf product. Installers work with specialist fabricators who can produce anything from a straightforward horizontal-bar contemporary gate to an ornate estate gate with scrollwork, a family crest, and gilded finials. Most fabricators provide detailed CAD drawings and, for larger projects, 3D renders showing the gate in position on your property. The design and approval process typically adds 2 to 4 weeks before fabrication begins.',
       },
     ],
   },
@@ -151,7 +151,7 @@ export const services: Service[] = [
       },
       {
         question: 'How much does a gate repair callout cost in Kent?',
-        answer: 'Kent gate engineers typically charge a callout and diagnostic fee of £80 to £140, which covers the visit and a full assessment of the fault. Labour and parts are additional. Most common repairs, including motor replacement, photocell realignment, control board replacement, and hinge adjustment, come to between £230 and £620 all in on a single visit. Engineers in our network carry the most common spare parts for FAAC, BFT, CAME, Nice, and Beninca systems on the van, which means the majority of faults are resolved the same day without a return visit.',
+        answer: 'Kent gate engineers typically charge a callout and diagnostic fee of £80 to £140, which covers the visit and a full assessment of the fault. Labour and parts are additional. Most common repairs, including motor replacement, photocell realignment, control board replacement, and hinge adjustment, come to between £230 and £620 all in on a single visit. Ask whether the engineer carries common spare parts for your motor brand (FAAC, BFT, CAME, Nice or Beninca), because that decides whether a fault can be fixed on the first visit.',
       },
     ],
   },

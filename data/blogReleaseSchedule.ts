@@ -41,6 +41,11 @@ export const BLOG_SITEMAP_RELEASE: Record<string, string> = {
   'are-driveway-gates-worth-the-money': '2026-07-28',
   'what-to-do-when-electric-gates-stop-working': '2026-07-28',
   'can-you-install-driveway-gates-on-a-sloped-driveway': '2026-07-28',
+
+  // Published spokes that were never added to the schedule
+  'pedestrian-gate-alongside-driveway-gates-kent': '2026-10-06',
+  'off-grid-power-for-gates-on-rural-kent-farm-drives': '2026-10-06',
+  'listed-building-consent-driveway-gates-kent': '2026-10-06',
 };
 
 // Slugs whose release date is on or before `now` (ISO YYYY-MM-DD compares chronologically).

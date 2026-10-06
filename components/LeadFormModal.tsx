@@ -177,7 +177,7 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                 <CheckCircle className="w-10 h-10" />
               </div>
               <h2 className="text-2xl font-display font-semibold text-brand-950">Request Received!</h2>
-              <p className="text-gray-600">We&apos;ve matched you with a vetted installer. Expect a call back within <strong className="text-gray-800">2 hours</strong>. Check your email for confirmation.</p>
+              <p className="text-gray-600">Thanks, your enquiry has been sent. Up to three Kent installers will be in touch to arrange a survey.</p>
               <button
                 onClick={() => { setIsSuccess(false); onClose(); }}
                 className="mt-2 bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-8 rounded-sm transition-colors text-sm shadow-md shadow-brand-500/20"
@@ -188,11 +188,8 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
           ) : (
             <>
               <div className="mb-4 sm:mb-6">
-                <span className="hidden sm:inline-block px-3 py-1 bg-brand-50 text-brand-600 text-xs font-bold uppercase tracking-wider rounded-full mb-3">
-                  Free Matching Service
-                </span>
-                <h2 className="text-xl sm:text-2xl font-display font-semibold text-brand-950">Find Your Gate Installer</h2>
-                <p className="hidden sm:block text-gray-600 text-sm mt-1">Complete the form to get matched with vetted Kent gate installers.</p>
+                <h2 className="text-xl sm:text-2xl font-display font-semibold text-brand-950">Get Free Gate Quotes</h2>
+                <p className="hidden sm:block text-gray-600 text-sm mt-1">Complete the form to get free quotes from Kent gate installers.</p>
               </div>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-2.5 sm:gap-3">
@@ -242,7 +239,7 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                 </button>
 
                 <p className="text-center text-xs text-gray-500 leading-relaxed">
-                  We typically call back within <strong className="text-gray-700">2 hours</strong> · 100% free, no obligation
+                  Free, with no obligation to go ahead
                 </p>
               </form>
             </>

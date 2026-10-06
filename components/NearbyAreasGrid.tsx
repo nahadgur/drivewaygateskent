@@ -25,7 +25,7 @@ export function NearbyAreasGrid({ cityName, serviceSlug, serviceName, initialVis
     : `Areas We Cover Around ${cityName}`;
 
   const description = serviceName
-    ? `Looking for ${serviceName.toLowerCase()} near ${cityName}? Our vetted installers serve homeowners across ${cityName} and the surrounding areas listed below. Whether you are in the town centre or a nearby suburb, we will match you with the closest experienced installer.`
+    ? `Looking for ${serviceName.toLowerCase()} near ${cityName}? Installers serve homeowners across ${cityName} and the surrounding areas listed below. Whether you are in the town centre or a nearby suburb, we will match you with the closest experienced installer.`
     : `Our driveway gate installers in ${cityName} serve homeowners from across the surrounding Kent area. If you live in any of the towns, villages, or nearby areas listed below, you are within reach of expert gate installation. Get matched with a local installer today.`;
 
   return (
@@ -77,7 +77,7 @@ export function NearbyAreasGrid({ cityName, serviceSlug, serviceName, initialVis
         <p>
           Homeowners from {areas.slice(0, 5).join(', ')}, and other areas around {cityName} regularly use our service to find gate installers.{' '}
           {serviceName
-            ? `If you need ${serviceName.toLowerCase()} and live in or near ${cityName}, our vetted installers can arrange a free site survey at a time that suits you, including evenings and weekends.`
+            ? `If you need ${serviceName.toLowerCase()} and live in or near ${cityName}, installers can arrange a free site survey at a time that suits you, including evenings and weekends.`
             : `All of our ${cityName} partner installers are experienced, fully insured, and offer flexible appointment times to suit your schedule.`
           }
         </p>
