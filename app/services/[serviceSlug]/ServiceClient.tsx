@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { MapPin, Clock, Shield, Star, Search, CheckCircle, ArrowRight, ChevronDown, Award, Users, CreditCard, Sparkles } from 'lucide-react';
 import { services, getServiceBySlug, serviceRelatedPosts } from '@/data/services';
 import { blogArticles } from '@/data/blog';
-import { LOCATIONS, toSlug } from '@/data/locations';
 import { FAQS_SERVICES } from '@/data/site';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -183,7 +182,7 @@ const serviceContent: Record<string, { intro: string[]; benefits: { title: strin
 };
 
 
-const MAIN_TOWNS = ['Sevenoaks', 'Tunbridge Wells', 'Tonbridge', 'Maidstone', 'Canterbury', 'Whitstable', 'Dartford', 'Folkestone'];
+const MAIN_TOWNS: [string, string][] = [['sevenoaks', 'Sevenoaks'], ['tunbridge-wells', 'Tunbridge Wells'], ['maidstone', 'Maidstone'], ['canterbury', 'Canterbury'], ['ashford', 'Ashford'], ['whitstable', 'Whitstable'], ['dartford', 'Dartford'], ['medway', 'Medway']];
 
 export default function ServicePage({ params }: { params: { serviceSlug: string } }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -199,7 +198,6 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
     .filter((b): b is NonNullable<typeof b> => Boolean(b));
 
 
-  const totalCities = Object.values(LOCATIONS).flat().length;
 
   const combinedFaqs = [
     ...(service.faqs || []),
@@ -276,10 +274,10 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
                   Installers cover the whole county. These are the main towns enquiries come from, or <Link href="/location/" className="text-brand-600 font-medium hover:underline">see every area covered</Link>.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  {MAIN_TOWNS.map(town => (
+                  {MAIN_TOWNS.map(([slug, town]) => (
                     <Link
                       key={town}
-                      href={`/location/${toSlug(town)}/`}
+                      href={`/location/${slug}/`}
                       className="group flex items-center gap-2 p-2.5 bg-brand-50 rounded-sm transition-all border border-brand-100 hover:border-brand-200"
                     >
                       <MapPin className="w-3 h-3 text-brand-400 flex-shrink-0" />

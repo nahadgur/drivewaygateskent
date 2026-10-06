@@ -22,11 +22,11 @@ export const TOWN_PAGES: TownPage[] = [
   { slug: 'tunbridge-wells', name: 'Tunbridge Wells', council: 'Tunbridge Wells Borough Council', lat: 51.1324, lng: 0.2637, absorbs: ['pembury', 'southborough', 'lamberhurst'], built: true },
   { slug: 'cranbrook', name: 'Cranbrook', council: 'Tunbridge Wells Borough Council', lat: 51.0966, lng: 0.5354, absorbs: ['hawkhurst', 'goudhurst', 'sissinghurst', 'paddock-wood'], built: true },
   { slug: 'tonbridge', name: 'Tonbridge', council: 'Tonbridge and Malling Borough Council', lat: 51.1953, lng: 0.2750, absorbs: ['hildenborough', 'borough-green', 'ightham'], built: true },
-  { slug: 'west-malling', name: 'West Malling', council: 'Tonbridge and Malling Borough Council', lat: 51.2930, lng: 0.4090, absorbs: ['east-malling', 'aylesford', 'larkfield', 'snodland'], built: false },
+  { slug: 'west-malling', name: 'West Malling', council: 'Tonbridge and Malling Borough Council', lat: 51.2930, lng: 0.4090, absorbs: ['east-malling', 'aylesford', 'larkfield', 'snodland'], built: true },
   { slug: 'maidstone', name: 'Maidstone', council: 'Maidstone Borough Council', lat: 51.2704, lng: 0.5227, absorbs: ['bearsted', 'loose', 'coxheath', 'barming', 'boughton-monchelsea', 'leeds', 'hollingbourne', 'lenham', 'harrietsham', 'headcorn', 'staplehurst', 'marden', 'yalding'], built: true },
   { slug: 'dartford', name: 'Dartford', council: 'Dartford Borough Council', lat: 51.4462, lng: 0.2188, absorbs: ['wilmington', 'bean', 'stone', 'greenhithe', 'longfield', 'swanley'], built: true },
   { slug: 'gravesend', name: 'Gravesend', council: 'Gravesham Borough Council', lat: 51.4416, lng: 0.3700, absorbs: ['northfleet', 'meopham', 'higham', 'cobham'], built: true },
-  { slug: 'medway', name: 'Medway', council: 'Medway Council', lat: 51.3800, lng: 0.5270, absorbs: [], built: false },
+  { slug: 'medway', name: 'Medway', council: 'Medway Council', lat: 51.3800, lng: 0.5270, absorbs: [], built: true },
   { slug: 'canterbury', name: 'Canterbury', council: 'Canterbury City Council', lat: 51.2802, lng: 1.0789, absorbs: ['bridge', 'chartham', 'sturry', 'wingham'], built: true },
   { slug: 'whitstable', name: 'Whitstable', council: 'Canterbury City Council', lat: 51.3600, lng: 1.0260, absorbs: [], built: true },
   { slug: 'herne-bay', name: 'Herne Bay', council: 'Canterbury City Council', lat: 51.3730, lng: 1.1280, absorbs: [], built: true },
@@ -34,9 +34,9 @@ export const TOWN_PAGES: TownPage[] = [
   { slug: 'ashford', name: 'Ashford', council: 'Ashford Borough Council', lat: 51.1465, lng: 0.8750, absorbs: [], built: true },
   { slug: 'tenterden', name: 'Tenterden', council: 'Ashford Borough Council', lat: 51.0690, lng: 0.6890, absorbs: [], built: true },
   { slug: 'folkestone', name: 'Folkestone', council: 'Folkestone and Hythe District Council', lat: 51.0814, lng: 1.1695, absorbs: ['hythe'], built: true },
-  { slug: 'dover', name: 'Dover', council: 'Dover District Council', lat: 51.1279, lng: 1.3134, absorbs: [], built: false },
-  { slug: 'deal', name: 'Deal', council: 'Dover District Council', lat: 51.2229, lng: 1.4026, absorbs: ['sandwich'], built: false },
-  { slug: 'thanet', name: 'Thanet', council: 'Thanet District Council', lat: 51.3600, lng: 1.3900, absorbs: ['broadstairs', 'ramsgate'], built: false },
+  { slug: 'dover', name: 'Dover', council: 'Dover District Council', lat: 51.1279, lng: 1.3134, absorbs: [], built: true },
+  { slug: 'deal', name: 'Deal', council: 'Dover District Council', lat: 51.2229, lng: 1.4026, absorbs: ['sandwich'], built: true },
+  { slug: 'thanet', name: 'Thanet', council: 'Thanet District Council', lat: 51.3600, lng: 1.3900, absorbs: ['broadstairs', 'ramsgate'], built: true },
 ];
 
 export function getTownPage(slug: string): TownPage | undefined {

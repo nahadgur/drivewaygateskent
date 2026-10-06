@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, ShieldCheck, Zap, FileCheck, KeyRound, Gauge, Wrench } from 'lucide-react';
 import { services } from '@/data/services';
-import { toSlug } from '@/data/locations';
 import { pricingTiers } from '@/data/pricing';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -13,22 +12,21 @@ import { HeroLeadForm } from '@/components/HeroLeadForm';
 import { FAQ } from '@/components/FAQ';
 import { LeadFormModal } from '@/components/LeadFormModal';
 
-// Kent's 13 local planning authorities and the towns on this site that sit in each.
-// Medway is a unitary authority with no town pages yet.
-const DISTRICTS: { name: string; towns: string[]; note?: string }[] = [
-  { name: 'Sevenoaks District', towns: ['Sevenoaks', 'Westerham', 'Edenbridge', 'Swanley', 'Otford'] },
-  { name: 'Tunbridge Wells Borough', towns: ['Tunbridge Wells', 'Cranbrook', 'Hawkhurst', 'Paddock Wood', 'Goudhurst'] },
-  { name: 'Tonbridge and Malling Borough', towns: ['Tonbridge', 'West Malling', 'Aylesford', 'Snodland', 'Borough Green'] },
-  { name: 'Maidstone Borough', towns: ['Maidstone', 'Bearsted', 'Headcorn', 'Marden', 'Lenham'] },
-  { name: 'Dartford Borough', towns: ['Dartford', 'Greenhithe', 'Wilmington'] },
-  { name: 'Gravesham Borough', towns: ['Gravesend', 'Northfleet', 'Meopham', 'Higham'] },
-  { name: 'Medway', towns: [], note: 'Rochester, Chatham, Gillingham and Strood' },
-  { name: 'Canterbury City', towns: ['Canterbury', 'Whitstable', 'Herne Bay', 'Sturry', 'Chartham'] },
-  { name: 'Swale Borough', towns: ['Faversham'] },
-  { name: 'Ashford Borough', towns: ['Tenterden'] },
-  { name: 'Folkestone and Hythe District', towns: ['Folkestone', 'Hythe'] },
-  { name: 'Dover District', towns: ['Dover', 'Deal', 'Sandwich', 'Wingham'] },
-  { name: 'Thanet District', towns: ['Broadstairs', 'Ramsgate'] },
+// Kent's 13 local planning authorities and the town pages that sit in each.
+const DISTRICTS: { name: string; towns: [string, string][] }[] = [
+  { name: 'Sevenoaks District', towns: [['sevenoaks', 'Sevenoaks'], ['westerham', 'Westerham']] },
+  { name: 'Tunbridge Wells Borough', towns: [['tunbridge-wells', 'Tunbridge Wells'], ['cranbrook', 'Cranbrook']] },
+  { name: 'Tonbridge and Malling Borough', towns: [['tonbridge', 'Tonbridge'], ['west-malling', 'West Malling']] },
+  { name: 'Maidstone Borough', towns: [['maidstone', 'Maidstone']] },
+  { name: 'Dartford Borough', towns: [['dartford', 'Dartford']] },
+  { name: 'Gravesham Borough', towns: [['gravesend', 'Gravesend']] },
+  { name: 'Medway', towns: [['medway', 'Rochester, Chatham and Gillingham']] },
+  { name: 'Canterbury City', towns: [['canterbury', 'Canterbury'], ['whitstable', 'Whitstable'], ['herne-bay', 'Herne Bay']] },
+  { name: 'Swale Borough', towns: [['faversham', 'Faversham']] },
+  { name: 'Ashford Borough', towns: [['ashford', 'Ashford'], ['tenterden', 'Tenterden']] },
+  { name: 'Folkestone and Hythe District', towns: [['folkestone', 'Folkestone and Hythe']] },
+  { name: 'Dover District', towns: [['dover', 'Dover'], ['deal', 'Deal and Sandwich']] },
+  { name: 'Thanet District', towns: [['thanet', 'Margate, Broadstairs and Ramsgate']] },
 ];
 
 const INSTALL_CHECKS = [
@@ -200,18 +198,14 @@ export default function HomeClient() {
               {DISTRICTS.map(d => (
                 <div key={d.name} className="p-5 bg-brand-50 rounded-sm border border-brand-100">
                   <h3 className="font-display font-semibold text-brand-950 mb-2">{d.name}</h3>
-                  {d.towns.length > 0 ? (
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      {d.towns.map((t, i) => (
-                        <span key={t}>
-                          <Link href={`/location/${toSlug(t)}/`} className="text-brand-600 hover:underline">{t}</Link>
-                          {i < d.towns.length - 1 ? ', ' : ''}
-                        </span>
-                      ))}
-                    </p>
-                  ) : (
-                    <p className="text-sm text-gray-600">{d.note}</p>
-                  )}
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {d.towns.map(([slug, label], i) => (
+                      <span key={slug}>
+                        <Link href={`/location/${slug}/`} className="text-brand-600 hover:underline">{label}</Link>
+                        {i < d.towns.length - 1 ? ', ' : ''}
+                      </span>
+                    ))}
+                  </p>
                 </div>
               ))}
             </div>
