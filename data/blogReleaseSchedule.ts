@@ -10,7 +10,7 @@
 
 export const BLOG_SITEMAP_RELEASE: Record<string, string> = {
   // Batch 1 — 2026-06-23 (coastal + cornerstones)
-  'coastal-gate-corrosion-protection': '2026-06-23',
+  'coastal-gate-corrosion-protection': '2026-10-06',
   'planning-permission-driveway-gates-kent': '2026-10-06',
   'how-much-do-driveway-gates-cost-kent-2026': '2026-10-06',
   'best-gate-material-kent-wood-steel-aluminium': '2026-10-06',
@@ -39,6 +39,9 @@ export const BLOG_SITEMAP_RELEASE: Record<string, string> = {
   'can-you-install-driveway-gates-on-a-sloped-driveway': '2026-07-28',
 
   // Phase 3 new articles
+  'best-timber-for-a-coastal-driveway-gate-kent': '2026-10-06',
+  'five-bar-and-estate-field-gates-for-rural-kent-drives': '2026-10-06',
+  'protecting-a-rural-kent-gate-against-farm-and-plant-theft': '2026-10-06',
   'how-far-back-should-driveway-gates-be-from-the-road': '2026-10-06',
   'electric-gate-safety-regulations-uk': '2026-10-06',
   'electric-gates-in-a-power-cut': '2026-10-06',
