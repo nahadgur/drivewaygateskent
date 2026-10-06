@@ -182,6 +182,16 @@ const serviceContent: Record<string, { intro: string[]; benefits: { title: strin
 };
 
 
+// Keyword-led H1 per service, matching the page titles.
+const SERVICE_H1: Record<string, string> = {
+  'electric-sliding-gates': 'Electric Sliding Gates in Kent',
+  'electric-swing-gates': 'Electric Swing Gates in Kent',
+  'wooden-driveway-gates': 'Wooden Driveway Gates in Kent',
+  'metal-driveway-gates': 'Metal and Wrought Iron Driveway Gates in Kent',
+  'automated-gate-systems': 'Automatic and Electric Gates in Kent',
+  'gate-repair-and-maintenance': 'Electric Gate Repairs and Servicing in Kent',
+};
+
 const MAIN_TOWNS: [string, string][] = [['sevenoaks', 'Sevenoaks'], ['tunbridge-wells', 'Tunbridge Wells'], ['maidstone', 'Maidstone'], ['canterbury', 'Canterbury'], ['ashford', 'Ashford'], ['whitstable', 'Whitstable'], ['dartford', 'Dartford'], ['medway', 'Medway']];
 
 export default function ServicePage({ params }: { params: { serviceSlug: string } }) {
@@ -219,8 +229,8 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
             <Breadcrumbs tone="dark" items={[{ label: 'Gate Types', href: '/services/' }, { label: service.title }]} />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-6">
               <div>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight leading-[1.02] mb-6 text-white">
-                  {service.title}
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium tracking-tight leading-[1.02] mb-6 text-white">
+                  {SERVICE_H1[service.slug] ?? `${service.title} in Kent`}
                 </h1>
                 <p className="text-xl text-brand-100 mb-8 leading-relaxed">{service.description}</p>
                 <div className="space-y-3">

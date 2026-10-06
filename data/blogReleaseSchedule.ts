@@ -18,16 +18,13 @@ export const BLOG_SITEMAP_RELEASE: Record<string, string> = {
 
   // Batch 2 — 2026-06-30
   'electric-gate-maintenance-kent': '2026-06-30',
-  'driveway-gates-kent-aonb-high-weald-north-downs': '2026-06-30',
   'driveway-gates-home-security-kent': '2026-06-30',
 
   // Batch 3 — 2026-07-07
   'electric-gate-automation-retrofit-kent': '2026-07-07',
   'choosing-gate-installer-kent': '2026-07-07',
-  'wooden-vs-metal-driveway-gates-pros-and-cons': '2026-07-07',
 
   // Batch 4 — 2026-07-14
-  'driveway-gates-west-kent-sevenoaks-tunbridge-wells': '2026-07-14',
   'do-electric-gates-add-value-to-your-house': '2026-07-14',
   'best-electric-gate-motor-brands-uk-compared': '2026-07-14',
 
@@ -38,7 +35,6 @@ export const BLOG_SITEMAP_RELEASE: Record<string, string> = {
 
   // Batch 6 — 2026-07-28
   'how-long-do-electric-gates-last-before-replacing': '2026-07-28',
-  'are-driveway-gates-worth-the-money': '2026-07-28',
   'what-to-do-when-electric-gates-stop-working': '2026-07-28',
   'can-you-install-driveway-gates-on-a-sloped-driveway': '2026-07-28',
 

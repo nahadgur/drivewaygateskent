@@ -83,7 +83,7 @@ export default function CranbrookPage() {
 
           <TownSection title="Inside the High Weald National Landscape">
             <p>
-              Cranbrook lies inside the High Weald National Landscape, and there is no Green Belt here. The designation shapes what looks right rather than banning gates. In 2014 the council permitted a set of gates fronting Tenterden Road (14/502632/FULL), a reminder that well-designed gates on a Weald frontage are routinely approved. What tends to draw objection is the suburban look: tall solid gates, oversized piers and wide hard standing on a rural lane. The <Link href="/blog/driveway-gates-kent-aonb-high-weald-north-downs/" className={linkClass}>High Weald planning approach</Link> favours timber and simple forms.
+              Cranbrook lies inside the High Weald National Landscape, and there is no Green Belt here. The designation shapes what looks right rather than banning gates. In 2014 the council permitted a set of gates fronting Tenterden Road (14/502632/FULL), a reminder that well-designed gates on a Weald frontage are routinely approved. What tends to draw objection is the suburban look: tall solid gates, oversized piers and wide hard standing on a rural lane. The <Link href="/blog/planning-permission-driveway-gates-kent/" className={linkClass}>High Weald planning approach</Link> favours timber and simple forms.
             </p>
           </TownSection>
 

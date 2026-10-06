@@ -21,8 +21,7 @@ export type ContentBlock =
   | { type: 'list'; items: string[] }
   | { type: 'cta' }
   | { type: 'internal-link'; href: string; text: string; context: string }
-  | { type: 'external-link'; href: string; text: string; source: string; rel: 'noopener noreferrer' }
-  | { type: 'related-articles'; articles: { slug: string; title: string; category: string }[] };
+  | { type: 'external-link'; href: string; text: string; source: string; rel: 'noopener noreferrer' };
 
 const article1: BlogArticle = {
   slug: 'how-much-do-driveway-gates-cost-kent-2026',
@@ -48,11 +47,6 @@ const article1: BlogArticle = {
     { type: 'h2', text: 'Getting an Accurate Quote for Your Kent Property' },
     { type: 'p', text: 'A site survey is the only route to a reliable price. Gate installation costs are site-specific in ways that cannot be assessed remotely. Driveway gradient, soil conditions, proximity to the coast, planning designations, and the physical condition of any existing pillars all influence the final figure. Compare a minimum of three quotes from specialist installers, with each quote broken down by gate, groundwork, motor, and access control separately.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'electric-sliding-vs-swing-gates-kent', title: 'Electric Sliding vs Swing Gates: Which Suits Your Kent Driveway?', category: 'Buying Guide' },
-      { slug: 'planning-permission-driveway-gates-kent', title: 'Planning Permission for Driveway Gates in Kent: National Landscapes, Green Belt, Conservation Areas', category: 'Planning' },
-      { slug: 'choosing-gate-installer-kent', title: 'How to Choose a Driveway Gate Installer in Kent', category: 'Buying Guide' },
-    ]},
   ],
 };
 
@@ -83,10 +77,6 @@ const article2: BlogArticle = {
       'Modern build in North Kent or commuter belt: either works; sliding favoured for a contemporary look',
     ]},
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'how-much-do-driveway-gates-cost-kent-2026', title: 'How Much Do Driveway Gates Cost in Kent? A Full 2026 Pricing Guide', category: 'Pricing' },
-      { slug: 'best-gate-material-kent-wood-steel-aluminium', title: 'Best Gate Material for Kent: Wood, Steel, or Aluminium?', category: 'Materials' },
-    ]},
   ],
 };
 
@@ -104,18 +94,14 @@ const article3: BlogArticle = {
     { type: 'h2', text: 'Permitted Development: The General Rule' },
     { type: 'p', text: 'Most residential driveway gates in Kent fall under permitted development and do not require a planning application. The general rule allows gates up to 2 metres in height that open inward onto the property. For gates adjacent to a classified road, the limit drops to 1 metre. These thresholds apply to the finished height of the gate measured from ground level at the point where it meets the road or pavement.' },
     { type: 'h2', text: 'Kent Downs and High Weald National Landscapes' },
-    { type: 'p', text: 'Both National Landscapes carry specific planning sensitivity for residential development, including gates. The Kent Downs National Landscape runs along the chalk ridge from the Surrey border through Sevenoaks, Wrotham, and onwards toward Folkestone. The High Weald National Landscape covers the southern part of the county including Cranbrook, Goudhurst, Lamberhurst, and Hawkhurst. [Properties within either National Landscape](/blog/driveway-gates-kent-aonb-high-weald-north-downs/) should confirm the planning position before proceeding, as Article 4 Directions can remove permitted development rights.' },
+    { type: 'p', text: 'Both National Landscapes carry specific planning sensitivity for residential development, including gates. The Kent Downs National Landscape runs along the chalk ridge from the Surrey border through Sevenoaks, Wrotham, and onwards toward Folkestone. The High Weald National Landscape covers the southern part of the county including Cranbrook, Goudhurst, Lamberhurst, and Hawkhurst. [Properties within either National Landscape](/blog/planning-permission-driveway-gates-kent/) should confirm the planning position before proceeding, as Article 4 Directions can remove permitted development rights.' },
     { type: 'h2', text: 'Green Belt Along the M25 Corridor' },
-    { type: 'p', text: 'The Metropolitan Green Belt extends into Kent through [Sevenoaks District](/blog/driveway-gates-west-kent-sevenoaks-tunbridge-wells/) and Dartford Borough. Properties within this designation are subject to stricter controls on development including boundary treatments. While standard driveway gates generally remain within permitted development, Green Belt properties with Article 4 Directions should check with the relevant district council before proceeding.' },
+    { type: 'p', text: 'The Metropolitan Green Belt extends into Kent through [Sevenoaks District](/location/sevenoaks/) and Dartford Borough. Properties within this designation are subject to stricter controls on development including boundary treatments. While standard driveway gates generally remain within permitted development, Green Belt properties with Article 4 Directions should check with the relevant district council before proceeding.' },
     { type: 'h2', text: 'Conservation Areas and Listed Buildings' },
     { type: 'p', text: 'Canterbury, Faversham, Tenterden, Sandwich, and dozens of Kent villages have conservation area designations that affect what you can install at the property boundary. Listed buildings require separate listed building consent for any gate installation regardless of height. Kent has a particularly high density of medieval and Tudor listed properties in its historic centres, and an installer familiar with the county will know when consent is needed and how to design a gate that satisfies the conservation officer.' },
     { type: 'h2', text: 'Twelve District Councils: Who to Ask' },
     { type: 'p', text: 'Kent County Council is not the planning authority for residential gates. Planning applications and pre-application enquiries go to the relevant district council: Sevenoaks, Tonbridge and Malling, Tunbridge Wells, Maidstone, Dartford, Gravesham, Canterbury, Swale, Ashford, Folkestone and Hythe, Dover, or Thanet. Each district has its own local plan policies and supplementary guidance on boundary treatments. Your installer should know which district covers your property and what the local policy says.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'choosing-gate-installer-kent', title: 'How to Choose a Driveway Gate Installer in Kent', category: 'Buying Guide' },
-      { slug: 'how-much-do-driveway-gates-cost-kent-2026', title: 'How Much Do Driveway Gates Cost in Kent? A Full 2026 Pricing Guide', category: 'Pricing' },
-    ]},
   ],
 };
 
@@ -129,7 +115,7 @@ const article4: BlogArticle = {
   featuredImage: '/images/gates/gate-wooden-painted-cream-kentish-countryside.png',
   excerpt: 'The right material depends on your property type, your proximity to the coast, and whether your installation falls within a planning designation. Here is how to choose.',
   content: [
-    { type: 'p', text: 'Kent properties span everything from medieval timber-frame houses in the Canterbury villages to modern estates in North Kent. [The material you choose for your driveway gate](/blog/wooden-vs-metal-driveway-gates-pros-and-cons/) should reflect the architectural character of the property, the environmental conditions of the location, and the level of maintenance you are prepared to commit to over the next twenty years.' },
+    { type: 'p', text: 'Kent properties span everything from medieval timber-frame houses in the Canterbury villages to modern estates in North Kent. [The material you choose for your driveway gate](/blog/best-gate-material-kent-wood-steel-aluminium/) should reflect the architectural character of the property, the environmental conditions of the location, and the level of maintenance you are prepared to commit to over the next twenty years.' },
     { type: 'h2', text: 'Hardwood: Iroko, Oak, and Accoya for Kent' },
     { type: 'p', text: 'Hardwood gates are the natural specification for oast houses, barn conversions, Wealden farmhouses, and period properties throughout the Kent countryside. Iroko offers the best balance of durability and cost. European oak brings richer grain character and weathers to an attractive silver grey. Accoya, with its 50-year guarantee, is the clear choice for coastal East Kent where salt air exposure accelerates weathering and where low maintenance is a firm requirement.' },
     { type: 'h2', text: 'Steel: The Versatile Standard' },
@@ -146,10 +132,6 @@ const article4: BlogArticle = {
       'National Landscape (Kent Downs or High Weald): hardwood is typically the safest planning choice',
     ]},
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'how-much-do-driveway-gates-cost-kent-2026', title: 'How Much Do Driveway Gates Cost in Kent? A Full 2026 Pricing Guide', category: 'Pricing' },
-      { slug: 'driveway-gates-kent-aonb-high-weald-north-downs', title: 'Driveway Gates in the Kent Downs and High Weald National Landscapes', category: 'Planning' },
-    ]},
   ],
 };
 
@@ -173,10 +155,6 @@ const article5: BlogArticle = {
     { type: 'h2', text: 'What the Retrofit Costs in Kent' },
     { type: 'p', text: 'A quality automation retrofit in Kent costs £1,400 to £3,800 depending on gate weight, motor type, and access control specification. Underground motors sit at the higher end of the range. The installation takes 1 to 2 days from arrival on site. BS EN 12453 safety commissioning and a written handover are included as standard on every retrofit in our Kent network.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'electric-gate-maintenance-kent', title: 'Electric Gate Maintenance in Kent: What Your Annual Service Should Cover', category: 'Maintenance' },
-      { slug: 'how-much-do-driveway-gates-cost-kent-2026', title: 'How Much Do Driveway Gates Cost in Kent? A Full 2026 Pricing Guide', category: 'Pricing' },
-    ]},
   ],
 };
 
@@ -202,10 +180,6 @@ const article6: BlogArticle = {
     { type: 'h2', text: 'Coastal Specification Knowledge' },
     { type: 'p', text: 'If your property is in East Kent near the coast, the installer should know the higher-specification surface treatments required for salt air exposure. Marine-grade powder coat, aluminium over steel where appropriate, and stainless steel fixings rather than standard zinc-plated are all relevant. An installer who does not raise these points for a coastal Kent property may not have the experience to get the specification right.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'how-much-do-driveway-gates-cost-kent-2026', title: 'How Much Do Driveway Gates Cost in Kent? A Full 2026 Pricing Guide', category: 'Pricing' },
-      { slug: 'electric-gate-maintenance-kent', title: 'Electric Gate Maintenance in Kent: What Your Annual Service Should Cover', category: 'Maintenance' },
-    ]},
   ],
 };
 
@@ -229,71 +203,6 @@ const article7: BlogArticle = {
     { type: 'h2', text: 'Why Skipping a Service Is a False Economy' },
     { type: 'p', text: 'The [most common gate failures](/blog/what-to-do-when-electric-gates-stop-working/) seen by Kent engineers are preventable with annual servicing. A motor that fails from lack of lubrication costs £350 to £700 to replace. A safety sensor that drifts out of alignment and is not caught until it causes repeated false stops generates a callout fee. A battery backup that dies silently leaves the gate stuck open during the next power cut. Annual servicing catches all of these at the point where they are cheap to address.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'electric-gate-automation-retrofit-kent', title: 'Adding Electric Automation to Existing Gates in Kent', category: 'Automation' },
-      { slug: 'choosing-gate-installer-kent', title: 'How to Choose a Driveway Gate Installer in Kent', category: 'Buying Guide' },
-    ]},
-  ],
-};
-
-const article8: BlogArticle = {
-  slug: 'driveway-gates-kent-aonb-high-weald-north-downs',
-  title: 'Driveway Gates in the Kent Downs and High Weald National Landscapes',
-  metaTitle: 'Driveway Gates in the Kent Downs and High Weald National Landscapes',
-  metaDescription: 'Installing driveway gates in the North Downs or High Weald National Landscape in Kent? This guide covers planning rules, material choices, and how to get the design right for a designated landscape.',
-  category: 'Planning',
-  publishDate: '2026-02-12',
-  featuredImage: '/images/gates/gate-wooden-painted-cream-kentish-countryside.png',
-  excerpt: 'Kent sits within two National Landscapes with distinct landscape characters. Getting the gate specification right for each requires understanding what the designation means in practice.',
-  content: [
-    { type: 'p', text: 'The Kent Downs and High Weald National Landscapes between them cover a substantial part of Kent. The North Downs run along the chalk escarpment from the Surrey border through Sevenoaks and onward past Wye toward Folkestone. The High Weald covers the southern portion of the county including Cranbrook, Goudhurst, Lamberhurst, Sissinghurst, and the surrounding countryside. Each carries a distinct landscape character that gate installations should respect.' },
-    { type: 'h2', text: 'Kent Downs: Chalk Downland Character' },
-    { type: 'p', text: 'The North Downs landscape is characterised by chalk grassland, beechwood, flint-walled villages, and a mix of vernacular and Victorian residential architecture along the ridge. Gate materials that sit comfortably in this landscape include [hardwood in European oak or iroko](/services/wooden-driveway-gates/), painted softwood where the property is a simpler cottage style, and traditional ironwork where the property has an established metalwork boundary. Powder-coated aluminium in standard commercial colours tends to read as suburban rather than rural and is less appropriate in this setting.' },
-    { type: 'h2', text: 'High Weald: Wealden Character' },
-    { type: 'p', text: 'The High Weald is a landscape of rolling hills, ancient woodland, medieval field patterns, and characteristic Wealden buildings including oast houses, tile-hung cottages, and timber-frame farmhouses. The gate specification that fits most naturally here is close-boarded hardwood, particularly European oak left to weather to a silver grey that matches the aged timber of the surrounding buildings. Wrought iron is appropriate on larger properties where the entrance scale justifies it. The Wealden villages tend to have a less formal boundary character than the North Downs settlements, and gate designs should reflect this.' },
-    { type: 'h2', text: 'Planning Considerations in Both National Landscapes' },
-    { type: 'p', text: '[Permitted development rights](/blog/planning-permission-driveway-gates-kent/) generally apply to standard residential gates in a National Landscape, but Article 4 Directions can remove these rights in specific areas. Pre-application advice from the relevant district council is the right first step for any installation where there is doubt. Installers in our Kent network who work regularly in both National Landscapes can advise on whether consent is needed and how to design a gate that satisfies the landscape officer.' },
-    { type: 'h2', text: 'Material and Finish Guidance' },
-    { type: 'list', items: [
-      'European oak, left untreated to weather naturally, is the default safest planning choice for the High Weald',
-      'Iroko, oiled to a warm mid-brown, works well across both National Landscapes for properties with a warmer colour palette',
-      'Accoya in a muted paint finish suits properties where the existing boundary is painted timber',
-      'Wrought iron is appropriate on larger estate properties in both National Landscapes where the entrance scale matches',
-      'Avoid bright white, anthracite grey, or other high-contrast colours that stand out against the rural landscape',
-      'Match the gate profile to the existing boundary style: close-boarded where fences are solid, open-framed where the boundary is post-and-rail',
-    ]},
-    { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'planning-permission-driveway-gates-kent', title: 'Planning Permission for Driveway Gates in Kent: National Landscapes, Green Belt, Conservation Areas', category: 'Planning' },
-      { slug: 'best-gate-material-kent-wood-steel-aluminium', title: 'Best Gate Material for Kent: Wood, Steel, or Aluminium?', category: 'Materials' },
-    ]},
-  ],
-};
-
-const article9: BlogArticle = {
-  slug: 'driveway-gates-west-kent-sevenoaks-tunbridge-wells',
-  title: 'Driveway Gates in West Kent: Sevenoaks, Tunbridge Wells, and the Commuter Belt',
-  metaTitle: 'Driveway Gates Sevenoaks Tunbridge Wells | West Kent Premium Guide',
-  metaDescription: 'West Kent has the highest concentration of premium residential gate installations in the county. This guide covers what the market expects and how to specify correctly.',
-  category: 'Local Guide',
-  publishDate: '2026-02-15',
-  featuredImage: '/images/gates/gate-wrought-iron-open-stone-pillars-lanterns-estate.png',
-  excerpt: 'The Sevenoaks and Tunbridge Wells corridor produces some of the highest-specification gate installations in the South East. Here is what the premium West Kent market requires.',
-  content: [
-    { type: 'p', text: 'West Kent is the wealthiest part of the county and the area where gate installation standards are highest. The Sevenoaks district, Tunbridge Wells, and the villages between them contain a concentration of high-value residential properties that sustain a genuine premium market for bespoke gate work. This is not about cost alone: it is about the expectation that the gate entrance will be architecturally coherent with the property it serves, that the automation will be invisible, and that the specification will be right for the next twenty years.' },
-    { type: 'h2', text: 'Underground Motors as the Standard Specification' },
-    { type: 'p', text: 'In the West Kent premium market, [underground motors](/services/electric-swing-gates/) are the default rather than the upgrade. The expectation is a clean entrance where the gate face is uninterrupted by visible motor equipment, the pillars are uncluttered, and the automation reads as invisible. Ram-arm motors, while perfectly functional, are viewed as a compromise in this segment. Properties in Sevenoaks, Westerham, Penshurst, and the Tunbridge Wells conservation area consistently specify underground installation as a non-negotiable element of the brief.' },
-    { type: 'h2', text: 'Wrought Iron and the West Kent Aesthetic' },
-    { type: 'p', text: '[Hand-forged wrought iron gates](/blog/best-gate-material-kent-wood-steel-aluminium/) are more widely specified in West Kent than in most parts of the country. The concentration of Georgian, Victorian, and Edwardian properties creates consistent demand for ironwork that reflects the architectural period of the house. Ornate scroll and spear designs on substantial brick pillars with stone caps and pillar-mounted lanterns are a standard brief in this market. The fabrication is specialist work, with lead times of 4 to 8 weeks from drawing approval to delivery.' },
-    { type: 'h2', text: 'Vehicle Security in the Premium Belt' },
-    { type: 'p', text: 'The Sevenoaks and Tunbridge Wells area has a high concentration of premium vehicles. Relay theft, where criminals use signal amplification to unlock and start keyless vehicles from the driveway, is a documented problem across this part of Kent. A closed automated gate with video intercom and recording capability is a meaningful deterrent. Access control that logs every gate opening with a timestamp provides evidence in the event of an incident. Security-conscious homeowners in this market routinely specify these features as part of the gate installation brief.' },
-    { type: 'h2', text: 'Kent Downs and Green Belt Overlap' },
-    { type: 'p', text: 'Much of the West Kent premium market sits within or adjacent to the Kent Downs National Landscape and the Green Belt. Properties on the ridge above Sevenoaks, in the villages of Otford, Shoreham, and Kemsing, and along the Pilgrims Way frequently fall within both designations. Installers working in this part of Kent need to understand the planning position before specifying, and the ability to design a gate that satisfies both the homeowner and the landscape officer is a genuine professional skill.' },
-    { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'how-much-do-driveway-gates-cost-kent-2026', title: 'How Much Do Driveway Gates Cost in Kent? A Full 2026 Pricing Guide', category: 'Pricing' },
-      { slug: 'best-gate-material-kent-wood-steel-aluminium', title: 'Best Gate Material for Kent: Wood, Steel, or Aluminium?', category: 'Materials' },
-    ]},
   ],
 };
 
@@ -320,11 +229,6 @@ const article10: BlogArticle = {
     { type: 'h2', text: 'Insurance Benefits' },
     { type: 'p', text: 'Some vehicle insurers offer [reduced premiums for vehicles kept behind a closed electric gate](/blog/do-electric-gates-add-value-to-your-house/). The extent of any reduction varies by insurer and policy. Documenting the installation with photographs and commissioning certificates is worth doing if you intend to claim a security-related premium reduction. Check with your insurer before and after installation.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'electric-gate-automation-retrofit-kent', title: 'Adding Electric Automation to Existing Gates in Kent', category: 'Automation' },
-      { slug: 'driveway-gates-west-kent-sevenoaks-tunbridge-wells', title: 'Driveway Gates in West Kent: Sevenoaks, Tunbridge Wells, and the Commuter Belt', category: 'Local Guide' },
-      { slug: 'how-much-do-driveway-gates-cost-kent-2026', title: 'How Much Do Driveway Gates Cost in Kent? A Full 2026 Pricing Guide', category: 'Pricing' },
-    ]},
   ],
 };
 
@@ -374,11 +278,6 @@ const article11: BlogArticle = {
     { type: 'h2', text: 'Getting a Width Recommendation for Your Kent Property' },
     { type: 'p', text: 'Every property is different, and the right gate width for yours depends on the combination of driveway geometry, traffic requirements, property style, and any planning constraints that apply. A site survey is the only way to confirm the correct specification. Submit your details and we will match you with up to three Kent gate installers who will each visit the property, measure the opening professionally, and provide a written quote based on the dimensions your entrance actually needs.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'electric-sliding-vs-swing-gates-kent', title: 'Electric Sliding vs Swing Gates: Which Suits Your Kent Driveway?', category: 'Buying Guide' },
-      { slug: 'how-much-do-driveway-gates-cost-kent-2026', title: 'How Much Do Driveway Gates Cost in Kent? A Full 2026 Pricing Guide', category: 'Pricing' },
-      { slug: 'planning-permission-driveway-gates-kent', title: 'Planning Permission for Driveway Gates in Kent', category: 'Planning' },
-    ]},
   ],
 };
 
@@ -417,16 +316,18 @@ const article12: BlogArticle = {
     { type: 'p', text: 'Valuers also consider the condition of the installation. Gates that show signs of poor maintenance, rust on ungalvanised steel, peeling timber, or a motor that does not operate smoothly during the inspection will not add value regardless of what they cost to install. Maintaining the gate to a sellable standard throughout its life is part of protecting the investment.' },
     { type: 'h2', text: 'The Return on Investment Calculation' },
     { type: 'p', text: 'A quality electric gate installation in Kent costs between £4,000 and £12,000 depending on the specification. On a property valued at £600,000 in a West Kent village, a 3% value uplift is £18,000. Even at the higher end of installation cost, the return is positive. On a property valued at £350,000 in a North Kent suburb, a 1% uplift is £3,500, which may not cover the installation cost if value appreciation is the sole motivation.' },
-    { type: 'p', text: 'The calculation changes when you factor in [the daily convenience, the security benefit](/blog/are-driveway-gates-worth-the-money/), the insurance saving, and the aesthetic improvement to the property. Most homeowners who install electric gates in Kent do so primarily for these reasons, with the property value impact as a secondary benefit. If you are installing gates purely as a financial investment with no intention of living with them, the return depends entirely on the property location and the specification quality.' },
+    { type: 'p', text: 'The calculation changes when you factor in [the daily convenience, the security benefit](/blog/do-electric-gates-add-value-to-your-house/), the insurance saving, and the aesthetic improvement to the property. Most homeowners who install electric gates in Kent do so primarily for these reasons, with the property value impact as a secondary benefit. If you are installing gates purely as a financial investment with no intention of living with them, the return depends entirely on the property location and the specification quality.' },
+    { type: 'h2', text: 'Privacy, Noise, and Boundary Control' },
+    { type: 'p', text: 'Solid or close-boarded gates provide complete visual screening of the driveway from the road. On Kent properties fronting busy A-roads or in villages with consistent through-traffic, this privacy has real quality-of-life value. A solid hardwood gate also reduces road noise reaching the front of the house, which can be significant on properties close to the A21, A26, or the M20 corridor.' },
+    { type: 'p', text: 'Gates also establish a clear boundary that discourages casual use of your driveway for turning, parking, or access. This is a common frustration on properties in busy Kent villages and near schools, shops, or stations, where an ungated driveway becomes an informal turning circle. A closed gate eliminates this entirely.' },
+    { type: 'h2', text: 'When Gates May Not Be Worth It' },
+    { type: 'p', text: 'If you have no manual gates currently and the driveway is very short (under 5 metres from the road to the house), the gate will be close to the building and may not provide meaningful security or privacy benefit. The installation cost remains the same but the practical return is lower.' },
+    { type: 'p', text: 'If the primary motivation is property value and the property is below the threshold where buyers expect gates, the investment is unlikely to produce a positive return at resale. The money may be better spent on other improvements that have more reliable value impact at that price point.' },
+    { type: 'p', text: 'If you are in a conservation area or National Landscape and the planning constraints would force a gate design that you do not actually like, the installation becomes a compromise that costs significant money but does not deliver the entrance you wanted. In this situation, it is worth exploring the planning position thoroughly before committing, and accepting that gates may not be practical if the constraints are too restrictive.' },
     { type: 'h2', text: 'Getting the Right Gate for Your Kent Property' },
     { type: 'p', text: 'The gates that add the most value are the ones that look right on the property and are built to last. That means choosing materials and a design that suit the house, the street, and the area. It means specifying hot-dip galvanising on steel, quality timber species on hardwood, and a motor from a manufacturer with long-term parts support. And it means working with an installer who understands Kent properties, Kent planning rules, and the expectations of Kent buyers.' },
     { type: 'p', text: 'Submit your details and we will match you with up to three Kent gate installers who will survey your property, recommend the right specification for your entrance, and provide written quotes that you can compare at your own pace. The matching service and every site survey are completely free.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'how-much-do-driveway-gates-cost-kent-2026', title: 'How Much Do Driveway Gates Cost in Kent? A Full 2026 Pricing Guide', category: 'Pricing' },
-      { slug: 'driveway-gates-home-security-kent', title: 'Driveway Gates and Home Security in Kent', category: 'Security' },
-      { slug: 'choosing-gate-installer-kent', title: 'How to Choose a Driveway Gate Installer in Kent', category: 'Buying Guide' },
-    ]},
   ],
 };
 
@@ -464,11 +365,6 @@ const article13: BlogArticle = {
     { type: 'h2', text: 'Getting the Right Specification for Long-Term Value' },
     { type: 'p', text: 'The installers in our Kent network specify for longevity as standard. Hot-dip galvanising on every steel gate. Motor brands with proven parts support for at least a decade. Timber species appropriate for the site exposure. Foundation depth matched to Kent soil conditions. Submit your enquiry and we will match you with up to three specialists who will survey your property and quote for an installation built to last.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'electric-gate-maintenance-kent', title: 'Electric Gate Maintenance in Kent: What Your Annual Service Should Cover', category: 'Maintenance' },
-      { slug: 'how-much-do-driveway-gates-cost-kent-2026', title: 'How Much Do Driveway Gates Cost in Kent? A Full 2026 Pricing Guide', category: 'Pricing' },
-      { slug: 'best-gate-material-kent-wood-steel-aluminium', title: 'Best Gate Material for Kent: Wood, Steel, or Aluminium?', category: 'Materials' },
-    ]},
   ],
 };
 
@@ -507,63 +403,6 @@ const article14: BlogArticle = {
     { type: 'p', text: 'When your installer recommends a specific motor, ask three questions. First, is the motor torque rating adequate for your gate weight with a safety margin, or is it running close to its maximum. Second, does the installer stock replacement parts for this brand and model on the van, or will a repair require ordering parts. Third, what is the manufacturer parts support commitment for this model, specifically how many years after production ends will components still be available. The answers to these questions will tell you more about the long-term reliability of your installation than any brand comparison.' },
     { type: 'p', text: 'A good installer will recommend the right motor for your gate after a physical site assessment. Submit your enquiry and we will match you with up to three specialists who will survey your property and specify the motor to suit your gate, your access control requirements, and your budget.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'electric-gate-automation-retrofit-kent', title: 'Adding Electric Automation to Existing Gates in Kent', category: 'Automation' },
-      { slug: 'how-long-do-electric-gates-last-before-replacing', title: 'How Long Do Electric Gates Last Before They Need Replacing', category: 'Maintenance' },
-      { slug: 'how-much-do-driveway-gates-cost-kent-2026', title: 'How Much Do Driveway Gates Cost in Kent? A Full 2026 Pricing Guide', category: 'Pricing' },
-    ]},
-  ],
-};
-
-const article15: BlogArticle = {
-  slug: 'wooden-vs-metal-driveway-gates-pros-and-cons',
-  title: 'Wooden vs Metal Driveway Gates and How to Decide Between Them',
-  metaTitle: 'Wooden vs Metal Driveway Gates | Pros and Cons for Kent Properties',
-  metaDescription: 'Choosing between wooden and metal driveway gates for your Kent property? This guide compares timber and metal on durability, maintenance, cost, appearance, and suitability for different settings.',
-  category: 'Materials',
-  publishDate: '2026-03-10',
-  featuredImage: '/images/gates/gate-wooden-oak-open-interior-tree-lined-lane.png',
-  excerpt: 'Wood and metal are the two main material categories for driveway gates in Kent. Each has genuine advantages and neither is the right answer for every property. Here is how to choose.',
-  content: [
-    { type: 'p', text: '[The material decision](/blog/best-gate-material-kent-wood-steel-aluminium/) is one of the first and most consequential choices in any driveway gate project. Timber and metal gates serve the same practical function, but they behave differently over time, demand different maintenance, suit different architectural settings, and cost different amounts to buy, install, and maintain over a 20-year period. Neither is objectively better. The right choice depends on your property, your area, your maintenance tolerance, and what you want the entrance to say about the house behind it.' },
-    { type: 'h2', text: 'Appearance and What Suits Your Property' },
-    { type: 'p', text: 'The visual argument for timber is strongest on properties with natural, rural, or heritage character. Oast houses across the Kent Weald, barn conversions, tile-hung cottages, timber-frame farmhouses, and older village houses all have a material vocabulary that timber gates continue naturally. European oak weathering to silver grey against Kentish ragstone walls is a combination that no metal finish replicates. In the High Weald and Kent Downs National Landscapes, timber is often the material that planning officers expect and that neighbours will not object to.' },
-    { type: 'p', text: 'Metal gates carry the argument on properties where formality, precision, or visual weight matters. Victorian and Edwardian houses in the Sevenoaks, Tunbridge Wells, and Canterbury conservation areas often have original iron railings and boundary treatments that a wrought iron or fabricated steel gate references directly. Contemporary homes in North Kent and the Maidstone suburbs suit clean-lined aluminium or steel in dark powder coat finishes. Laser-cut patterns, geometric motifs, and flat-bar horizontal designs are all metal territory and look wrong executed in timber.' },
-    { type: 'h2', text: 'Durability and How Long Each Material Lasts' },
-    { type: 'p', text: 'A hot-dip galvanised and powder-coated steel gate will last 25 to 40 years with minimal maintenance. An aluminium gate does not corrode at all and will last indefinitely in structural terms. Wrought iron, maintained with periodic repainting, has proven its durability over centuries.' },
-    { type: 'p', text: '[Hardwood gates in iroko or European oak](/services/wooden-driveway-gates/) last 25 to 30 years with an oil treatment every one to two years. Accoya carries a 50-year above-ground guarantee. Softwood gates, even treated ones, have a significantly shorter life and are not recommended for Kent residential installations where the gate is expected to last.' },
-    { type: 'p', text: 'The critical difference on the Kent coast between Whitstable and Folkestone is corrosion. Steel and iron gates face accelerated surface damage from salt air unless marine-grade powder coat or galvanising is specified. Aluminium is immune. Timber is unaffected by salt corrosion, though salt air can accelerate surface weathering on untreated softwoods. For coastal Kent properties, aluminium or Accoya offer the lowest-risk material choices.' },
-    { type: 'h2', text: 'Maintenance Over 20 Years' },
-    { type: 'p', text: 'A galvanised and powder-coated metal gate needs almost nothing for the first 15 to 20 years. An annual wash with soapy water and a visual check of the finish for chips or scratches is the full maintenance requirement. Touch-up paint for minor chips is the only intervention likely to be needed. Aluminium needs even less because there is no substrate corrosion to worry about if the powder coat is damaged.' },
-    { type: 'p', text: 'Hardwood timber gates need more active maintenance. An [oil treatment every one to two years](/blog/how-to-look-after-wooden-driveway-gates/) is essential to maintain the finish and prevent surface checking. This takes a few hours with a brush and a tin of penetrating oil, and it is not technically difficult, but it is a recurring commitment that some homeowners prefer not to make. If you choose untreated oak and allow it to weather naturally, the maintenance drops to an annual check of the structural joints and ironmongery, but you accept the silver-grey appearance that untreated oak develops over time.' },
-    { type: 'p', text: 'Accoya changes the timber maintenance calculation substantially. Its modified cell structure means it holds paint and stain finishes far longer than conventional timber, and the treatment interval extends to 4 to 6 years rather than every 1 to 2 years. For homeowners who want a timber appearance without the typical maintenance schedule, Accoya is the specification that bridges the gap.' },
-    { type: 'h2', text: 'Privacy and Noise' },
-    { type: 'p', text: 'A close-boarded timber gate provides complete visual privacy and meaningful reduction in road noise. Solid timber is a better sound absorber than metal. For properties fronting busy Kent A-roads or in villages with through-traffic, this is a genuine functional advantage that metal gates do not offer unless they are specified with solid infill panels, which changes their appearance significantly.' },
-    { type: 'p', text: 'Most metal gate designs are at least partially open, with bars, rails, or decorative elements that allow visibility through the gate. This is an advantage for properties where the entrance and front garden are part of the property presentation, and it provides a clear sightline when exiting onto the road. But it offers no privacy and no noise reduction.' },
-    { type: 'h2', text: 'Weight and Motor Implications' },
-    { type: 'p', text: 'Hardwood gates are heavy. A pair of iroko swing gates for a 3.5 metre opening can weigh 150 to 200 kilograms total. This weight requires a motor with adequate torque and hinges specified for the load. Underground motors handle heavy timber gates well, but the motor model must be matched to the actual weight, not estimated.' },
-    { type: 'p', text: 'Steel gates of equivalent dimensions are similar in weight to hardwood. Aluminium gates are 35% to 60% lighter than steel or timber equivalents, which allows a smaller motor and places less stress on the post foundations. On sites where the post condition is marginal or the soil is poor (common on Wealden clay), the reduced weight of aluminium can avoid the cost of post replacement or foundation reinforcement.' },
-    { type: 'h2', text: 'Cost Comparison in Kent' },
-    { type: 'p', text: 'Hardwood timber gates (iroko or oak) installed with ironmongery and locking hardware cost from £2,800 to £8,500 in Kent. The range reflects timber species, panel design, and gate dimensions. Automation adds £1,400 to £3,800 on top.' },
-    { type: 'p', text: 'Fabricated steel gates with hot-dip galvanising and powder coat cost from £3,000 to £9,500 installed, including posts and hardware. Wrought iron starts from around £6,500. Aluminium is typically 10% to 20% more than equivalent steel in material cost but saves on long-term maintenance. Automation is usually included in the price for electric metal gate installations.' },
-    { type: 'p', text: 'Over a 20-year period, the total cost of ownership (installation plus maintenance plus any component replacement) is broadly similar for quality timber and quality metal gates. Metal wins on lower maintenance cost. Timber wins on lower initial cost for equivalent visual warmth and privacy.' },
-    { type: 'h2', text: 'Making the Decision for Your Kent Property' },
-    { type: 'list', items: [
-      'Oast house, barn conversion, or rural farmhouse in the Weald: hardwood, almost certainly',
-      'Victorian or Edwardian in Sevenoaks, Tunbridge Wells, or Canterbury conservation area: wrought iron or fabricated steel with period detailing',
-      'Modern build in Dartford, Gravesend, or Maidstone: aluminium or powder-coated steel in anthracite',
-      'Coastal property between Whitstable and Folkestone: aluminium or Accoya for corrosion resistance',
-      'Privacy is the priority: close-boarded hardwood',
-      'Minimum maintenance is the priority: aluminium or galvanised steel',
-      'High Weald or Kent Downs National Landscape: timber is usually the safest planning choice',
-    ]},
-    { type: 'p', text: 'A site survey with an experienced Kent installer is the right starting point. They will assess the property, the boundary character, and any planning context, and recommend the material that fits your brief. Submit your enquiry and we will match you with up to three specialists.' },
-    { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'best-gate-material-kent-wood-steel-aluminium', title: 'Best Gate Material for Kent: Wood, Steel, or Aluminium?', category: 'Materials' },
-      { slug: 'how-much-do-driveway-gates-cost-kent-2026', title: 'How Much Do Driveway Gates Cost in Kent? A Full 2026 Pricing Guide', category: 'Pricing' },
-      { slug: 'driveway-gates-kent-aonb-high-weald-north-downs', title: 'Driveway Gates in the Kent Downs and High Weald National Landscapes', category: 'Planning' },
-    ]},
   ],
 };
 
@@ -604,53 +443,6 @@ const article16: BlogArticle = {
     { type: 'p', text: 'The best gate installations on period Kent properties involve a design conversation between the homeowner, the installer, and in some cases the fabricator or joinery workshop. Drawings produced before fabrication allow you to see and adjust the design before any material is cut or metal is bent. On larger projects, 3D renders showing the gate in position against the existing building are standard practice and worth requesting.' },
     { type: 'p', text: 'Submit your enquiry and we will match you with Kent gate specialists who have demonstrable experience with period properties, conservation areas, and listed buildings. Each one will visit the property, discuss the design brief, and produce drawings and a quote tailored to your specific entrance.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'planning-permission-driveway-gates-kent', title: 'Planning Permission for Driveway Gates in Kent', category: 'Planning' },
-      { slug: 'best-gate-material-kent-wood-steel-aluminium', title: 'Best Gate Material for Kent: Wood, Steel, or Aluminium?', category: 'Materials' },
-      { slug: 'do-electric-gates-add-value-to-your-house', title: 'Do Electric Gates Add Value to Your House', category: 'Buying Guide' },
-    ]},
-  ],
-};
-
-const article17: BlogArticle = {
-  slug: 'are-driveway-gates-worth-the-money',
-  title: 'Are Driveway Gates Actually Worth the Money in 2026',
-  metaTitle: 'Are Driveway Gates Worth It | Real Cost vs Benefit Analysis for Kent',
-  metaDescription: 'Driveway gates cost thousands to install and maintain. Are they worth the investment? This honest assessment covers convenience, security, property value, and when gates are not the right answer.',
-  category: 'Buying Guide',
-  publishDate: '2026-03-14',
-  featuredImage: '/images/gates/gate-opening-driver-pov-tree-lined-driveway.png',
-  excerpt: 'A quality gate installation is a significant investment. Before committing, it is worth understanding what you actually get for the money and whether your situation genuinely benefits from it.',
-  content: [
-    { type: 'p', text: 'Electric driveway gates cost between £3,800 and £12,500 to install in Kent, with annual servicing at £120 to £210 and component replacements over a 20-year ownership period adding another £3,000 to £6,000 on top. That is a total cost of ownership in the range of £6,000 to £20,000 over two decades. It is a genuine investment, and like any investment it deserves an honest assessment of what you get back in return.' },
-    { type: 'p', text: 'This guide covers the real benefits of driveway gates, the situations where they deliver clear value, and the situations where they may not be the best use of money. If you are on the fence, this should help you decide.' },
-    { type: 'h2', text: 'The Daily Convenience Argument' },
-    { type: 'p', text: 'The most immediate benefit of electric gates is not security or property value. It is the daily convenience of not getting out of the car to open and close the gate every time you arrive or leave. If you currently have manual gates and use them twice a day, that is 730 times a year you step out of the car, open the gate, drive through, step out again, close the gate. In rain, in the dark, in a suit, carrying shopping, with children in the back seat. Over 20 years, that is 14,600 gate-opening events eliminated.' },
-    { type: 'p', text: 'This sounds trivial until you live with it. Homeowners who install electric gates consistently report that the daily convenience is the single benefit they value most, above security, above aesthetics, above property value. If you have manual gates that you currently leave open because you cannot face the routine of opening and closing them, [automation gives you the security of a closed gate](/services/automated-gate-systems/) with none of the inconvenience.' },
-    { type: 'h2', text: 'The Security Argument' },
-    { type: 'p', text: 'A closed automated gate is a [proven deterrent against driveway vehicle theft](/blog/driveway-gates-home-security-kent/), which is a documented problem in parts of Kent. The Sevenoaks and Tunbridge Wells corridor has a concentration of high-value vehicles targeted by organised theft groups using relay signal amplification to steal keyless cars from open driveways. A gate that closes automatically after every entry and opens only to authorised users puts a physical barrier between the vehicle and the road.' },
-    { type: 'p', text: 'The deterrent effect is real but limited. A gate deters opportunistic and time-sensitive crime. It does not stop a determined criminal with enough time and resources. The practical benefit is that it makes your property a harder target than a neighbouring property without a gate, which redirects the risk rather than eliminating it entirely. For most residential purposes in Kent, this redirection is sufficient to justify the security claim.' },
-    { type: 'p', text: 'Video intercom with recording capability adds a second security layer. A camera at the gate that records every approach creates an evidence trail and a visible deterrent. Push notifications to a smartphone provide real-time awareness of gate activity from anywhere. These features are increasingly expected by buyers in the premium Kent market and are worth specifying on any installation where security is part of the brief.' },
-    { type: 'h2', text: 'The Property Value Argument' },
-    { type: 'p', text: 'Electric gates [add measurable property value](/blog/do-electric-gates-add-value-to-your-house/) in the right location. Estate agents in the Sevenoaks and Tunbridge Wells belt estimate a 3% to 5% uplift on properties above £800,000 where gated access is an expected feature. On a £1 million property, that is £30,000 to £50,000 of perceived value from an installation that may have cost £8,000 to £12,000. The return is clearly positive in this market segment.' },
-    { type: 'p', text: 'The value argument weakens on lower-value properties and in areas where gates are not the norm. On a £350,000 house in North Kent, the value uplift may be 1% or less, which does not cover the installation cost if property value is the sole motivation. And on a terraced or semi-detached property with a short drive, gates can look incongruous and may even raise questions in a buyer mind about why they were felt necessary.' },
-    { type: 'h2', text: 'Privacy, Noise, and Boundary Control' },
-    { type: 'p', text: 'Solid or close-boarded gates provide complete visual screening of the driveway from the road. On Kent properties fronting busy A-roads or in villages with consistent through-traffic, this privacy has real quality-of-life value. A solid hardwood gate also reduces road noise reaching the front of the house, which can be significant on properties close to the A21, A26, or the M20 corridor.' },
-    { type: 'p', text: 'Gates also establish a clear boundary that discourages casual use of your driveway for turning, parking, or access. This is a common frustration on properties in busy Kent villages and near schools, shops, or stations, where an ungated driveway becomes an informal turning circle. A closed gate eliminates this entirely.' },
-    { type: 'h2', text: 'When Gates May Not Be Worth It' },
-    { type: 'p', text: 'If you have no manual gates currently and the driveway is very short (under 5 metres from the road to the house), the gate will be close to the building and may not provide meaningful security or privacy benefit. The installation cost remains the same but the practical return is lower.' },
-    { type: 'p', text: 'If the primary motivation is property value and the property is below the threshold where buyers expect gates, the investment is unlikely to produce a positive return at resale. The money may be better spent on other improvements that have more reliable value impact at that price point.' },
-    { type: 'p', text: 'If you are in a conservation area or National Landscape and the planning constraints would force a gate design that you do not actually like, the installation becomes a compromise that costs significant money but does not deliver the entrance you wanted. In this situation, it is worth exploring the planning position thoroughly before committing, and accepting that gates may not be practical if the constraints are too restrictive.' },
-    { type: 'h2', text: 'The Honest Bottom Line' },
-    { type: 'p', text: 'Electric driveway gates are worth the money if you will use them daily, if the property and location benefit from gated access, and if you invest in a specification that is right for the building and built to last. They are not worth it if the motivation is purely financial on a lower-value property, if the driveway cannot accommodate them sensibly, or if planning constraints force a compromised design.' },
-    { type: 'p', text: 'For most Kent homeowners on detached properties with driveways of reasonable length, the combination of daily convenience, improved security, property value uplift, and aesthetic improvement makes the investment worthwhile. The key is getting the specification right for the property and the budget, which is exactly what a site survey with an experienced installer will establish.' },
-    { type: 'p', text: 'Submit your enquiry and we will connect you with up to three Kent gate specialists who will assess your property and give you a clear picture of what is achievable, what it will cost, and what you will get for the investment.' },
-    { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'do-electric-gates-add-value-to-your-house', title: 'Do Electric Gates Add Value to Your House', category: 'Buying Guide' },
-      { slug: 'how-much-do-driveway-gates-cost-kent-2026', title: 'How Much Do Driveway Gates Cost in Kent? A Full 2026 Pricing Guide', category: 'Pricing' },
-      { slug: 'driveway-gates-home-security-kent', title: 'Driveway Gates and Home Security in Kent', category: 'Security' },
-    ]},
   ],
 };
 
@@ -690,11 +482,6 @@ const article18: BlogArticle = {
     { type: 'p', text: 'If your gate has not been serviced in the last 12 months, book a service rather than waiting for a failure. The service cost is a fraction of an emergency callout and repair, and the engineer will identify any components that are approaching the end of their service life before they fail unexpectedly.' },
     { type: 'p', text: 'Need a gate engineer in Kent? Submit your details and we will connect you with repair specialists covering your area who carry parts for all the main motor brands.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'electric-gate-maintenance-kent', title: 'Electric Gate Maintenance in Kent: What Your Annual Service Should Cover', category: 'Maintenance' },
-      { slug: 'best-electric-gate-motor-brands-uk-compared', title: 'The Best Electric Gate Motor Brands in the UK and What Sets Them Apart', category: 'Automation' },
-      { slug: 'how-long-do-electric-gates-last-before-replacing', title: 'How Long Do Electric Gates Last Before They Need Replacing', category: 'Maintenance' },
-    ]},
   ],
 };
 
@@ -735,11 +522,6 @@ const article19: BlogArticle = {
     { type: 'p', text: 'Experience with sloped driveways is not universal among gate installers. An installer who works primarily on flat suburban driveways in North Kent may not have encountered the gradient challenges that are routine on the North Downs or in the Weald. When we match you with installers, we account for site conditions including gradient, and connect you with firms that have handled sloped installations in your part of Kent.' },
     { type: 'p', text: 'Submit your enquiry with your postcode and a note about the driveway slope. Photographs showing the gradient from the road are helpful. We will match you with up to three Kent gate specialists who have the experience to get the specification right for your site.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'electric-sliding-vs-swing-gates-kent', title: 'Electric Sliding vs Swing Gates: Which Suits Your Kent Driveway?', category: 'Buying Guide' },
-      { slug: 'how-wide-should-driveway-gates-be-measuring-guide', title: 'How Wide Should Driveway Gates Be and How to Measure Your Entrance', category: 'Buying Guide' },
-      { slug: 'how-much-do-driveway-gates-cost-kent-2026', title: 'How Much Do Driveway Gates Cost in Kent? A Full 2026 Pricing Guide', category: 'Pricing' },
-    ]},
   ],
 };
 
@@ -782,11 +564,6 @@ const article20: BlogArticle = {
     { type: 'h2', text: 'Getting Professional Help With Timber Gate Maintenance' },
     { type: 'p', text: 'If your gates need more than an oil treatment and a visual check, or if you would rather have a professional handle the annual maintenance, the gate specialists in our Kent network offer service packages that cover both the automation and the gate structure. Submit your details and we will connect you with an installer who covers your area.' },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'best-gate-material-kent-wood-steel-aluminium', title: 'Best Gate Material for Kent: Wood, Steel, or Aluminium?', category: 'Materials' },
-      { slug: 'how-long-do-electric-gates-last-before-replacing', title: 'How Long Do Electric Gates Last Before They Need Replacing', category: 'Maintenance' },
-      { slug: 'electric-gate-maintenance-kent', title: 'Electric Gate Maintenance in Kent: What Your Annual Service Should Cover', category: 'Maintenance' },
-    ]},
   ],
 };
 
@@ -830,10 +607,6 @@ const article21: BlogArticle = {
     { type: 'p', text: `Pulling the threads together, a metal driveway gate that lasts on the Kent coast is not a single product but a stack of correct decisions: a base material that suits the exposure, either galvanised steel or marine-grade aluminium, a duplex finish where steel is used, marine-grade A4 stainless for every hinge and fixing, and a realistic rinse-and-inspect routine once it is installed. Get those right and the sea stops being a threat to your gate. Get any one of them wrong, most often the fixings, and the coast will find the weak point within a couple of winters.` },
     { type: 'p', text: `If you are weighing up a new gate for a coastal property anywhere from the north Kent shore through Thanet to the Romney Marsh edge, tell us the address, the exposure and the look you are after, and use the form on this page to request quotes from local installers who build to a genuine coastal specification rather than an inland one. You will get back proposals you can compare on the things that actually decide longevity by the sea.` },
     { type: 'cta' },
-    { type: 'related-articles', articles: [
-      { slug: 'best-gate-material-kent-wood-steel-aluminium', title: 'Best Gate Material for Kent: Wood, Steel, or Aluminium?', category: 'Materials' },
-      { slug: 'electric-gate-maintenance-kent', title: 'Electric Gate Maintenance in Kent: What Your Annual Service Should Cover', category: 'Maintenance' },
-    ]},
   ],
 };
 
@@ -942,7 +715,7 @@ const article24: BlogArticle = {
     { type: 'p', text: 'Two further points carry real weight in an application. The first is that automation must be invisible: underground motors are the usual answer on a listed entrance, or a ram-arm concealed on the inner face of the gate and pier, so no motor housing, bracket or control box intrudes on the historic view. The second is that fixing method matters, because how a gate meets a listed pier is itself part of what is being consented, and a reversible fixing that avoids cutting into historic brickwork is easier to justify than one that hacks into it. Where a bespoke [wooden driveway gate](/services/wooden-driveway-gates/) is being made for the property, the joinery and ironmongery can be specified from the outset to match the building, which is the sort of detail that turns a marginal application into an approved one.' },
     { type: 'h2', text: 'How the application process runs' },
     { type: 'p', text: 'The route is broadly the same across Kent, with local variation in how much the officer wants to see up front. A pre-application conversation with the district conservation officer is the sensible first step, and it is often free or low cost. It establishes whether the entrance is listed or curtilage-listed at all and gives you an early steer on what design will be acceptable, which saves you paying for drawings that will not fly. From there a formal listed building consent application goes to the relevant district council, supported by a heritage statement that explains the significance of the building and its setting and how the proposed gate preserves it, along with drawings, materials and finish details.' },
-    { type: 'p', text: 'Where the property also sits in one of the county protected landscapes the two questions run together, because much of the listed rural stock lies inside the Kent Downs or the High Weald, and the [National Landscape planning position across the North Downs and High Weald](/blog/driveway-gates-kent-aonb-high-weald-north-downs/) will shape the design brief alongside the listing. A single submission that addresses both the heritage significance and the landscape setting is far stronger than treating them as separate afterthoughts. Timescales vary by district and by the complexity of the building, so start early rather than assuming a gate can be turned around in a few weeks.' },
+    { type: 'p', text: 'Where the property also sits in one of the county protected landscapes the two questions run together, because much of the listed rural stock lies inside the Kent Downs or the High Weald, and the [National Landscape planning position across the North Downs and High Weald](/blog/planning-permission-driveway-gates-kent/) will shape the design brief alongside the listing. A single submission that addresses both the heritage significance and the landscape setting is far stronger than treating them as separate afterthoughts. Timescales vary by district and by the complexity of the building, so start early rather than assuming a gate can be turned around in a few weeks.' },
     { type: 'h2', text: 'Getting the right people on a listed Kent entrance' },
     { type: 'p', text: 'A listed property is not the job for a general fencing contractor. The installers who succeed on these entrances are the ones who have designed to a conservation officer before, who can produce a gate and ironmongery that suit a timber-frame or oast property, and who understand that a reversible, sympathetic fixing to a historic pier is part of the specification rather than an inconvenience. If your Kent property is listed, is a barn or oast conversion, or you simply suspect the piers at your entrance might be caught by a nearby listing, tell us the address and what you know of its history, and use the form on this page to be matched with local specialists who work on listed and curtilage-listed properties and can guide the consent process rather than leaving you to navigate it alone.' },
     { type: 'cta' },
@@ -969,7 +742,7 @@ const article25: BlogArticle = {
     { type: 'image', src: '/images/gates/gate-wooden-oak-open-interior-tree-lined-lane.png', alt: 'A hardwood driveway gate of the kind used on exposed Kent coastal plots' },
     { type: 'p', text: 'Accoya is a modified softwood, usually radiata pine, put through an acetylation process that changes the wood so it barely takes up water. That matters enormously on the coast, because a timber that hardly swells or shrinks holds its shape and holds a paint film through the constant damp cycling that destroys ordinary joinery. It reaches the top natural durability rating, Class 1 under EN 350, which is equal to or better than teak, and the manufacturer covers above-ground use with a fifty year warranty that explicitly extends to salt-water splash zones. The technical picture is set out in the [Accoya wood information guide](https://www.accoya.com/app/uploads/2020/04/Accoya_WoodInfoGuide-1.pdf), and for a fully exposed seafront gate it is often the most rational choice despite being a softwood, precisely because the failure mode on the coast is movement and finish breakdown rather than rot alone. It takes paint and colour beautifully, which suits a painted coastal look, and if left unpainted it silvers to an even grey within a year or two.' },
     { type: 'h2', text: 'Iroko and oak: the hardwood options' },
-    { type: 'p', text: 'Iroko, sometimes sold as African teak, is a genuine coastal performer. It carries natural oils that resist moisture and fungal attack without treatment and reaches Class 1 to 2 durability, so it stands up to salt exposure well and can be left to weather to silver-grey or oiled to keep its warm tone. The trade-offs are practical: its interlocked grain makes it harder to machine cleanly, and those same oils can fight paint adhesion, so it is best specified with an experienced joiner and finished with oil rather than paint. European oak is the traditional Kent estate timber and lasts decades when detailed well, but it moves more than Accoya and stains iron-grey where it meets steel fixings in damp salt air, so on a fully exposed front it needs more careful design than in a sheltered spot. A neutral overview of how these species and modified timbers compare on durability class is set out by [ForestSource on modified and durable wood](https://forestsource.io/topics/modified-wood), which is a useful sense-check against any single supplier claim. The broader [wood versus metal decision for a Kent gate](/blog/wooden-vs-metal-driveway-gates-pros-and-cons/) also sits behind this, because on the most brutal seafront plots some owners conclude that a marine-grade metal gate is the lower-maintenance answer.' },
+    { type: 'p', text: 'Iroko, sometimes sold as African teak, is a genuine coastal performer. It carries natural oils that resist moisture and fungal attack without treatment and reaches Class 1 to 2 durability, so it stands up to salt exposure well and can be left to weather to silver-grey or oiled to keep its warm tone. The trade-offs are practical: its interlocked grain makes it harder to machine cleanly, and those same oils can fight paint adhesion, so it is best specified with an experienced joiner and finished with oil rather than paint. European oak is the traditional Kent estate timber and lasts decades when detailed well, but it moves more than Accoya and stains iron-grey where it meets steel fixings in damp salt air, so on a fully exposed front it needs more careful design than in a sheltered spot. A neutral overview of how these species and modified timbers compare on durability class is set out by [ForestSource on modified and durable wood](https://forestsource.io/topics/modified-wood), which is a useful sense-check against any single supplier claim. The broader [wood versus metal decision for a Kent gate](/blog/best-gate-material-kent-wood-steel-aluminium/) also sits behind this, because on the most brutal seafront plots some owners conclude that a marine-grade metal gate is the lower-maintenance answer.' },
     { type: 'p', text: 'Cost tends to sort these options in a way that surprises people. Accoya usually sits above ordinary softwood and can approach hardwood prices, which feels counter-intuitive for a modified pine until the warranty and the low movement are weighed in. Iroko is a genuine hardwood price, and good oak is dearer still for a well-made estate gate. On the coast the sensible way to read those numbers is over the life of the gate rather than at the point of purchase, because a cheaper timber that needs replacing or heavily reworking after a handful of hard winters is no saving at all. Properly maintained, oak, iroko and Accoya can all give forty to sixty years or more, but that word maintained does a lot of work on an exposed front, and the timber that holds its finish and its shape with the least intervention is usually the one that proves cheapest in the end. Treat any price you see as an indicative range and get a coastal-specific quote, since exposure, size and finish move it considerably.' },
     { type: 'h2', text: 'Fixings and finish matter as much as the species' },
     { type: 'p', text: 'A coastal timber gate is only as good as its ironmongery. Ordinary or even standard stainless fixings can bleed and corrode in salt air, so hinges, bolts and screws should be marine-grade stainless steel, typically the 316 grade specified for coastal work, or hot-dip galvanised and then coated. The same salt that corrodes an all-metal gate works on the ironmongery of a timber one, so the metal parts of a coastal timber gate deserve the same anti-corrosion care as the gate itself. On the finish, a microporous coating that flexes with the wood outlasts a hard film that cracks, and whatever you choose will need recoating more often facing the sea than it would inland. Detailing the gate to shed water quickly, with weathered top rails and no flat surfaces that pond, does as much for its life as the timber grade.' },
@@ -1022,7 +795,7 @@ const article27: BlogArticle = {
     { type: 'p', text: 'Not every rural Kent entrance wants an ornamental gate. On a working farm drive, an orchard track near Faversham, a smallholding on the Marsh or a paddock entrance in the Weald, an ornate spear-topped estate gate looks out of place and gets in the way of the vehicles that actually use the opening. The gate that belongs on agricultural and semi-rural land is the field gate: the familiar five-bar in timber or metal, or its heavier estate-gate cousin, sized and hung for tractors, horseboxes, feed lorries and trailers rather than for show. Choosing one well is a practical exercise in matching the gate to the land, the traffic and the local vernacular rather than to a brochure of decorative ironwork.' },
     { type: 'p', text: 'The appeal is that a well-made field gate reads as though it has always belonged to the place, which matters a great deal on the timber-frame farmhouses, oast conversions and orchard holdings that make up so much of rural Kent. It also tends to be a more honest fit for the budget and the wear a farm entrance actually takes.' },
     { type: 'h2', text: 'When a field gate is the right call' },
-    { type: 'p', text: 'A five-bar or estate field gate suits any entrance where the setting is agricultural or genuinely rural and the traffic is working traffic. If tractors, trailers, a horsebox or delivery lorries use the drive, the wide single-leaf or double field gate gives the clear opening they need without the intermediate posts or the delicate detailing that decorative gates carry. It also sits comfortably against grazing land, orchards and paddocks in a way an ornate gate never does, and on protected land it is often the more acceptable design too, because it echoes the traditional agricultural character that planning officers in the [Kent Downs and High Weald National Landscapes](/blog/driveway-gates-kent-aonb-high-weald-north-downs/) want to see preserved. The [Kent Downs landscape design handbook](https://kentdowns.org.uk/wp-content/uploads/2018/04/Landscape-Design-Handbook.pdf) is explicit that elaborate suburban-style gateways read as out of place in the countryside, which is precisely the pitfall a simple field gate avoids. Where the entrance is to a period farmhouse or barn conversion, the field gate is frequently the right aesthetic answer as well, sitting alongside the wider thinking on gates for [older houses and period properties](/blog/driveway-gate-ideas-for-older-houses-and-period-properties/).' },
+    { type: 'p', text: 'A five-bar or estate field gate suits any entrance where the setting is agricultural or genuinely rural and the traffic is working traffic. If tractors, trailers, a horsebox or delivery lorries use the drive, the wide single-leaf or double field gate gives the clear opening they need without the intermediate posts or the delicate detailing that decorative gates carry. It also sits comfortably against grazing land, orchards and paddocks in a way an ornate gate never does, and on protected land it is often the more acceptable design too, because it echoes the traditional agricultural character that planning officers in the [Kent Downs and High Weald National Landscapes](/blog/planning-permission-driveway-gates-kent/) want to see preserved. The [Kent Downs landscape design handbook](https://kentdowns.org.uk/wp-content/uploads/2018/04/Landscape-Design-Handbook.pdf) is explicit that elaborate suburban-style gateways read as out of place in the countryside, which is precisely the pitfall a simple field gate avoids. Where the entrance is to a period farmhouse or barn conversion, the field gate is frequently the right aesthetic answer as well, sitting alongside the wider thinking on gates for [older houses and period properties](/blog/driveway-gate-ideas-for-older-houses-and-period-properties/).' },
     { type: 'h2', text: 'Timber field gates: the traditional Kent look' },
     { type: 'image', src: '/images/gates/gate-wooden-painted-cream-kentish-countryside.png', alt: 'A traditional timber five-bar field gate on rural Kent farmland' },
     { type: 'p', text: 'The classic agricultural gate is the timber five-bar, traditionally softwood or, for longer life, a durable hardwood such as oak or sweet chestnut, the latter a genuinely local Kentish coppice timber. Its diagonal brace is not decoration; it stops the gate dropping at the latch end under its own weight, and it should always run from the bottom of the hinge side up towards the latch. A timber field gate weathers to silver-grey, blends into hedgerow and orchard, and can be made to the wider widths a farm needs. The trade-off is that timber wants maintenance and a heavy field gate is a real load on its hinges and post, so the hanging post has to be substantial and well set. For a gate that will be automated, the weight and movement of timber need to be allowed for in the motor choice, which is one reason the field gate should be planned as a whole rather than bought off a stack and mechanised as an afterthought.' },
@@ -1067,12 +840,7 @@ const article28: BlogArticle = {
 
 
 export const blogArticles: BlogArticle[] = [
-  article1, article2, article3, article4, article5,
-  article6, article7, article8, article9, article10,
-  article11, article12, article13, article14, article15,
-  article16, article17, article18, article19, article20,
-  article21, article22, article23, article24, article25,
-  article26, article27, article28,
+  article1, article2, article3, article4, article5, article6, article7, article10, article11, article12, article13, article14, article16, article18, article19, article20, article21, article22, article23, article24, article25, article26, article27, article28,
 ].filter(a => !a.draft);
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

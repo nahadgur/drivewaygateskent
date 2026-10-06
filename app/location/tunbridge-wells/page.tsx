@@ -95,7 +95,7 @@ export default function TunbridgeWellsPage() {
 
           <TownSection title="High Weald and Green Belt Beyond the Town">
             <p>
-              The <Link href="/blog/driveway-gates-kent-aonb-high-weald-north-downs/" className={linkClass}>High Weald National Landscape</Link> and the Green Belt together cover about three quarters of the borough. The Local Plan adopted on 10 December 2025 released a small share of Green Belt for housing. For villages such as Langton Green, Speldhurst and Pembury, timber gates are often what the landscape and the planning officer expect.
+              The <Link href="/blog/planning-permission-driveway-gates-kent/" className={linkClass}>High Weald National Landscape</Link> and the Green Belt together cover about three quarters of the borough. The Local Plan adopted on 10 December 2025 released a small share of Green Belt for housing. For villages such as Langton Green, Speldhurst and Pembury, timber gates are often what the landscape and the planning officer expect.
             </p>
           </TownSection>
 
