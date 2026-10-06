@@ -17,15 +17,15 @@ export const BLOG_SITEMAP_RELEASE: Record<string, string> = {
   'electric-sliding-vs-swing-gates-kent': '2026-10-06',
 
   // Batch 2 — 2026-06-30
-  'electric-gate-maintenance-kent': '2026-06-30',
-  'driveway-gates-home-security-kent': '2026-06-30',
+  'electric-gate-maintenance-kent': '2026-10-06',
+  'driveway-gates-home-security-kent': '2026-10-06',
 
   // Batch 3 — 2026-07-07
-  'electric-gate-automation-retrofit-kent': '2026-07-07',
-  'choosing-gate-installer-kent': '2026-07-07',
+  'electric-gate-automation-retrofit-kent': '2026-10-06',
+  'choosing-gate-installer-kent': '2026-10-06',
 
   // Batch 4 — 2026-07-14
-  'do-electric-gates-add-value-to-your-house': '2026-07-14',
+  'do-electric-gates-add-value-to-your-house': '2026-10-06',
   'best-electric-gate-motor-brands-uk-compared': '2026-07-14',
 
   // Batch 5 — 2026-07-21
@@ -35,7 +35,7 @@ export const BLOG_SITEMAP_RELEASE: Record<string, string> = {
 
   // Batch 6 — 2026-07-28
   'how-long-do-electric-gates-last-before-replacing': '2026-07-28',
-  'what-to-do-when-electric-gates-stop-working': '2026-07-28',
+  'what-to-do-when-electric-gates-stop-working': '2026-10-06',
   'can-you-install-driveway-gates-on-a-sloped-driveway': '2026-07-28',
 
   // Published spokes that were never added to the schedule
