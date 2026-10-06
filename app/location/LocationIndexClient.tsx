@@ -2,11 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { MapPin } from 'lucide-react';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { FAQS_LOCATION } from '@/data/site';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { Hero } from '@/components/Hero';
 import { FAQ } from '@/components/FAQ';
 import { LeadFormModal } from '@/components/LeadFormModal';
 
@@ -81,56 +80,40 @@ const COUNCILS: { name: string; note: string; towns: { slug: string; label: stri
 
 export default function LocationIndexPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [search, setSearch] = useState('');
+  const query = search.trim().toLowerCase();
+  const filteredCouncils = COUNCILS.map(council => ({
+    ...council,
+    towns: council.name.toLowerCase().includes(query) ? council.towns : council.towns.filter(town => town.label.toLowerCase().includes(query) || town.slug.includes(query)),
+  })).filter(council => council.towns.length > 0);
+  const townCount = filteredCouncils.reduce((count, council) => count + council.towns.length, 0);
 
-  return (
-    <>
-      <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-      <Header onOpenModal={() => setIsModalOpen(true)} />
-      <main className="flex-grow heritage-inner">
-        <Hero
-          title="Driveway Gates Across Kent"
-          subtitle="Planning rules, ground and weather change from one council to the next. Find your area to see what applies to a gate where you live."
-          image="/images/gates/gate-aerial-wrought-iron-closed-topiary-gravel-circle.png"
-          onOpenModal={() => setIsModalOpen(true)}
-        />
-
-        <section className="section-padding">
-          <div className="container-width">
-            <div className="max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-4">Kent&apos;s 13 Councils and Their Gate Rules</h2>
-              <p className="text-gray-600 text-lg leading-8">
-                Kent has 12 district councils plus Medway, and each sets its own policy on conservation areas, Article 4 directions and front boundaries. Kent County Council handles dropped kerbs everywhere except Medway, which runs its own highways.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
-              {COUNCILS.map(c => (
-                <div key={c.name} className="bg-white border border-brand-200 rounded-sm p-6">
-                  <h3 className="text-xl font-display font-semibold text-brand-950 mb-2">{c.name}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-4">{c.note}</p>
-                  <ul className="space-y-2">
-                    {c.towns.map(t => (
-                      <li key={t.slug}>
-                        <Link href={`/location/${t.slug}/`} className="group inline-flex items-center gap-2 font-medium text-brand-700 hover:text-brand-900">
-                          <MapPin className="w-4 h-4 text-brand-500 flex-shrink-0" />
-                          <span className="group-hover:underline">Driveway gates in {t.label}</span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section-padding bg-brand-50">
-          <div className="container-width max-w-3xl">
-            <FAQ faqs={FAQS_LOCATION} />
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  );
+  return <>
+    <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    <Header onOpenModal={() => setIsModalOpen(true)} />
+    <main id="main-content" className="subpage locations-index">
+      <header className="location-opening container-width">
+        <Breadcrumbs items={[{ label: 'Areas we cover' }]} />
+        <div className="location-opening-layout">
+          <div className="location-opening-copy"><p className="eyebrow">Local knowledge matters</p><h1>Driveway Gates<br /><em>Across Kent</em></h1><p>Planning rules, ground and weather change from one council to the next. Find your area to see what applies to a gate where you live.</p><a href="#kent-districts" className="text-link">Find your area</a></div>
+          <figure className="location-opening-image">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/gates/gate-aerial-wrought-iron-closed-topiary-gravel-circle.png" alt="Gated Kent country entrance with gravel driveway and topiary" width={1408} height={768} fetchPriority="high" />
+          </figure>
+        </div>
+      </header>
+      <section id="kent-districts" className="location-directory container-width" aria-labelledby="area-finder-title">
+        <div className="area-finder"><div><h2 id="area-finder-title">Find your area</h2><p>Choose a town for local gate advice.</p></div><label className="area-search"><span>Search towns or districts</span><input type="search" placeholder="e.g. Sevenoaks or Canterbury" value={search} onChange={event => setSearch(event.target.value)} /></label></div>
+        <div className="area-directory-meta"><p role="status">{townCount} {townCount === 1 ? 'area' : 'areas'} across {filteredCouncils.length} {filteredCouncils.length === 1 ? 'council' : 'councils'}</p>{query && <button onClick={() => setSearch('')} className="text-link">Clear search</button>}</div>
+        {filteredCouncils.length > 0 ? <div className="area-district-grid">{filteredCouncils.map(council => <section key={council.name} className="area-district">
+          <h3>{council.name}</h3>
+          <ul className="area-town-links">{council.towns.map(town => <li key={town.slug}><Link href={`/location/${town.slug}/`} aria-label={`Driveway gates in ${town.label}`}>{town.label}</Link></li>)}</ul>
+          <details className="area-rules"><summary>Local gate rules<span className="rules-closed" aria-hidden="true">+</span><span className="rules-open" aria-hidden="true">&minus;</span></summary><p>{council.note}</p></details>
+        </section>)}</div> : <div className="area-empty"><h3>No matching areas</h3><p>Try a nearby town or a district name.</p><button className="btn-primary" onClick={() => setSearch('')}>Show all areas</button></div>}
+        <div className="county-rule-overview"><h2>Kent&apos;s 13 Councils<br /><em>and Their Gate Rules</em></h2><p>Kent has 12 district councils plus Medway, and each sets its own policy on conservation areas, Article 4 directions and front boundaries. Kent County Council handles dropped kerbs everywhere except Medway, which runs its own highways.</p></div>
+      </section>
+      <section className="subpage-faq container-width"><p className="eyebrow">Before you begin</p><FAQ faqs={FAQS_LOCATION} /></section>
+    </main>
+    <Footer />
+  </>;
 }

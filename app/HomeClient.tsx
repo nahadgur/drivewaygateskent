@@ -1,14 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, Zap, FileCheck, KeyRound, Gauge, Wrench } from 'lucide-react';
+import { ShieldCheck, Zap, FileCheck, KeyRound, Gauge, Wrench } from 'lucide-react';
 import { services } from '@/data/services';
 import { pricingTiers } from '@/data/pricing';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { Hero } from '@/components/Hero';
-import { HeroLeadForm } from '@/components/HeroLeadForm';
+
+
 import { FAQ } from '@/components/FAQ';
 import { LeadFormModal } from '@/components/LeadFormModal';
 
@@ -99,182 +99,111 @@ const homepageFaqs = [
 
 export default function HomeClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const openQuotes = () => setIsModalOpen(true);
+  const [selectedGate, setSelectedGate] = useState(0);
+  const gateTabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const handleGateKey = (event: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
+    let next = index;
+    if (event.key === 'ArrowDown') next = (index + 1) % services.length;
+    else if (event.key === 'ArrowUp') next = (index - 1 + services.length) % services.length;
+    else if (event.key === 'Home') next = 0;
+    else if (event.key === 'End') next = services.length - 1;
+    else return;
+    event.preventDefault();
+    setSelectedGate(next);
+    gateTabs.current[next]?.focus();
+  };
 
-  return (
-    <>
-      <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-      <Header onOpenModal={() => setIsModalOpen(true)} />
-
-      <main>
-        <Hero
-          title="Driveway Gates in Kent, Supplied and Fitted"
-          subtitle="Electric, wooden and metal driveway gates for Kent homes. Describe your entrance and up to three local installers will arrange a site survey and a written quote."
-          image="/images/gates/gate-wrought-iron-open-manor-brick-pillars.png"
-          checklist={[
-            'Electric sliding and swing gates, wooden and wrought iron',
-            'Guide prices from £2,800 fitted',
-            'Free, no-obligation written quotes',
-          ]}
-          form={<HeroLeadForm />}
-        />
-
-        {/* How It Works */}
-        <section id="how-it-works" className="section-padding bg-white scroll-mt-24">
-          <div className="container-width">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-4">How Getting a Quote Works</h2>
-              <p className="text-gray-600 max-w-xl mx-auto">Three steps from your first message to a written quote you can compare.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  step: '1',
-                  title: 'Describe Your Project',
-                  desc: 'Your Kent town or postcode and the type of gate you want. It takes about two minutes.',
-                },
-                {
-                  step: '2',
-                  title: 'Arrange Site Surveys',
-                  desc: 'Up to three Kent gate installers contact you to visit. They measure the entrance, check the ground and power supply, and flag any planning questions.',
-                },
-                {
-                  step: '3',
-                  title: 'Compare Written Quotes',
-                  desc: 'Each quote is based on a survey of your property. Compare them on your own terms and go ahead only if you want to.',
-                },
-              ].map(item => (
-                <div key={item.step} className="text-center">
-                  <div className="w-14 h-14 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-5">{item.step}</div>
-                  <h3 className="text-lg font-display font-semibold text-brand-950 mb-3">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
+  return <>
+    <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    <Header onOpenModal={openQuotes} />
+    <main id="main-content" className="home-editorial">
+      <section className="entrance-hero">
+        <div className="hero-heading container-width">
+          <div className="hero-kicker"><p>Driveway gate installers across Kent</p><p>Independent quote service</p></div>
+          <h1>Driveway <span>Gates</span><span className="sr-only"> in Kent, supplied and fitted.</span></h1>
+        </div>
+        <div className="hero-stage container-width">
+          <figure className="hero-photograph">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/gates/gate-wrought-iron-open-manor-brick-pillars.png" alt="Wrought iron entrance gates opening towards a country house" fetchPriority="high" />
+            <figcaption><span>Electric. Wooden. Metal.</span><a href="#gate-styles">Explore gate styles</a></figcaption>
+          </figure>
+          <div className="hero-copy">
+            <p className="hero-location">In Kent.</p>
+            <h2>Supplied<br />and fitted.</h2>
+            <p className="hero-description">Electric, wooden and metal driveway gates for Kent homes. Describe your entrance and up to three local installers will arrange a site survey and a written quote.</p>
+            <button onClick={openQuotes} className="btn-primary">Get free quotes</button>
+            <p className="hero-note">Free, no-obligation written quotes</p>
           </div>
-        </section>
+        </div>
+        <div className="assurance-strip container-width"><p>Electric sliding and swing gates</p><p>Wooden and wrought iron</p><p>Guide prices from £2,800 fitted</p></div>
+      </section>
 
-        {/* Gate Types */}
-        <section className="section-padding bg-brand-50">
-          <div className="container-width">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-4">Electric, Wooden and Metal Driveway Gates</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">A <Link href="/services/electric-sliding-gates/" className="text-brand-600 hover:underline">sliding gate</Link> suits a short or steep North Downs drive, while a <Link href="/services/wooden-driveway-gates/" className="text-brand-600 hover:underline">hardwood gate</Link> suits a Wealden farmhouse. Start with the gate type.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map(service => (
-                <Link key={service.id} href={`/services/${service.slug}/`} className="group bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-brand-100">
-                  <div className="h-44 overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={service.image} alt={`${service.title} in Kent`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                  </div>
-                  <div className="p-5">
-                    <h3 className="text-lg font-display font-semibold text-brand-950 group-hover:text-brand-600 mb-2">{service.title}</h3>
-                    <p className="text-sm text-gray-500 mb-4 line-clamp-2">{service.description}</p>
-                    <span className="text-brand-600 font-medium text-sm flex items-center">
-                      Prices and options <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Kent by District */}
-        <section className="section-padding bg-white">
-          <div className="container-width">
-            <div className="max-w-3xl mb-10">
-              <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-5">Driveway Gates Across Kent by District</h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                  Kent has 13 local planning authorities, the 12 district councils plus Medway, and each sets its own policy on boundary treatments, conservation areas and Article 4 directions. The Kent Downs and High Weald, renamed from Areas of Outstanding Natural Beauty to National Landscapes in 2023, cover much of the west and south of the county.
-                </p>
-                <p>
-                  The property stock changes the specification too. Oast houses and barn conversions in the Weald usually call for hardwood, period homes around Sevenoaks and Tunbridge Wells suit wrought iron on brick piers, new builds in North Kent suit aluminium sliding gates, and the coast from Whitstable to Folkestone needs <Link href="/blog/coastal-gate-corrosion-protection/" className="text-brand-600 hover:underline">corrosion-resistant finishes</Link>.
-                </p>
+      <section id="gate-styles" className="gate-collection section-padding">
+        <div className="container-width">
+          <div className="section-heading"><div><p className="eyebrow">Find your entrance</p><h2>Electric, Wooden and<br /><em>Metal Driveway Gates</em></h2></div><p>A <Link href="/services/electric-sliding-gates/">sliding gate</Link> suits a short or steep North Downs drive, while a <Link href="/services/wooden-driveway-gates/">hardwood gate</Link> suits a Wealden farmhouse. Start with the gate type.</p></div>
+          <div className="gate-browser">
+            <div className="gate-panels">{services.map((service,index) => <div key={service.id} id={'gate-panel-' + index} role="tabpanel" aria-labelledby={'gate-tab-' + index} hidden={selectedGate !== index} tabIndex={0}>
+              <div className="gate-image">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={service.image} alt={service.title + ' in Kent'} loading="lazy" width={1408} height={768} />
               </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {DISTRICTS.map(d => (
-                <div key={d.name} className="p-5 bg-brand-50 rounded-sm border border-brand-100">
-                  <h3 className="font-display font-semibold text-brand-950 mb-2">{d.name}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {d.towns.map(([slug, label], i) => (
-                      <span key={slug}>
-                        <Link href={`/location/${slug}/`} className="text-brand-600 hover:underline">{label}</Link>
-                        {i < d.towns.length - 1 ? ', ' : ''}
-                      </span>
-                    ))}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8">
-              <Link href="/location/" className="btn-secondary">See every area covered</Link>
+              <div className="gate-panel-copy"><p>{service.description}</p><Link href={'/services/' + service.slug + '/'} className="btn-primary">Prices and options</Link></div>
+            </div>)}</div>
+            <div className="gate-selector">
+              <p className="eyebrow">Choose your gate type</p>
+              <div role="tablist" aria-label="Gate types" aria-orientation="vertical">{services.map((service,index) => <button key={service.id} id={'gate-tab-' + index} role="tab" aria-selected={selectedGate === index} aria-controls={'gate-panel-' + index} tabIndex={selectedGate === index ? 0 : -1} ref={node => { gateTabs.current[index] = node; }} onKeyDown={event => handleGateKey(event,index)} onPointerEnter={event => { if (event.pointerType === 'mouse') setSelectedGate(index); }} onFocus={() => setSelectedGate(index)} onClick={() => setSelectedGate(index)}>
+                {service.title}<span aria-hidden="true">{selectedGate === index ? '−' : '+'}</span>
+              </button>)}</div>
+              <Link href="/services/" className="text-link">View all gate services</Link>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* What a Proper Install Includes */}
-        <section className="section-padding bg-brand-50">
-          <div className="container-width">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-4">What a Proper Electric Gate Install Includes</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">Use this as a checklist when you compare quotes. A well-run installation covers all six.</p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {INSTALL_CHECKS.map(item => (
-                <div key={item.title} className="bg-white rounded-sm p-6 border border-brand-100 shadow-sm">
-                  <div className="bg-brand-100 p-3 rounded-sm text-brand-600 w-fit mb-4">{item.icon}</div>
-                  <h3 className="font-display font-semibold text-brand-950 mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+      <section id="how-it-works" className="quote-process section-padding">
+        <div className="container-width process-layout">
+          <div className="process-intro"><p className="eyebrow">A simpler way to start</p><h2>How Getting<br />a Quote <em>Works</em></h2><p>Three steps from your first message to a written quote you can compare.</p><button onClick={openQuotes} className="btn-light">Get free quotes</button></div>
+          <div className="process-steps">{[
+            { step: '1', title: 'Describe Your Project', desc: 'Your Kent town or postcode and the type of gate you want. It takes about two minutes.' },
+            { step: '2', title: 'Arrange Site Surveys', desc: 'Up to three Kent gate installers contact you to visit. They measure the entrance, check the ground and power supply, and flag any planning questions.' },
+            { step: '3', title: 'Compare Written Quotes', desc: 'Each quote is based on a survey of your property. Compare them on your own terms and go ahead only if you want to.' },
+          ].map(item => <div className="process-step" key={item.step}><span className="step-number">{item.step}</span><div><h3>{item.title}</h3><p>{item.desc}</p></div></div>)}</div>
+        </div>
+      </section>
 
-        {/* Guide Prices */}
-        <section className="section-padding bg-white">
-          <div className="container-width">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-semibold text-brand-950 mb-4">Driveway Gate Guide Prices in Kent for 2026</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">Indicative ranges for a fully installed gate, not quotes. <Link href="/blog/how-much-do-driveway-gates-cost-kent-2026/" className="text-brand-600 hover:underline">West Kent usually sits higher</Link> than North and East Kent.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {pricingTiers.map(tier => (
-                <div key={tier.slug} className="bg-brand-50 rounded-sm p-6 border border-brand-100">
-                  <h3 className="font-display font-semibold text-brand-950 mb-2">{tier.treatment}</h3>
-                  <p className="text-2xl font-bold text-brand-600 mb-1">
-                    &pound;{tier.priceFrom.toLocaleString()} <span className="text-base text-gray-400 font-normal">to</span> &pound;{tier.priceTo.toLocaleString()}
-                  </p>
-                  <p className="text-xs text-gray-500 mb-3">{tier.includes} &middot; {tier.typicalDuration}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{tier.description}</p>
-                </div>
-              ))}
+      <section className="kent-section section-padding">
+        <div className="container-width">
+          <div className="kent-intro">
+            <figure className="kent-image">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/gates/gate-wooden-oak-open-interior-tree-lined-lane.png" alt="Oak gates opening onto a leafy country lane" loading="lazy" width={1408} height={768} />
+              <figcaption>Hardwood gates. A natural fit for the Weald.</figcaption>
+            </figure>
+            <div><p className="eyebrow">Local knowledge matters</p><h2>Driveway Gates Across Kent <em>by District</em></h2>
+              <p>Kent has 13 local planning authorities, the 12 district councils plus Medway, and each sets its own policy on boundary treatments, conservation areas and Article 4 directions. The Kent Downs and High Weald, renamed from Areas of Outstanding Natural Beauty to National Landscapes in 2023, cover much of the west and south of the county.</p>
+              <p>The property stock changes the specification too. Oast houses and barn conversions in the Weald usually call for hardwood, period homes around Sevenoaks and Tunbridge Wells suit wrought iron on brick piers, new builds in North Kent suit aluminium sliding gates, and the coast from Whitstable to Folkestone needs <Link href="/blog/coastal-gate-corrosion-protection/" className="inline-link">corrosion-resistant finishes</Link>.</p>
+              <Link href="/location/" className="text-link">See every area covered</Link>
             </div>
           </div>
-        </section>
+          <div className="district-list">{DISTRICTS.map(d => <div key={d.name}><h3>{d.name}</h3><p>{d.towns.map(([slug, label], i) => <span key={slug}><Link href={'/location/' + slug + '/'}>{label}</Link>{i < d.towns.length - 1 ? ' · ' : ''}</span>)}</p></div>)}</div>
+        </div>
+      </section>
 
-        {/* FAQ */}
-        <section className="section-padding bg-brand-50">
-          <div className="container-width max-w-3xl">
-            <FAQ faqs={homepageFaqs} title="Driveway Gates in Kent: Common Questions" />
-          </div>
-        </section>
+      <section className="installation-section section-padding"><div className="container-width">
+        <div className="section-heading"><div><p className="eyebrow">The details that count</p><h2>What a Proper Electric<br /><em>Gate Install Includes</em></h2></div><p>Use this as a checklist when you compare quotes. A well-run installation covers all six.</p></div>
+        <div className="installation-grid">{INSTALL_CHECKS.map(item => <div key={item.title}><div className="installation-heading"><h3>{item.title}</h3><span className="installation-icon" aria-hidden="true">{item.icon}</span></div><p>{item.desc}</p></div>)}</div>
+      </div></section>
 
-        {/* Bottom CTA */}
-        <section className="section-padding bg-brand-900 text-white">
-          <div className="container-width text-center">
-            <h2 className="text-3xl md:text-4xl font-display font-semibold mb-4">Get Free Driveway Gate Quotes in Kent</h2>
-            <p className="text-brand-200 max-w-2xl mx-auto mb-8">Tell us about your entrance and up to three Kent installers will arrange site surveys and written quotes. No fee and no obligation.</p>
-            <button onClick={() => setIsModalOpen(true)} className="bg-white text-brand-900 font-bold text-lg py-4 px-10 rounded-sm hover:bg-brand-50 transition-colors">
-              Get Free Quotes
-            </button>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  );
+      <section className="prices-section section-padding"><div className="container-width pricing-layout">
+        <div className="pricing-intro"><p className="eyebrow">Plan your project</p><h2>Driveway Gate Guide Prices in Kent <em>for 2026</em></h2><p>Indicative ranges for a fully installed gate, not quotes. <Link href="/blog/how-much-do-driveway-gates-cost-kent-2026/" className="inline-link">West Kent usually sits higher</Link> than North and East Kent.</p><button onClick={openQuotes} className="btn-primary">Get free quotes</button></div>
+        <div className="price-list">{pricingTiers.map(tier => <details key={tier.slug} className="price-row"><summary><span><span className="price-name">{tier.treatment}</span><span className="price-meta">{tier.typicalDuration}</span></span><span className="price-amount">£{tier.priceFrom.toLocaleString()} <span>–</span> £{tier.priceTo.toLocaleString()}</span><span className="price-toggle" aria-hidden="true">+</span></summary><div className="price-details"><p>{tier.includes}</p><p>{tier.description}</p></div></details>)}<p className="price-footnote">Select a gate type to see what is included.</p></div>
+      </div></section>
+
+      <section className="questions-section section-padding"><div className="container-width questions-layout"><div><p className="eyebrow">Before you begin</p><h2>A little more<br /><em>clarity.</em></h2><p>Driveway gates, planning and installation.</p></div><FAQ faqs={homepageFaqs} title="Driveway Gates in Kent: Common Questions" /></div></section>
+      <section className="closing-section"><div className="container-width closing-layout"><div><p className="eyebrow">Your entrance starts here</p><h2>Get Free Driveway<br />Gate Quotes <em>in Kent</em></h2></div><div><p>Tell us about your entrance and up to three Kent installers will arrange site surveys and written quotes. No fee and no obligation.</p><button onClick={openQuotes} className="btn-light">Get Free Quotes</button></div></div></section>
+    </main>
+    <Footer />
+  </>;
 }

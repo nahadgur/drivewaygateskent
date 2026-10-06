@@ -13,7 +13,7 @@ export function TownShell({ children }: { children: React.ReactNode }) {
     <>
       <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Header onOpenModal={() => setIsModalOpen(true)} />
-      <main className="flex-grow">{children}</main>
+      <main id="main-content" className="subpage town-page">{children}</main>
       <Footer />
     </>
   );

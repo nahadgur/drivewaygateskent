@@ -6,19 +6,19 @@ import { siteConfig } from '@/data/site';
 
 export function Footer() {
   return (
-    <footer className="bg-brand-950 text-brand-100 pt-20 pb-8 border-t-4 border-brand-500">
+    <footer className="site-footer">
       <div className="container-width">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_.8fr] gap-10 mb-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 border border-brand-400 flex items-center justify-center text-brand-300 font-bold">DG</div>
-              <span className="font-display font-semibold text-lg text-white">Driveway Gates Kent</span>
+
+              <span className="footer-brand">Driveway Gates Kent</span>
             </div>
-            <p className="text-sm text-brand-100/75 leading-relaxed mb-4">
+            <p className="footer-description">
               Free quote service connecting Kent homeowners with driveway gate installers across every corner of the county.
             </p>
-            <p className="text-xs text-brand-200/55 italic border-l-2 border-brand-700 pl-3">
+            <p className="footer-disclosure">
               Driveway Gates Kent is a referral service. We connect you with independent gate installers. We do not carry out installations ourselves.
             </p>
           </div>
@@ -66,7 +66,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-brand-800 pt-8 text-sm text-brand-200/55 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-brand-800 pt-8 text-sm text-brand-200/80 flex flex-col md:flex-row justify-between items-center gap-4">
           <p>&copy; {new Date().getFullYear()} {siteConfig.name}. We are a matching service, not a gate installer.</p>
           <div className="flex gap-6">
             <Link href="/sitemap.xml" className="hover:text-brand-100">Sitemap</Link>

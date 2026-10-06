@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { Calendar, ArrowLeft, ArrowRight } from 'lucide-react';
+import { PageIntro } from '@/components/PageIntro';
+import { QuoteBand } from '@/components/QuoteBand';
 import { getArticleBySlug, type ContentBlock } from '@/data/blog';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -11,31 +12,7 @@ import { LeadFormModal } from '@/components/LeadFormModal';
 import { siteConfig } from '@/data/site';
 
 function BlogCtaBanner({ onOpenModal }: { onOpenModal: () => void }) {
-  return (
-    <div className="my-12 rounded-sm overflow-hidden border border-brand-600 bg-brand-950 shadow-lg relative not-prose">
-      <div className="absolute inset-y-0 left-0 w-1.5 bg-brand-500" />
-      <div className="px-7 py-8 md:px-10 md:py-10 flex flex-col md:flex-row items-center gap-6">
-        <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-brand-500/20 flex items-center justify-center">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-brand-400">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-          </svg>
-        </div>
-        <div className="flex-1 text-center md:text-left">
-          <h3 className="text-xl md:text-2xl font-display font-semibold !text-white leading-snug mb-2">Looking for a Kent gate installer?</h3>
-          <p className="!text-brand-100 text-sm md:text-base leading-6">Up to three Kent installers will arrange a site survey and a written quote. No fee and no obligation.</p>
-        </div>
-        <div className="flex-shrink-0">
-          <button
-            onClick={onOpenModal}
-            className="inline-flex min-h-12 items-center gap-2 px-7 py-3 rounded-sm bg-brand-500 hover:bg-brand-400 !text-brand-950 font-bold text-sm transition-colors whitespace-nowrap"
-          >
-            Get 3 Free Quotes
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+  return <QuoteBand title="Looking for a Kent gate installer?" onOpenModal={onOpenModal}><p>Up to three Kent installers will arrange a site survey and a written quote. No fee and no obligation.</p></QuoteBand>;
 }
 
 /* Inline markdown-link parser: [text](url) rendered inline in prose.
@@ -83,11 +60,9 @@ function ContentRenderer({ blocks, onOpenModal }: { blocks: ContentBlock[]; onOp
     }
   }
 
-  // Track which images have been rendered
-  const renderedImages = new Set<number>();
 
   return (
-    <div className="prose prose-gray max-w-none">
+    <div className="article-prose">
       {blocks.map((block, i) => {
         // Skip image blocks, they render attached to their h2 instead
         if (block.type === 'image') return null;
@@ -104,7 +79,7 @@ function ContentRenderer({ blocks, onOpenModal }: { blocks: ContentBlock[]; onOp
         switch (block.type) {
           case 'h2':
             elements.push(
-              <h2 key={i} className="text-2xl md:text-3xl font-display font-semibold text-brand-950 mt-10 mb-4">
+              <h2 key={i} id={`section-${i}`} className="text-2xl md:text-3xl font-display font-semibold text-brand-950 mt-10 mb-4">
                 {block.text}
               </h2>
             );
@@ -112,7 +87,7 @@ function ContentRenderer({ blocks, onOpenModal }: { blocks: ContentBlock[]; onOp
             if (imageQueue[i]) {
               imageQueue[i].forEach((img, imgIdx) => {
                 elements.push(
-                  <div key={`img-${i}-${imgIdx}`} className="my-6 rounded-sm overflow-hidden border border-gray-200 shadow-lg aspect-[16/9]">
+                  <div key={`img-${i}-${imgIdx}`} className="article-inline-image">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={img.src} alt={img.alt} className="w-full h-full object-cover" loading="lazy" />
                   </div>
@@ -199,41 +174,19 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }} />
       <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Header onOpenModal={() => setIsModalOpen(true)} />
-      <main className="flex-grow heritage-inner">
-
-        {/* Hero */}
-        <div className="relative h-[400px] md:h-[500px] overflow-hidden">
+      <main id="main-content" className="subpage article-page">
+        <PageIntro eyebrow={article.category} title={article.title} breadcrumbs={[{ label: 'Guides', href: '/blog/' }, { label: article.category }]}>
+          <p>{article.excerpt}</p>
+          <time className="article-date" dateTime={article.publishDate}>{new Date(article.publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time>
+        </PageIntro>
+        <figure className="article-cover container-width">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={article.featuredImage} alt={article.title} className="w-full h-full object-cover" loading="eager" />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/40 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 container-width pb-10">
-            <Link href="/blog/" className="inline-flex items-center gap-1 text-brand-300 text-xs font-bold uppercase tracking-wider mb-4 hover:text-brand-200 transition-colors">
-              <ArrowLeft className="w-3 h-3" /> Back to blog
-            </Link>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="px-3 py-1 bg-brand-500/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider rounded-full">
-                {article.category}
-              </span>
-              <span className="flex items-center gap-1 text-brand-100 text-xs">
-                <Calendar className="w-3 h-3" />
-                {new Date(article.publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
-              </span>
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-white max-w-4xl leading-tight">
-              {article.title}
-            </h1>
-          </div>
+          <img src={article.featuredImage} alt={article.title} width={1408} height={768} fetchPriority="high" />
+        </figure>
+        <div className="container-width article-layout">
+          <aside className="article-contents"><nav aria-label="On this page"><p className="eyebrow">In this guide</p>{article.content.map((block, i) => block.type === 'h2' ? <a key={i} href={`#section-${i}`}>{block.text}</a> : null)}<Link href="/blog/" className="text-link">All guides</Link></nav></aside>
+          <article><ContentRenderer blocks={article.content} onOpenModal={() => setIsModalOpen(true)} /><Link href="/blog/" className="text-link article-back">Back to all guides</Link></article>
         </div>
-
-        {/* Long-form content */}
-        <div className="container-width py-12 md:py-16">
-          <div className="max-w-4xl mx-auto">
-            <article>
-              <ContentRenderer blocks={article.content} onOpenModal={() => setIsModalOpen(true)} />
-            </article>
-          </div>
-        </div>
-
       </main>
       <Footer />
     </>

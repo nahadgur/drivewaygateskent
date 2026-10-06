@@ -72,7 +72,7 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
 
   // Auto-focus first input on open + restore focus on close
   useEffect(() => {
-    if (isOpen && modalRef.current) {
+    if (isOpen && modalRef.current && !previousFocusRef.current) {
       previousFocusRef.current = document.activeElement as HTMLElement;
       const firstInput = modalRef.current.querySelector<HTMLElement>('input, select, button');
       firstInput?.focus();
@@ -81,7 +81,7 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
       previousFocusRef.current.focus();
       previousFocusRef.current = null;
     }
-  }, [isOpen]);
+  }, [isOpen, shouldRender]);
 
   // Focus trap — keep Tab cycling within the modal
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
@@ -235,7 +235,7 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   disabled={isSubmitting}
                   className="w-full bg-brand-500 hover:bg-brand-600 active:scale-[0.98] disabled:opacity-60 text-white font-bold py-3.5 px-6 rounded-sm transition-all text-base mt-1 shadow-md shadow-brand-500/20"
                 >
-                  {isSubmitting ? 'Sending…' : 'Request a Free Call Back →'}
+                  {isSubmitting ? 'Sending…' : 'Request a Free Call Back'}
                 </button>
 
                 <p className="text-center text-xs text-gray-500 leading-relaxed">

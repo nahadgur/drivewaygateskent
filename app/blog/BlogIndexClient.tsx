@@ -1,219 +1,42 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
-import { ArrowRight, Calendar, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { blogArticles } from '@/data/blog';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { LeadFormModal } from '@/components/LeadFormModal';
+import { PageIntro } from '@/components/PageIntro';
+import { GuideCard } from '@/components/GuideCard';
+import { QuoteBand } from '@/components/QuoteBand';
 
-const publishedArticles = blogArticles.filter(a => !a.draft);
+const publishedArticles = blogArticles.filter(a => !a.draft).sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
 const CATEGORIES = ['All', ...Array.from(new Set(publishedArticles.map(a => a.category))).sort()];
 
 export default function BlogIndexPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState('All');
   const [search, setSearch] = useState('');
-
-  const filtered = publishedArticles
-    .filter(a => activeCategory === 'All' || a.category === activeCategory)
-    .filter(a =>
-      search.trim() === '' ||
-      a.title.toLowerCase().includes(search.toLowerCase()) ||
-      a.excerpt.toLowerCase().includes(search.toLowerCase())
-    )
-    .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
-
+  const query = search.trim().toLowerCase();
+  const filtered = publishedArticles.filter(a => (activeCategory === 'All' || a.category === activeCategory) && (!query || a.title.toLowerCase().includes(query) || a.excerpt.toLowerCase().includes(query)));
   const featured = filtered[0];
-  const rest = filtered.slice(1);
-
-  return (
-    <>
-      <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-      <Header onOpenModal={() => setIsModalOpen(true)} />
-      <main className="flex-grow heritage-inner">
-
-        {/* Hero */}
-        <div className="relative h-[440px] md:h-[540px] overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000&auto=format&fit=crop"
-            alt="Driveway gate guides and advice"
-            className="w-full h-full object-cover"
-            loading="eager"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/50 to-brand-950/20" />
-          <div className="absolute inset-0 flex flex-col items-start justify-end text-left px-6 md:px-[max(2rem,calc((100vw-80rem)/2))] pb-14 md:pb-20">
-            <h1 className="text-4xl md:text-6xl font-display font-medium text-white max-w-4xl leading-[1.05] mb-4">
-              Kent Gate Guides: Planning, Pricing, and Specification
-            </h1>
-            <p className="text-brand-100 text-sm md:text-lg max-w-2xl leading-7">
-              National Landscape planning rules, coastal material specification, cost breakdowns by area, and how to tell a specialist from a generalist. Written specifically for Kent homeowners.
-            </p>
-          </div>
+  return <>
+    <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    <Header onOpenModal={() => setIsModalOpen(true)} />
+    <main id="main-content" className="subpage guides-index">
+      <PageIntro eyebrow="Advice & guides" title="Kent Gate Guides: Planning, Pricing, and Specification" breadcrumbs={[{ label: 'Guides' }]}>
+        <p>National Landscape planning rules, coastal material specification, cost breakdowns by area, and how to tell a specialist from a generalist. Written specifically for Kent homeowners.</p>
+      </PageIntro>
+      <section className="container-width guide-library" aria-label="Gate guides">
+        <div className="guide-filters">
+          <div className="category-filters" role="group" aria-label="Filter guides by category">{CATEGORIES.map(cat => <button key={cat} onClick={() => setActiveCategory(cat)} aria-pressed={activeCategory === cat}>{cat}</button>)}</div>
+          <label className="guide-search"><Search size={18} aria-hidden="true" /><span className="sr-only">Search guides</span><input type="search" placeholder="Search guides…" value={search} onChange={e => setSearch(e.target.value)} /></label>
         </div>
-
-        {/* Search + Filter Bar */}
-        <div className="bg-white border-b border-brand-100 sticky top-0 z-30 shadow-sm">
-          <div className="container-width py-4 flex flex-col sm:flex-row gap-3 items-center justify-between">
-
-            {/* Category pills */}
-            <div className="flex gap-2 flex-wrap">
-              {CATEGORIES.map(cat => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide transition-all ${
-                    activeCategory === cat
-                      ? 'bg-brand-600 text-white shadow-sm'
-                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-
-            {/* Search */}
-            <div className="relative w-full sm:w-56">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search guides…"
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-                className="w-full pl-8 pr-3 py-2 rounded-full border border-gray-200 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-300 focus:border-transparent"
-              />
-            </div>
-          </div>
-        </div>
-
-        <section className="section-padding">
-          <div className="container-width">
-
-            {filtered.length === 0 ? (
-              <div className="text-center py-20">
-                <p className="text-gray-400 text-lg mb-2">No articles found</p>
-                <button
-                  onClick={() => { setSearch(''); setActiveCategory('All'); }}
-                  className="text-brand-600 text-sm font-semibold hover:underline"
-                >
-                  Clear filters
-                </button>
-              </div>
-            ) : (
-              <>
-                {/* Featured Article */}
-                {featured && (
-                  <Link
-                    href={`/blog/${featured.slug}/`}
-                    className="group block mb-12 rounded-sm overflow-hidden border border-brand-100 hover:shadow-lg hover:border-brand-200 transition-all bg-white"
-                  >
-                    <div className="grid grid-cols-1 md:grid-cols-2">
-                      <div className="relative h-60 md:h-auto overflow-hidden">
-                        <img
-                          src={featured.featuredImage}
-                          alt={featured.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-brand-950/10" />
-                        <span className="absolute top-4 left-4 px-3 py-1 bg-brand-500/90 text-white text-[10px] font-bold uppercase tracking-wider rounded-full">
-                          {featured.category}
-                        </span>
-                      </div>
-                      <div className="p-8 md:p-10 flex flex-col justify-center">
-                        <h2 className="text-2xl md:text-3xl font-display font-semibold text-brand-950 group-hover:text-brand-700 transition-colors leading-tight mb-4">
-                          {featured.title}
-                        </h2>
-                        <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">{featured.excerpt}</p>
-                        <div className="flex items-center justify-between">
-                          <span className="flex items-center gap-1.5 text-xs text-gray-400">
-                            <Calendar className="w-3.5 h-3.5" />
-                            {new Date(featured.publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
-                          </span>
-                          <span className="inline-flex items-center gap-1.5 text-brand-600 font-bold text-sm group-hover:gap-2.5 transition-all">
-                            Read guide <ArrowRight className="w-4 h-4" />
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                )}
-
-                {/* Article Grid */}
-                {rest.length > 0 && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {rest.map(article => (
-                      <Link
-                        key={article.slug}
-                        href={`/blog/${article.slug}/`}
-                        className="group flex flex-col bg-white rounded-sm border border-brand-100 overflow-hidden hover:shadow-lg hover:border-brand-200 transition-all"
-                      >
-                        <div className="relative h-44 overflow-hidden">
-                          <img
-                            src={article.featuredImage}
-                            alt={article.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-brand-950/50 to-transparent" />
-                          <span className="absolute top-3 left-3 px-2 py-0.5 bg-brand-500/90 text-white text-[9px] font-bold uppercase tracking-wide rounded-full">
-                            {article.category}
-                          </span>
-                        </div>
-                        <div className="p-5 flex-grow flex flex-col">
-                          <h3 className="text-base font-display font-semibold text-brand-950 group-hover:text-brand-600 transition-colors mb-2 leading-snug line-clamp-2">
-                            {article.title}
-                          </h3>
-                          <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2 flex-grow">
-                            {article.excerpt}
-                          </p>
-                          <div className="flex items-center justify-between pt-3 border-t border-brand-100">
-                            <span className="flex items-center gap-1 text-[11px] text-gray-400">
-                              <Calendar className="w-3 h-3" />
-                              {new Date(article.publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
-                            </span>
-                            <span className="text-brand-600 font-bold text-xs flex items-center gap-1 group-hover:gap-1.5 transition-all">
-                              Read <ArrowRight className="w-3 h-3" />
-                            </span>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </>
-            )}
-
-            {/* CTA Banner */}
-            <div className="mt-16 rounded-sm overflow-hidden bg-gradient-to-r from-brand-900 to-brand-800 border border-brand-700 shadow-lg relative">
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-brand-400 via-brand-500 to-transparent" />
-              <div className="px-8 py-10 md:px-12 flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-display font-semibold text-white mb-2">
-                    Need a Gate Installer in Kent?
-                  </h3>
-                  <p className="text-brand-200 text-sm">
-                    Local installers, site surveys and up to three written quotes. No fees at any stage.
-                  </p>
-                </div>
-                <div className="flex-shrink-0">
-                  <button
-                    onClick={() => setIsModalOpen(true)}
-                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-sm bg-brand-500 hover:bg-brand-400 text-white font-bold text-sm transition-all hover:scale-105 active:scale-95 whitespace-nowrap"
-                  >
-                    Get 3 Free Quotes
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  );
+        <p className="results-count" role="status">{filtered.length} {filtered.length === 1 ? 'guide' : 'guides'}{activeCategory !== 'All' ? ` · ${activeCategory}` : ''}</p>
+        {featured ? <><GuideCard article={featured} featured /><div className="guide-grid">{filtered.slice(1).map(article => <GuideCard key={article.slug} article={article} />)}</div></> : <div className="empty-guides"><h2>No articles found</h2><button className="text-link" onClick={() => { setSearch(''); setActiveCategory('All'); }}>Clear filters</button></div>}
+        <QuoteBand onOpenModal={() => setIsModalOpen(true)}><p>Local installers, site surveys and up to three written quotes. No fees at any stage.</p></QuoteBand>
+      </section>
+    </main>
+    <Footer />
+  </>;
 }

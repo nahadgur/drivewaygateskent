@@ -1,17 +1,17 @@
 // app/services/[serviceSlug]/page.tsx
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { MapPin, Clock, Shield, Star, Search, CheckCircle, ArrowRight, ChevronDown, Award, Users, CreditCard, Sparkles } from 'lucide-react';
-import { services, getServiceBySlug, serviceRelatedPosts } from '@/data/services';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { GuideCard } from '@/components/GuideCard';
+import { getServiceBySlug, serviceRelatedPosts } from '@/data/services';
 import { blogArticles } from '@/data/blog';
 import { FAQS_SERVICES } from '@/data/site';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { FAQ } from '@/components/FAQ';
-import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { LeadFormModal } from '@/components/LeadFormModal';
 import { HeroLeadForm } from '@/components/HeroLeadForm';
 import { PricingSection } from '@/components/PricingSection';
@@ -198,213 +198,47 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const service = getServiceBySlug(params.serviceSlug);
   if (!service) notFound();
-
   const content = serviceContent[service.id] || serviceContent['electric-swing'];
-  const relatedServices = services.filter(s => s.id !== service.id);
-
-  // Silo down-links: resolve this pillar's supporting blog spokes to render as cards.
+  const serviceHeading = SERVICE_H1[service.slug] ?? `${service.title} in Kent`;
   const relatedPosts = (serviceRelatedPosts[service.slug] ?? [])
     .map(slug => blogArticles.find(b => b.slug === slug))
-    .filter((b): b is NonNullable<typeof b> => Boolean(b));
+    .filter((b): b is NonNullable<typeof b> => Boolean(b) && !b?.draft);
+  const combinedFaqs = [...(service.faqs || []), ...FAQS_SERVICES];
 
-
-
-  const combinedFaqs = [
-    ...(service.faqs || []),
-    ...FAQS_SERVICES,
-  ];
-
-  return (
-    <>
-      <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-      <Header onOpenModal={() => setIsModalOpen(true)} />
-      <main className="flex-grow heritage-inner">
-        <section className="bg-brand-950 text-white relative overflow-hidden">
-          <div className="absolute inset-0">
+  return <>
+    <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    <Header onOpenModal={() => setIsModalOpen(true)} />
+    <main id="main-content" className="subpage service-detail">
+      <section className="service-opening">
+        <div className="container-width">
+          <Breadcrumbs tone="dark" items={[{ label: 'Gate Types', href: '/services/' }, { label: service.title }]} />
+          <div className="service-opening-label"><p className="eyebrow">Driveway gates / Kent</p><a href="#service-enquiry">Get free quotes</a></div>
+          <h1>{serviceHeading.replace(/ in Kent$/, '')} <span>in Kent</span></h1>
+          <div className="service-opening-summary"><p>{service.description}</p><a className="text-link" href="#service-details">Explore the specification</a></div>
+          <figure className="service-featured-image">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={service.image} alt="" className="w-full h-full object-cover opacity-40" loading="eager" />
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-950/95 via-brand-950/80 to-brand-950/40" />
-          </div>
-          <div className="container-width py-20 md:py-28 relative z-10">
-            <Breadcrumbs tone="dark" items={[{ label: 'Gate Types', href: '/services/' }, { label: service.title }]} />
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-6">
-              <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium tracking-tight leading-[1.02] mb-6 text-white">
-                  {SERVICE_H1[service.slug] ?? `${service.title} in Kent`}
-                </h1>
-                <p className="text-xl text-brand-100 mb-8 leading-relaxed">{service.description}</p>
-                <div className="space-y-3">
-                  {['Compare up to 3 free quotes', 'No fee for homeowners', 'Enquiries taken across all of Kent'].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-brand-400 flex-shrink-0" />
-                      <span className="text-lg">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <HeroLeadForm service={service.title} />
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-        <div className="container-width py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2">
-
-              <section className="mb-14">
-                <h2 className="text-2xl md:text-3xl font-display font-semibold text-brand-950 mb-6">{service.title}: What You Need to Know</h2>
-                <div className="prose prose-gray max-w-none text-gray-600 space-y-4">
-                  {content.intro.map((p, i) => <p key={i}>{p}</p>)}
-                </div>
-              </section>
-
-              <section className="mb-14">
-                <h2 className="text-2xl font-display font-semibold text-brand-950 mb-6">Benefits of {service.title}</h2>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {content.benefits.map((b, i) => (
-                    <div key={i} className="flex gap-4 p-5 bg-brand-50 rounded-sm border border-brand-100">
-                      <div className="bg-brand-100 p-2 rounded-sm text-brand-600 flex-shrink-0 h-fit">
-                        <CheckCircle className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-brand-950 mb-1">{b.title}</h3>
-                        <p className="text-sm text-gray-600">{b.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section className="mb-14">
-                <h2 className="text-2xl md:text-3xl font-display font-semibold text-brand-950 mb-2">{service.title} Across Kent</h2>
-                <p className="text-gray-600 mb-6">
-                  Installers cover the whole county. These are the main towns enquiries come from, or <Link href="/location/" className="text-brand-600 font-medium hover:underline">see every area covered</Link>.
-                </p>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  {MAIN_TOWNS.map(([slug, town]) => (
-                    <Link
-                      key={town}
-                      href={`/location/${slug}/`}
-                      className="group flex items-center gap-2 p-2.5 bg-brand-50 rounded-sm transition-all border border-brand-100 hover:border-brand-200"
-                    >
-                      <MapPin className="w-3 h-3 text-brand-400 flex-shrink-0" />
-                      <span className="text-gray-700 group-hover:text-brand-700 text-sm font-medium truncate">{town}</span>
-                    </Link>
-                  ))}
-                </div>
-              </section>
-
-              <section className="mb-14">
-                <h2 className="text-2xl font-display font-semibold text-brand-950 mb-4">Are {service.title} Right for Your Property?</h2>
-                <p className="text-gray-600 mb-4">{content.candidateIntro}</p>
-                <div className="bg-brand-50 rounded-sm p-6 border border-brand-100">
-                  <ul className="space-y-3">
-                    {content.candidates.map((c, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-700">
-                        <CheckCircle className="w-4 h-4 text-brand-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm">{c}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <p className="text-gray-600 text-sm mt-4">
-                  A site survey is always the right starting point. Your installer will assess the driveway, check planning position if relevant, and give you a firm recommendation based on what the site actually allows.
-                </p>
-              </section>
-
-              <section className="mb-14">
-                <h2 className="text-2xl font-display font-semibold text-brand-950 mb-6">The Installation Process</h2>
-                <div className="space-y-4">
-                  {content.process.map((step, i) => (
-                    <div key={i} className="flex gap-4 p-4 bg-white rounded-sm shadow-sm border border-brand-100">
-                      <div className="flex-shrink-0 w-8 h-8 bg-brand-500 text-white rounded-full flex items-center justify-center font-bold text-sm">{i + 1}</div>
-                      <div>
-                        <h3 className="font-bold text-brand-950 mb-0.5">{step.title}</h3>
-                        <p className="text-sm text-gray-600">{step.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <PricingSection serviceId={service.id} serviceName={service.title} />
-
-              <div className="mb-14">
-                <FAQ faqs={combinedFaqs} title={`${service.title} FAQs`} />
-              </div>
-
-            </div>
-
-            <aside className="lg:col-span-1">
-              <div className="sticky top-28 space-y-6">
-                <div className="bg-white p-6 rounded-sm shadow-lg border border-brand-100">
-                  <h3 className="text-lg font-display font-semibold text-brand-950 mb-3">Get Quotes for {service.title}</h3>
-                  <p className="text-gray-600 mb-5 text-sm">Free, no-obligation quotes from installers in your part of Kent.</p>
-                  <button onClick={() => setIsModalOpen(true)} className="block w-full btn-primary text-center">Find an Installer</button>
-                  <div className="mt-5 pt-5 border-t border-brand-100 space-y-3">
-                    {[
-                      { icon: <Clock className="w-4 h-4 text-brand-500" />, text: "Up to three quotes to compare" },
-                      { icon: <Shield className="w-4 h-4 text-brand-500" />, text: "No fee for homeowners" },
-                      { icon: <Star className="w-4 h-4 text-brand-500" />, text: "No obligation to go ahead" },
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <div className="bg-brand-100 p-1.5 rounded-full">{item.icon}</div>
-                        <span className="text-sm font-medium text-gray-700">{item.text}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-
-                <div className="bg-brand-50 p-5 rounded-sm border border-brand-100">
-                  <h3 className="font-bold text-brand-950 text-sm mb-3">Other Gate Types</h3>
-                  <div className="space-y-2">
-                    {relatedServices.map(s => (
-                      <Link key={s.id} href={`/services/${s.slug}/`} className="flex items-center gap-2 text-sm text-gray-600 hover:text-brand-600 transition-colors">
-                        <ArrowRight className="w-3 h-3" /> {s.title}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </aside>
-          </div>
+            <img src={service.image} alt={service.title + ' in Kent'} width={1408} height={768} fetchPriority="high" />
+            <figcaption><span>{service.title}</span><span>Enquiries taken across all of Kent</span></figcaption>
+          </figure>
         </div>
+      </section>
+      <section id="service-enquiry" className="service-enquiry container-width" aria-label="Request gate quotes">
+        <HeroLeadForm service={service.title} layout="wide" />
+      </section>
+      <div id="service-details" className="container-width detail-layout">
+        <article className="service-body">
+          <section className="detail-section service-specification"><div><p className="eyebrow">The specification</p><h2>{service.title}: What You Need to Know</h2></div><div className="reading-copy">{content.intro.map(p => <p key={p}>{p}</p>)}</div></section>
+          <section className="detail-section"><h2>Benefits of {service.title}</h2><div className="benefit-list">{content.benefits.map(b => <div key={b.title}><h3>{b.title}</h3><p>{b.desc}</p></div>)}</div></section>
+          <section className="detail-section"><h2>{service.title} Across Kent</h2><p>Installers cover the whole county. These are the main towns enquiries come from, or <Link href="/location/" className="inline-link">see every area covered</Link>.</p><div className="town-link-list">{MAIN_TOWNS.map(([slug, town]) => <Link key={slug} href={`/location/${slug}/`}>{town}</Link>)}</div></section>
+          <section className="detail-section"><h2>Are {service.title} Right for Your Property?</h2><p>{content.candidateIntro}</p><ul className="specification-list">{content.candidates.map(c => <li key={c}>{c}</li>)}</ul><p>A site survey is always the right starting point. Your installer will assess the driveway, check planning position if relevant, and give you a firm recommendation based on what the site actually allows.</p></section>
+          <section className="detail-section"><h2>The Installation Process</h2><ol className="installation-process">{content.process.map(step => <li key={step.title}><h3>{step.title}</h3><p>{step.desc}</p></li>)}</ol></section>
+          <PricingSection serviceId={service.id} serviceName={service.title} />
+          <FAQ faqs={combinedFaqs} title={`${service.title} FAQs`} />
+        </article>
 
-        {relatedPosts.length > 0 && (
-          <section className="bg-brand-50 border-t border-brand-100 py-16">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6">
-              <p className="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Guides &amp; Articles</p>
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-brand-950 mb-8">{service.title} guides and advice</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {relatedPosts.map(post => (
-                  <Link key={post.slug} href={`/blog/${post.slug}/`}
-                    className="group bg-white rounded-sm border border-brand-100 overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
-                    <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
-                      {post.featuredImage
-                        // eslint-disable-next-line @next/next/no-img-element
-                        ? <img src={post.featuredImage} alt={post.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                        : <div className="w-full h-full bg-gray-100" />}
-                      <span className="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-brand-600">{post.category}</span>
-                    </div>
-                    <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="font-display font-semibold text-brand-950 leading-snug group-hover:text-brand-600 transition-colors">{post.title}</h3>
-                      <span className="mt-auto pt-3 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-brand-500">
-                        Read <ArrowRight className="w-3 h-3" />
-                      </span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-      </main>
-      <Footer />
-    </>
-  );
+      </div>
+      {relatedPosts.length > 0 && <section className="related-guides container-width"><p className="eyebrow">Guides &amp; Articles</p><h2>{service.title} guides and advice</h2><div className="guide-grid">{relatedPosts.map(post => <GuideCard key={post.slug} article={post} />)}</div></section>}
+    </main>
+    <Footer />
+  </>;
 }

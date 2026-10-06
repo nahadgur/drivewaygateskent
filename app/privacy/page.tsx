@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { PageIntro } from '@/components/PageIntro';
 import { siteConfig } from '@/data/site';
 
 export const metadata: Metadata = {
@@ -31,22 +31,10 @@ export default function PrivacyPage() {
     <>
       <Header />
 
-      <main className="flex-grow heritage-inner">
-        <section className="bg-brand-50 border-b border-gray-200">
-          <div className="container-width py-12 md:py-16">
-            <Breadcrumbs items={[{ label: 'Privacy Policy' }]} />
-            <div className="max-w-3xl mt-6">
-              <h1 className="font-display font-semibold text-3xl md:text-4xl text-brand-950 leading-tight mb-4">
-                Privacy Policy
-              </h1>
-              <p className="text-gray-500 text-sm uppercase tracking-wider">
-                Last updated: {LAST_UPDATED}
-              </p>
-            </div>
-          </div>
-        </section>
+      <main id="main-content" className="subpage privacy-page">
+        <PageIntro eyebrow="Your information" title="Privacy Policy" breadcrumbs={[{ label: 'Privacy Policy' }]}><p>Last updated: {LAST_UPDATED}</p></PageIntro>
 
-        <section className="bg-white">
+        <section className="legal-content">
           <div className="container-width py-10 md:py-14">
             <div className="max-w-3xl text-[15px] leading-relaxed text-gray-700 space-y-4 [&_a]:text-brand-600 [&_a]:underline hover:[&_a]:text-brand-800">
 

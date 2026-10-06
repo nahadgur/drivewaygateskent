@@ -27,11 +27,11 @@ export function Breadcrumbs({ items, tone = 'light' }: { items: BreadcrumbItem[]
       <ol className="flex items-center flex-wrap gap-1 text-sm text-gray-500">
         {allItems.map((item, i) => (
           <li key={i} className="flex items-center gap-1">
-            {i > 0 && <ChevronRight className="w-3.5 h-3.5 text-brand-100" />}
+            {i > 0 && <ChevronRight aria-hidden="true" className={`w-3.5 h-3.5 ${tone === 'dark' ? 'text-brand-300' : 'text-gray-500'}`} />}
             {item.href ? (
               <Link href={item.href} className={`${tone === 'dark' ? 'text-brand-200 hover:text-white' : 'hover:text-brand-600'} transition-colors`}>{item.label}</Link>
             ) : (
-              <span className={`${tone === 'dark' ? 'text-white' : 'text-brand-950'} font-medium`}>{item.label}</span>
+              <span aria-current="page" className={`${tone === 'dark' ? 'text-white' : 'text-brand-950'} font-medium`}>{item.label}</span>
             )}
           </li>
         ))}
