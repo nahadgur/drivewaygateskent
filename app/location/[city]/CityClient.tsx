@@ -57,13 +57,13 @@ export default function CityPage({ params }: { params: { city: string } }) {
         <section className="bg-brand-950 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-brand-900/30 via-brand-950/0 to-transparent pointer-events-none" />
           <div className="container-width py-20 md:py-28 relative z-10">
-            <Breadcrumbs items={[{ label: 'Locations', href: '/location/' }, { label: cityName }]} />
+            <Breadcrumbs tone="dark" items={[{ label: 'Locations', href: '/location/' }, { label: cityName }]} />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-6">
               <div>
                 <div className="inline-flex items-center gap-2 bg-brand-500/20 text-brand-300 px-3 py-1 rounded-full text-sm font-medium mb-6 border border-brand-500/30">
                   <MapPin className="w-4 h-4" /> Gate Installers in {cityName}
                 </div>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight leading-[1.02] mb-6">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight leading-[1.02] mb-6 text-white">
                   Driveway Gates in <span className="text-brand-400">{cityName}</span>
                 </h1>
                 <p className="text-xl text-brand-100 leading-relaxed">

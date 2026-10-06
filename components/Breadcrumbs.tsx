@@ -7,7 +7,7 @@ interface BreadcrumbItem {
   href?: string;
 }
 
-export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
+export function Breadcrumbs({ items, tone = 'light' }: { items: BreadcrumbItem[]; tone?: 'light' | 'dark' }) {
   const allItems = [{ label: 'Home', href: '/' }, ...items];
 
   const schema = {
@@ -29,9 +29,9 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
           <li key={i} className="flex items-center gap-1">
             {i > 0 && <ChevronRight className="w-3.5 h-3.5 text-brand-100" />}
             {item.href ? (
-              <Link href={item.href} className="hover:text-brand-600 transition-colors">{item.label}</Link>
+              <Link href={item.href} className={`${tone === 'dark' ? 'text-brand-200 hover:text-white' : 'hover:text-brand-600'} transition-colors`}>{item.label}</Link>
             ) : (
-              <span className="text-brand-950 font-medium">{item.label}</span>
+              <span className={`${tone === 'dark' ? 'text-white' : 'text-brand-950'} font-medium`}>{item.label}</span>
             )}
           </li>
         ))}

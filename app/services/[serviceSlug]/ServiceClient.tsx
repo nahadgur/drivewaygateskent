@@ -218,10 +218,10 @@ export default function ServicePage({ params }: { params: { serviceSlug: string 
             <div className="absolute inset-0 bg-gradient-to-r from-brand-950/95 via-brand-950/80 to-brand-950/40" />
           </div>
           <div className="container-width py-20 md:py-28 relative z-10">
-            <Breadcrumbs items={[{ label: 'Gate Types', href: '/services/' }, { label: service.title }]} />
+            <Breadcrumbs tone="dark" items={[{ label: 'Gate Types', href: '/services/' }, { label: service.title }]} />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-6">
               <div>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight leading-[1.02] mb-6">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight leading-[1.02] mb-6 text-white">
                   {service.title}
                 </h1>
                 <p className="text-xl text-brand-100 mb-8 leading-relaxed">{service.description}</p>
