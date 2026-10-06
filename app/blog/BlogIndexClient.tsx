@@ -44,7 +44,6 @@ export default function BlogIndexPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/50 to-brand-950/20" />
           <div className="absolute inset-0 flex flex-col items-start justify-end text-left px-6 md:px-[max(2rem,calc((100vw-80rem)/2))] pb-14 md:pb-20">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-brand-400 mb-3">Expert Advice</p>
             <h1 className="text-4xl md:text-6xl font-display font-medium text-white max-w-4xl leading-[1.05] mb-4">
               Kent Gate Guides: Planning, Pricing, and Specification
             </h1>
@@ -124,7 +123,6 @@ export default function BlogIndexPage() {
                         </span>
                       </div>
                       <div className="p-8 md:p-10 flex flex-col justify-center">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-brand-500 mb-3">Featured Guide</span>
                         <h2 className="text-2xl md:text-3xl font-display font-semibold text-brand-950 group-hover:text-brand-700 transition-colors leading-tight mb-4">
                           {featured.title}
                         </h2>
@@ -193,7 +191,6 @@ export default function BlogIndexPage() {
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-brand-400 via-brand-500 to-transparent" />
               <div className="px-8 py-10 md:px-12 flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
                 <div className="flex-1">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-brand-400 mb-2">Free Service</p>
                   <h3 className="text-xl md:text-2xl font-display font-semibold text-white mb-2">
                     Need a Gate Installer in Kent?
                   </h3>

@@ -21,9 +21,8 @@ function BlogCtaBanner({ onOpenModal }: { onOpenModal: () => void }) {
           </svg>
         </div>
         <div className="flex-1 text-center md:text-left">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-brand-400 mb-1">No Cost, No Obligation</p>
           <h3 className="text-xl md:text-2xl font-display font-semibold !text-white leading-snug mb-2">Looking for a Kent gate installer?</h3>
-          <p className="!text-brand-100 text-sm md:text-base leading-6">We match you with up to three specialists. Free site surveys, written quotes, zero fees.</p>
+          <p className="!text-brand-100 text-sm md:text-base leading-6">Up to three Kent installers will arrange a site survey and a written quote. No fee and no obligation.</p>
         </div>
         <div className="flex-shrink-0">
           <button

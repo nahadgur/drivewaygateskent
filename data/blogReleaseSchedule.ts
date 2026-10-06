@@ -38,6 +38,13 @@ export const BLOG_SITEMAP_RELEASE: Record<string, string> = {
   'what-to-do-when-electric-gates-stop-working': '2026-10-06',
   'can-you-install-driveway-gates-on-a-sloped-driveway': '2026-07-28',
 
+  // Phase 3 new articles
+  'how-far-back-should-driveway-gates-be-from-the-road': '2026-10-06',
+  'electric-gate-safety-regulations-uk': '2026-10-06',
+  'electric-gates-in-a-power-cut': '2026-10-06',
+  'electric-gates-on-a-shared-driveway': '2026-10-06',
+  'video-intercoms-and-anpr-for-driveway-gates': '2026-10-06',
+
   // Published spokes that were never added to the schedule
   'pedestrian-gate-alongside-driveway-gates-kent': '2026-10-06',
   'off-grid-power-for-gates-on-rural-kent-farm-drives': '2026-10-06',
