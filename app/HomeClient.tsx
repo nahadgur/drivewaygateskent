@@ -64,7 +64,7 @@ const INSTALL_CHECKS = [
 
 const homepageFaqs = [
   {
-    question: 'What do driveway gates cost to install in Kent in 2026?',
+    question: 'What do driveway gates cost to install in Kent?',
     answer: 'As a guide, a manual hardwood swing gate starts at around £2,800 fitted, electric swing gates typically fall between £3,800 and £11,500, and a fully automated sliding or wrought iron system can reach £12,500 or more. West Kent around Sevenoaks and Tunbridge Wells tends to sit at the higher end, and coastal properties may pay more for marine-grade finishes. Only a site survey gives a figure you can rely on.',
   },
   {
@@ -197,7 +197,7 @@ export default function HomeClient() {
       </div></section>
 
       <section className="prices-section section-padding"><div className="container-width pricing-layout">
-        <div className="pricing-intro"><p className="eyebrow">Plan your project</p><h2>Driveway Gate Guide Prices in Kent <em>for 2026</em></h2><p>Indicative ranges for a fully installed gate, not quotes. <Link href="/blog/how-much-do-driveway-gates-cost-kent-2026/" className="inline-link">West Kent usually sits higher</Link> than North and East Kent.</p><button onClick={openQuotes} className="btn-primary">Get free quotes</button></div>
+        <div className="pricing-intro"><p className="eyebrow">Plan your project</p><h2>Driveway Gate Guide Prices in Kent</h2><p>Indicative ranges for a fully installed gate, not quotes. <Link href="/blog/how-much-do-driveway-gates-cost-kent/" className="inline-link">West Kent usually sits higher</Link> than North and East Kent.</p><button onClick={openQuotes} className="btn-primary">Get free quotes</button></div>
         <div className="price-list">{pricingTiers.map(tier => <details key={tier.slug} className="price-row"><summary><span><span className="price-name">{tier.treatment}</span><span className="price-meta">{tier.typicalDuration}</span></span><span className="price-amount">£{tier.priceFrom.toLocaleString()} <span>–</span> £{tier.priceTo.toLocaleString()}</span><span className="price-toggle" aria-hidden="true">+</span></summary><div className="price-details"><p>{tier.includes}</p><p>{tier.description}</p></div></details>)}<p className="price-footnote">Select a gate type to see what is included.</p></div>
       </div></section>
 

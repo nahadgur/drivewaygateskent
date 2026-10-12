@@ -12,7 +12,7 @@ export const BLOG_SITEMAP_RELEASE: Record<string, string> = {
   // Batch 1 — 2026-06-23 (coastal + cornerstones)
   'coastal-gate-corrosion-protection': '2026-10-06',
   'planning-permission-driveway-gates-kent': '2026-10-06',
-  'how-much-do-driveway-gates-cost-kent-2026': '2026-10-06',
+  'how-much-do-driveway-gates-cost-kent': '2026-10-06',
   'best-gate-material-kent-wood-steel-aluminium': '2026-10-06',
   'electric-sliding-vs-swing-gates-kent': '2026-10-06',
 

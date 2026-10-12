@@ -169,6 +169,6 @@ export const serviceRelatedPosts: Record<string, string[]> = {
   'electric-swing-gates': ['electric-sliding-vs-swing-gates-kent', 'driveway-gate-ideas-for-older-houses-and-period-properties', 'do-electric-gates-add-value-to-your-house'],
   'wooden-driveway-gates': ['best-gate-material-kent-wood-steel-aluminium', 'how-to-look-after-wooden-driveway-gates', 'driveway-gate-ideas-for-older-houses-and-period-properties'],
   'metal-driveway-gates': ['best-gate-material-kent-wood-steel-aluminium', 'coastal-gate-corrosion-protection', 'driveway-gates-home-security-kent'],
-  'automated-gate-systems': ['electric-gate-automation-retrofit-kent', 'best-electric-gate-motor-brands-uk-compared', 'how-much-do-driveway-gates-cost-kent-2026'],
+  'automated-gate-systems': ['electric-gate-automation-retrofit-kent', 'best-electric-gate-motor-brands-uk-compared', 'how-much-do-driveway-gates-cost-kent'],
   'gate-repair-and-maintenance': ['electric-gate-maintenance-kent', 'what-to-do-when-electric-gates-stop-working', 'how-long-do-electric-gates-last-before-replacing'],
 };

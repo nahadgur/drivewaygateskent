@@ -104,7 +104,7 @@ export default function TonbridgePage() {
               A question that comes up often in Tonbridge is what an electric gate costs to run once it is in. A gate motor draws real power only for the 15 to 30 seconds each cycle takes. Most of the electricity a gate uses over a year goes on standby: the control board, radio receiver, photocells and any intercom are on all the time.
             </p>
             <p>
-              To work out your own figure, ask the installer for the system&apos;s standby wattage, multiply it by 8,760 hours, divide by 1,000 to get kilowatt hours, and multiply by your unit rate. Add a small allowance for the motor itself. A video intercom with a screen indoors adds more than the gate. Running costs are small next to the <Link href="/blog/how-much-do-driveway-gates-cost-kent-2026/" className={linkClass}>price of the installation</Link> itself.
+              To work out your own figure, ask the installer for the system&apos;s standby wattage, multiply it by 8,760 hours, divide by 1,000 to get kilowatt hours, and multiply by your unit rate. Add a small allowance for the motor itself. A video intercom with a screen indoors adds more than the gate. Running costs are small next to the <Link href="/blog/how-much-do-driveway-gates-cost-kent/" className={linkClass}>price of the installation</Link> itself.
             </p>
           </TownSection>
 
