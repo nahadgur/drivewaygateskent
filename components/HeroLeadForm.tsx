@@ -30,9 +30,10 @@ export function HeroLeadForm({ city, service, layout = 'stacked' }: HeroLeadForm
     phone: '',
     location: city || '',
     treatment: service || '',
+    message: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -46,6 +47,7 @@ export function HeroLeadForm({ city, service, layout = 'stacked' }: HeroLeadForm
         phone: formData.phone,
         location: formData.location || city || '',
         treatment: formData.treatment || service || '',
+        message: formData.message.trim(),
         page: window.location.href,
         source: 'Driveway Gates Kent',
       };
@@ -117,6 +119,8 @@ export function HeroLeadForm({ city, service, layout = 'stacked' }: HeroLeadForm
         {!city && (
           <label className="quote-field"><span>Your Kent town or postcode *</span><input aria-label="Your Kent town or postcode" required name="location" type="text" value={formData.location} onChange={handleChange} placeholder="Town or postcode" className={inputClass} /></label>
         )}
+
+        <label className="quote-field quote-field-message"><span>Message (optional)</span><textarea aria-label="Message" name="message" rows={3} maxLength={1000} value={formData.message} onChange={handleChange} placeholder="Gate width, access, timing or anything else useful" className={inputClass + " resize-y"} /></label>
 
         <button
           disabled={isSubmitting}

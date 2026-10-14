@@ -115,6 +115,7 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
         email: formData.get('email') as string,
         treatment: formData.get('treatment') as string,
         location: formData.get('location') as string,
+        message: ((formData.get('message') as string) || '').trim(),
         page: window.location.href,
         source: 'Driveway Gates Kent',
       };
@@ -228,6 +229,10 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                 <div>
                   <label htmlFor="lead-location" className={labelClass}>Your area or postcode <span className="text-red-400">*</span></label>
                   <input id="lead-location" required name="location" type="text" placeholder="e.g. Maidstone or ME14" className={inputClass} />
+                </div>
+                <div>
+                  <label htmlFor="lead-message" className={labelClass}>Message <span className="font-normal text-gray-400">(optional)</span></label>
+                  <textarea id="lead-message" name="message" rows={3} maxLength={1000} placeholder="Gate width, access, timing or anything else useful" className={inputClass + ' resize-y'} />
                 </div>
 
                 <button

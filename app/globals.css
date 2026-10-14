@@ -500,8 +500,9 @@ button,a,input,select { -webkit-tap-highlight-color:transparent; }
 .subpage .quote-form-title { font-size:36px; }
 .quote-field { display:block; min-width:0; }
 .quote-field > span { display:block; font-size:11px; font-weight:700; margin-bottom:6px; }
-.quote-field input,.quote-field select { border-radius:0; border-color:#bfc3bc; background:var(--paper); min-width:0; height:48px; padding:10px 12px; }
-.quote-field input::placeholder { color:#747a77; }
+.quote-field input,.quote-field select,.quote-field textarea { border-radius:0; border-color:#bfc3bc; background:var(--paper); min-width:0; height:48px; padding:10px 12px; }
+.quote-field textarea { height:auto; min-height:96px; }
+.quote-field input::placeholder,.quote-field textarea::placeholder { color:#747a77; }
 .quote-field select { padding-right:24px; }
 .enquiry-note { font-size:11px; color:var(--muted); padding-top:16px; margin-top:18px; border-top:1px solid #bfc3bc; }
 .detail-layout { display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:85px; padding-top:90px; padding-bottom:85px; }
@@ -755,7 +756,9 @@ button,a,input,select { -webkit-tap-highlight-color:transparent; }
 .quote-form-wide .quote-form-note { margin-top:22px; padding-top:20px; border-top:1px solid #ffffff66; }
 .quote-form-wide .quote-form-fields { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; padding:30px; align-content:center; }
 .quote-form-wide .quote-contact-fields { display:contents; }
-.quote-form-wide .quote-field input,.quote-form-wide .quote-field select { background:transparent; border-width:0 0 1px; border-color:#868d86; padding-inline:0; height:46px; }
+.quote-form-wide .quote-field input,.quote-form-wide .quote-field select,.quote-form-wide .quote-field textarea { background:transparent; border-width:0 0 1px; border-color:#868d86; padding-inline:0; height:46px; }
+.quote-form-wide .quote-field textarea { height:auto; min-height:72px; }
+.quote-form-wide .quote-field-message { grid-column:1 / -1; }
 .quote-form-wide .quote-field select { padding-right:18px; }
 .quote-form-wide .quote-field > span { font-size:11px; }
 .quote-form-wide .quote-form-fields > button { align-self:end; min-height:46px; height:auto; margin:0; padding:13px; }
