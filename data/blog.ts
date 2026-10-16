@@ -29,7 +29,7 @@ const article1: BlogArticle = {
   metaTitle: 'Driveway Gate Costs in Kent | Real Quotes and Guide Prices',
   metaDescription: 'What driveway and electric gates really cost in Kent: real South East quotes, guide prices by gate type, where the money goes, and how to tell if your quote is fair.',
   category: 'Pricing',
-  publishDate: '2026-10-06',
+  publishDate: '2026-09-09',
   featuredImage: '/images/gates/gate-wrought-iron-open-manor-brick-pillars.png',
   excerpt: 'Real South East quotes for automated gates cluster between about £5,000 and £11,000, with sliding and hardwood gates often higher. Here is where that money goes and how to judge a quote.',
   content: [
@@ -71,7 +71,7 @@ const article2: BlogArticle = {
   metaTitle: 'Sliding vs Swing Driveway Gates | Which Suits Your Kent Drive?',
   metaDescription: 'Sliding or swing driveway gates? How to decide using your drive depth, run-back space, slope and budget, with real UK price differences and motor sizing explained.',
   category: 'Buying Guide',
-  publishDate: '2026-10-06',
+  publishDate: '2026-09-11',
   featuredImage: '/images/gates/gate-aluminium-sliding-horizontal-modern-new-build.png',
   excerpt: 'The choice between a sliding and a swing gate usually comes down to three measurements: how deep your drive is, how much straight wall you have beside the opening, and how much the ground slopes.',
   content: [
@@ -112,7 +112,7 @@ const article3: BlogArticle = {
   metaTitle: 'Planning Permission for Driveway Gates in Kent | 2026 Rules',
   metaDescription: 'When driveway gates in Kent need planning permission: the 1m and 2m rule, listed buildings, conservation areas, Article 4 directions, National Landscapes, new accesses and outward-opening gates.',
   category: 'Planning',
-  publishDate: '2026-10-06',
+  publishDate: '2026-09-14',
   featuredImage: '/images/gates/gate-wrought-iron-open-stone-pillars-lanterns-estate.png',
   excerpt: 'Most driveway gates are permitted development up to 1 metre beside a road and 2 metres elsewhere. Listed buildings, Article 4 directions and new accesses are where Kent homeowners need permission.',
   content: [
@@ -153,7 +153,7 @@ const article4: BlogArticle = {
   metaTitle: 'Best Driveway Gate Material | Wood vs Steel vs Aluminium (Kent)',
   metaDescription: 'Wood, steel, aluminium, wrought iron or composite? How each driveway gate material lasts, what it weighs, what it costs and which suits coastal and inland Kent homes.',
   category: 'Materials',
-  publishDate: '2026-10-06',
+  publishDate: '2026-09-16',
   featuredImage: '/images/gates/gate-wooden-painted-cream-kentish-countryside.png',
   excerpt: 'The right gate material depends on where you live, how heavy a gate your motor can move, and how much maintenance you will actually do. Here is how wood, steel, aluminium, iron and composite compare.',
   content: [
@@ -195,7 +195,7 @@ const article5: BlogArticle = {
   metaTitle: 'Automate Existing Gates in Kent | Retrofit Costs and Safety',
   metaDescription: 'Can your existing driveway gates be made electric? What makes a gate suitable, ram, arm and underground motors, retrofit costs, the safety rules that still apply, and DIY kits.',
   category: 'Automation',
-  publishDate: '2026-10-06',
+  publishDate: '2026-09-18',
   featuredImage: '/images/gates/gate-underground-motor-installation-engineer.png',
   excerpt: 'Most sound manual gates can be automated for a fraction of the price of new ones, but the same safety rules apply as for a new installation, and old posts and hinges are where retrofits go wrong.',
   content: [
@@ -235,7 +235,7 @@ const article6: BlogArticle = {
   metaTitle: 'How to Choose an Electric Gate Installer in Kent | 2026 Checklist',
   metaDescription: 'How to vet an electric gate installer in Kent: Gate Safe training, DHF, Kent Trading Standards Checked, the paperwork you are entitled to, safety edges, deposits and red flags.',
   category: 'Buying Guide',
-  publishDate: '2026-10-06',
+  publishDate: '2026-09-21',
   featuredImage: '/images/gates/gate-steel-installation-two-engineers-suburban.png',
   excerpt: 'An automated gate is a machine, and the person who installs it takes on legal duties. Here is how to check a Kent installer before you sign, and what you are entitled to at handover.',
   content: [
@@ -276,7 +276,7 @@ const article7: BlogArticle = {
   metaTitle: 'Electric Gate Servicing in Kent | What a Service Includes and Costs',
   metaDescription: 'How often to service an electric gate, what a proper service includes, force testing, typical UK costs, common faults, checks you can do yourself, and who is liable if a gate causes harm.',
   category: 'Maintenance',
-  publishDate: '2026-10-06',
+  publishDate: '2026-09-23',
   featuredImage: '/images/gates/gate-automation-commissioning-tablet-installer.png',
   excerpt: 'A gate service is a safety check first and a tune-up second. Gate Safe recommends one every six months. Here is what should happen on the visit and what it typically costs.',
   content: [
@@ -316,7 +316,7 @@ const article10: BlogArticle = {
   metaTitle: 'Driveway Gates and Security in Kent | Keyless Car Theft and More',
   metaDescription: 'Do driveway gates stop car theft and burglary? Keyless theft figures, the 2026 law on relay devices, Kent driveway thefts, Secured by Design gate guidance, rural crime and insurance.',
   category: 'Security',
-  publishDate: '2026-10-06',
+  publishDate: '2026-09-25',
   featuredImage: '/images/gates/gate-video-intercom-panel-brick-wall-closeup.png',
   excerpt: 'A driveway gate will not stop a relay thief unlocking your car, but it can stop them driving it away quickly. Here is what gates do and do not do for security, and what to pair them with.',
   content: [
@@ -406,7 +406,7 @@ const article12: BlogArticle = {
   metaTitle: 'Do Electric Gates Add Value to Your House? | An Honest Kent Guide',
   metaDescription: 'Do electric gates add value to a house? What the evidence does and does not show, where gates fit buyer expectations in Kent, the costs and benefits, and when gates are not worth it.',
   category: 'Buying Guide',
-  publishDate: '2026-10-06',
+  publishDate: '2026-09-28',
   featuredImage: '/images/gates/gate-aerial-wrought-iron-closed-topiary-gravel-circle.png',
   excerpt: 'There is no reliable UK figure for how much electric gates add to a house price. What you can judge is whether gates fit the house and the street, and whether the daily benefits justify the cost.',
   content: [
@@ -845,7 +845,7 @@ const article25: BlogArticle = {
   metaTitle: 'Best Timber for a Coastal Gate in Kent | Accoya and Iroko',
   metaDescription: 'Which timber lasts on a salt-exposed Kent coast gate? Accoya, iroko and oak compared for the Whitstable, Thanet and Folkestone belt, plus fixings, finish and silvering.',
   category: 'Materials',
-  publishDate: '2026-10-06',
+  publishDate: '2026-09-30',
   featuredImage: '/images/gates/gate-wooden-painted-cream-kentish-countryside.png',
   excerpt: 'A wooden gate on the Kent coast lives with salt, wind and constant wetting and drying that a sheltered inland gate never sees. The timber you pick decides whether it lasts five years or fifty. Here is how Accoya, iroko and oak really compare on a seafront plot.',
   content: [
@@ -876,7 +876,7 @@ const article27: BlogArticle = {
   metaTitle: 'Five-Bar and Estate Field Gates for Rural Kent Drives | Guide',
   metaDescription: 'When a five-bar field gate or estate gate suits a rural Kent farm or paddock drive. Timber and metal options, widths, automation and the agricultural look that fits Wealden land.',
   category: 'Buying Guide',
-  publishDate: '2026-10-06',
+  publishDate: '2026-10-02',
   featuredImage: '/images/gates/gate-wooden-iroko-closeup-kent-weald-countryside.png',
   excerpt: 'On a working farm drive or a paddock entrance the ornate estate gate looks wrong. A five-bar or estate field gate fits the agricultural setting and the vehicles that actually use it. Here is how to choose one for rural Kent land.',
   content: [
@@ -906,7 +906,7 @@ const article28: BlogArticle = {
   metaTitle: 'Rural Kent Gate Security: Farm and Plant Theft | Guide',
   metaDescription: 'How a driveway gate defends a rural Kent farm or smallholding against quad, plant and trailer theft. Anti-lift hinges, field-gate locking and gate design for isolated land.',
   category: 'Security',
-  publishDate: '2026-10-06',
+  publishDate: '2026-10-05',
   featuredImage: '/images/gates/gate-wrought-iron-open-manor-brick-pillars.png',
   excerpt: 'Rural crime hits Kent hard, and a farm gate at the end of a long unlit drive is both the first line of defence and, done badly, an easy weak point. Here is how to design and secure a gate against quad, plant and trailer theft.',
   content: [
@@ -936,7 +936,7 @@ const article29: BlogArticle = {
   metaTitle: 'How Far Back Should Driveway Gates Be From the Road?',
   metaDescription: 'How far driveway gates should be set back from the road in the UK, why highways officers ask for 5 to 6 metres, outward-opening gates, visibility, and a Kent council’s six-metre guidance.',
   category: 'Planning',
-  publishDate: '2026-10-06',
+  publishDate: '2026-10-07',
   featuredImage: '/images/gates/gate-opening-driver-pov-tree-lined-driveway.png',
   excerpt: 'There is no single national figure, but highways authorities commonly look for 5 to 6 metres so a car can wait off the road while the gate opens. Gravesham in Kent says six.',
   content: [
@@ -978,7 +978,7 @@ const article30: BlogArticle = {
   metaTitle: 'Electric Gate Safety Regulations in the UK',
   metaDescription: 'The UK safety rules for electric gates: the Supply of Machinery Regulations, the installer as manufacturer, Declarations of Conformity, BS EN 12453 force limits, Gate Safe and who is liable.',
   category: 'Safety',
-  publishDate: '2026-10-06',
+  publishDate: '2026-10-09',
   featuredImage: '/images/gates/gate-automation-commissioning-tablet-installer.png',
   excerpt: 'An automated gate is legally a machine. The person who installs or automates it becomes its manufacturer, and owes you a Declaration of Conformity, user instructions and a force-tested gate.',
   content: [
@@ -1019,7 +1019,7 @@ const article31: BlogArticle = {
   metaTitle: 'Electric Gates in a Power Cut: What to Do',
   metaDescription: 'What happens to electric gates in a power cut: the manual release, battery backup, solar gates, resetting after an outage, emergency and delivery access, and the 3G switch-off.',
   category: 'Automation',
-  publishDate: '2026-10-06',
+  publishDate: '2026-10-12',
   featuredImage: '/images/gates/gate-proximity-fob-reader-closeup.png',
   excerpt: 'Every automated gate should open by hand in a power cut. Battery backup keeps many working for a few cycles, and the UK 3G switch-off has quietly broken some older phone-based gate openers.',
   content: [
@@ -1059,7 +1059,7 @@ const article32: BlogArticle = {
   metaTitle: 'Electric Gates on a Shared Driveway',
   metaDescription: 'Can you put electric gates across a shared driveway or right of way? What the courts say about substantial interference, fobs and push buttons, neighbour agreements and who pays.',
   category: 'Planning',
-  publishDate: '2026-10-06',
+  publishDate: '2026-10-14',
   featuredImage: '/images/gates/gate-aerial-estate-closed-autumn-trees.png',
   excerpt: 'A gate can be put across a private right of way, but only if it does not substantially interfere with your neighbour’s use of it. With electric gates, how they are opened is what decides that.',
   content: [
@@ -1099,7 +1099,7 @@ const article33: BlogArticle = {
   metaTitle: 'Video Intercoms and ANPR for Driveway Gates',
   metaDescription: 'Wired, GSM, 4G and Wi-Fi gate intercoms, phone app control, and ANPR number plate cameras for driveway gates: how each works, typical costs, long drives, and the data protection rules.',
   category: 'Automation',
-  publishDate: '2026-10-06',
+  publishDate: '2026-10-16',
   featuredImage: '/images/gates/gate-video-intercom-panel-brick-wall-closeup.png',
   excerpt: 'How you open the gate matters as much as the gate. Wired, 4G and Wi-Fi intercoms each suit different drives, ANPR opens the gate for your own cars, and cameras that see the street bring data protection rules.',
   content: [
