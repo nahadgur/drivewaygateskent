@@ -1135,7 +1135,131 @@ const article33: BlogArticle = {
 };
 
 
+const coastalLifespanArticle: BlogArticle = {
+  "slug": "how-long-galvanised-gates-last-kent-coast",
+  "title": "How Long Do Galvanised Gates Last on the Kent Coast?",
+  "metaTitle": "Galvanised Gate Lifespan on the Kent Coast",
+  "metaDescription": "Assess a coastal gate's zinc coating, understand lifespan estimates, spot damage and decide when to ask a fabricator about repair or replacement.",
+  "category": "Materials",
+  "publishDate": "2026-10-19",
+  "featuredImage": "/images/gates/galvanised-gate-coating-life.svg",
+  "excerpt": "A coating thickness and a coastal postcode cannot promise a gate's lifespan. Check the exposure, the remaining zinc and the condition of the gate before choosing a repair or replacement.",
+  "content": [
+    {
+      "type": "p",
+      "text": "A hot-dip galvanised gate can give decades of service, but there is no reliable single lifespan for every Kent coastal entrance. A gate behind buildings in Deal and one receiving sea spray on an exposed frontage need different assessments. Ask the fabricator to explain the expected life of the zinc coating, the inspection assumptions and what that estimate excludes."
+    },
+    {
+      "type": "p",
+      "text": "This guide deals with an existing or proposed galvanised steel gate. For choosing between steel, aluminium and timber, use our [coastal corrosion guide](/blog/coastal-gate-corrosion-protection/). Motors, controls and mechanical wear have separate replacement decisions, covered in [how long electric gates last](/blog/how-long-do-electric-gates-last-before-replacing/)."
+    },
+    {
+      "type": "h2",
+      "text": "Read a lifespan estimate as a coating estimate"
+    },
+    {
+      "type": "p",
+      "text": "The Galvanizers Association explains that zinc loss in a given atmospheric environment is generally linear. That lets a specialist use coating thickness and a suitable corrosion rate to estimate its life. The starting point is the amount of zinc protecting the steel, rather than the age of the gate alone. See its [atmospheric corrosion guidance](https://galvanizing.org.uk/atmospheric-corrosion/)."
+    },
+    {
+      "type": "p",
+      "text": "The association's [UK corrosion map](https://galvanizing.org.uk/corrosion/corrosion-map/) illustrates the difference: for an 85-micrometre coating, its legend pairs a loss rate of 1 micrometre per year with 85 years, and 2.5 micrometres per year with 34 years. Those figures explain the calculation; they are not a 34-to-85-year guarantee for a Kent gate. The map uses 10 km squares and identifies its survey period as 1998–2000. A map estimate cannot describe every sheltered joint or spray-wetted hinge at your entrance."
+    },
+    {
+      "type": "p",
+      "text": "Ask what the supplier means by the end of the quoted life: first coating maintenance, visible rust, or replacement of the whole gate. Record that definition with the quotation. A sound frame may justify coating repair, while damaged hinges or posts may need attention before the coating reaches its estimated life."
+    },
+    {
+      "type": "h2",
+      "text": "Separate salt air from repeated sea spray"
+    },
+    {
+      "type": "p",
+      "text": "Tell the fabricator whether the gate receives airborne salt, visible spray during storms, or direct wetting from overtopping water. Include photographs of the entrance and the sea-facing side. Give the same information to each firm so they quote against the same exposure."
+    },
+    {
+      "type": "p",
+      "text": "Do not apply an atmospheric map to continuous immersion or repeated direct spray. In its [guidance on other environments](https://galvanizing.org.uk/atmospheric-corrosion/corrosion-performance-in-other-environments/), the Galvanizers Association gives a zinc corrosion range of 10–15 micrometres per year for continuous immersion in UK seawater and says tidal exposure and regular sea spray can increase corrosion. That is a different exposure from a garden gate in coastal air. It is not a rate to assign to your gate from its distance to the beach."
+    },
+    {
+      "type": "p",
+      "text": "For a frontage in Whitstable, Thanet or Folkestone, ask the specialist to state which exposure they have assumed and why. If spray reaches the gate, get advice for that condition before accepting a standard coastal coating estimate. Ask them to identify which parts you can inspect safely and which require access by an installer."
+    },
+    {
+      "type": "h2",
+      "text": "Check how much zinc the gate actually has"
+    },
+    {
+      "type": "p",
+      "text": "Do not assume every galvanised gate starts with 85 micrometres of zinc. The association's [EN ISO 1461 guidance](https://galvanizing.org.uk/galvanizing-standards/iso-1461/) gives different minimum mean thicknesses for different steel sections: 55 micrometres for steel from 1.5 to 3 mm thick, 70 above 3 mm up to 6 mm, and 85 above 6 mm. These examples concern non-centrifuged articles; the specification and actual component matter."
+    },
+    {
+      "type": "p",
+      "text": "Ask for the fabrication and galvanising records, including any coating measurements. On an older gate, a coating specialist can advise whether measurements will support a remaining-life assessment. Tell them about any paint or powder coating over the zinc so they can choose a suitable measurement method. Keep the findings with dated photographs; guessing thickness from the colour or shine will not give you that evidence."
+    },
+    {
+      "type": "h2",
+      "text": "Inspect changes, not just the gate's age"
+    },
+    {
+      "type": "p",
+      "text": "Photograph the same accessible areas over time: the lower rail, hinge brackets, latch, welded joints and any later drilled holes. Look from a safe position with the gate secured against movement. Do not dismantle an automated gate or work on its supporting hardware as part of a coating check."
+    },
+    {
+      "type": "list",
+      "items": [
+        "A dull grey zinc surface: the Galvanizers Association describes this as the normal patina that develops after galvanising. Loss of shine alone does not establish failure.",
+        "White deposits: these may involve corrosion of zinc. Ask the galvanizer to assess persistent or substantial deposits rather than deciding the gate needs replacing from colour alone.",
+        "Orange staining, flaking or blistering: photograph the location and ask the fabricator to identify the source, including nearby fixings. Appearance alone cannot establish how much sound steel remains.",
+        "Loose hinges, cracked joints, movement at posts or a visibly distorted frame: stop using an unstable gate and arrange an installer assessment. A new finish cannot restore missing strength."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "The American Galvanizers Association explains how restricted airflow and retained moisture can produce [wet storage stain](https://galvanizeit.org/specification-and-inspection/post-hdg-considerations/storage), a white deposit on galvanised steel. Its guidance helps distinguish a coating condition from a structural diagnosis. Avoid aggressive cleaning until the galvanizer has advised on the deposit and remaining coating."
+    },
+    {
+      "type": "h2",
+      "text": "Choose local repair, refurbishment or replacement"
+    },
+    {
+      "type": "p",
+      "text": "For an isolated coating defect on sound steel, ask for a local repair specification. The Galvanizers Association's [repair guidance](https://galvanizing.org.uk/welding-galvanized-steel-structure/repair-galvanized-steel/) describes zinc-rich paint and other recognised renovation methods, with requirements for repair thickness and compatibility with subsequent coatings. An ordinary decorative touch-up is not evidence that someone has restored the zinc protection. Leave heat-based or structural repairs to suitable professionals."
+    },
+    {
+      "type": "p",
+      "text": "If damage affects several areas, request a written comparison of refurbishment and replacement. Ask the assessor to separate the frame's condition from the condition of the posts, hinges and automation. A refurbishment proposal should identify repairs, surface preparation, the new coating system and any removal and reinstallation work. A replacement proposal should explain which defects make retaining the gate unsuitable."
+    },
+    {
+      "type": "p",
+      "text": "Keep a copy of the findings before anyone paints over them. For help assessing an existing entrance, ask about [gate repair and maintenance](/services/gate-repair-and-maintenance/). For a new frame, have the supplier include the exposure and coating specification in the [metal driveway gate quotation](/services/metal-driveway-gates/)."
+    },
+    {
+      "type": "h2",
+      "text": "Get the lifespan assumptions in writing"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Which parts will be hot-dip galvanised, and at what stage of fabrication? How will later cutting, drilling or welding be protected?",
+        "Which coating standard and thickness requirements apply to this gate's sections? What records will you receive?",
+        "Does the assessment cover this entrance's salt air, regular spray or direct seawater exposure?",
+        "What does the quoted lifespan measure, and what inspection, cleaning and maintenance does it assume?",
+        "What does any warranty cover, what does it exclude, and who should assess a change in the coating?"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Keep those answers in the handover pack alongside the installer’s maintenance instructions. They give you a basis for checking the gate as it ages and for comparing repair proposals, without relying on a lifespan number that leaves the site conditions unexplained."
+    },
+    {
+      "type": "cta"
+    }
+  ]
+};
+
 export const blogArticles: BlogArticle[] = [
+  coastalLifespanArticle,
   article33,
   article32,
   article31,
