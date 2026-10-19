@@ -2,10 +2,13 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { CheckCircle, X } from 'lucide-react';
+import { buildEnquiryMessage, type ArticleEnquiryContext } from '@/lib/articleEnquiry';
+import { trackArticleEvent } from '@/lib/articleEvents';
 
 interface LeadFormModalProps {
   isOpen: boolean;
   onClose: () => void;
+  context?: ArticleEnquiryContext;
 }
 
 const GATE_TYPES = [
@@ -28,7 +31,7 @@ const GATE_TYPES = [
 const GOOGLE_SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycbzLbvBw8jR-Cpr87ZQSpNcEKEmSGUo_FnAi9ofkNgGIIWX50v_8u7is6yUgsdP3bMki/exec';
 
-export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
+export function LeadFormModal({ isOpen, onClose, context }: LeadFormModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess]       = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -115,7 +118,7 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
         email: formData.get('email') as string,
         treatment: formData.get('treatment') as string,
         location: formData.get('location') as string,
-        message: ((formData.get('message') as string) || '').trim(),
+        message: buildEnquiryMessage(formData, context),
         page: window.location.href,
         source: 'Driveway Gates Kent',
       };
@@ -129,10 +132,12 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
       let data: any = {};
       try { data = JSON.parse(text); } catch {}
 
+      if (!res.ok) throw new Error('Submission failed');
       if (data && data.ok === false) throw new Error(data.error || 'Submission failed');
 
       setIsSubmitting(false);
       setIsSuccess(true);
+      if (context && data?.ok === true) trackArticleEvent('article_enquiry_success', context.slug);
     } catch (err) {
       console.error(err);
       setIsSubmitting(false);
@@ -159,7 +164,7 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
         ref={modalRef}
         role="dialog"
         aria-modal="true"
-        aria-label="Get free gate installation quotes"
+        aria-label={context?.formTitle || "Get free gate installation quotes"}
         className={`relative w-full max-w-lg max-h-[calc(100dvh-2rem)] overflow-y-auto overflow-x-hidden bg-white rounded-sm shadow-lg
           ${animationState === 'entering' ? 'animate-modal-in' : 'animate-modal-out'}`}
       >
@@ -178,7 +183,7 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                 <CheckCircle className="w-10 h-10" />
               </div>
               <h2 className="text-2xl font-display font-semibold text-brand-950">Request Received!</h2>
-              <p className="text-gray-600">Thanks, your enquiry has been sent. Up to three Kent installers will be in touch to arrange a survey.</p>
+              <p className="text-gray-600">{context ? 'Thanks, your enquiry and project details have been sent for matching with Kent installers. They can discuss the work and any survey needed before quoting.' : 'Thanks, your enquiry has been sent. Up to three Kent installers will be in touch to arrange a survey.'}</p>
               <button
                 onClick={() => { setIsSuccess(false); onClose(); }}
                 className="mt-2 bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-8 rounded-sm transition-colors text-sm shadow-md shadow-brand-500/20"
@@ -189,8 +194,8 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
           ) : (
             <>
               <div className="mb-4 sm:mb-6">
-                <h2 className="text-xl sm:text-2xl font-display font-semibold text-brand-950">Get Free Gate Quotes</h2>
-                <p className="hidden sm:block text-gray-600 text-sm mt-1">Complete the form to get free quotes from Kent gate installers.</p>
+                <h2 className="text-xl sm:text-2xl font-display font-semibold text-brand-950">{context?.formTitle || 'Get free quotes'}</h2>
+                <p className="text-gray-600 text-sm mt-2">{context ? context.body : 'Complete the form to get free quotes from Kent gate installers.'}</p>
               </div>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-2.5 sm:gap-3">
@@ -205,6 +210,26 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                     </button>
                   </div>
                 )}
+                {context && <>
+                  <div>
+                    <label htmlFor="lead-setup" className={labelClass}>Are these existing or proposed gates? <span className="text-red-400">*</span></label>
+                    <select id="lead-setup" name="gateSetup" required defaultValue="" className={inputClass}>
+                      <option value="" disabled>Select your situation</option>
+                      <option>Existing gates</option>
+                      <option>Proposed new gates</option>
+                      <option>Replacing existing gates</option>
+                      <option>Not sure yet</option>
+                    </select>
+                  </div>
+                  {context.setback && <fieldset className="border border-gray-200 p-3 space-y-3">
+                    <legend className="px-1 text-sm font-semibold text-brand-950">Your measurements (optional)</legend>
+                    <p className="text-sm text-gray-600">Include units, such as metres. Leave anything you have not measured blank.</p>
+                    <div><label htmlFor="lead-distance" className={labelClass}>Distance to the closed gate</label><input id="lead-distance" name="setbackDistance" maxLength={100} placeholder="e.g. 4.8 metres" className={inputClass} /></div>
+                    <div><label htmlFor="lead-start" className={labelClass}>Where did you start measuring?</label><input id="lead-start" name="measurementStart" maxLength={200} placeholder="e.g. back edge of the pavement" className={inputClass} /></div>
+                    <div><label htmlFor="lead-vehicle" className={labelClass}>Vehicle or vehicle-and-trailer length</label><input id="lead-vehicle" name="vehicleLength" maxLength={100} placeholder="Include units and any trailer" className={inputClass} /></div>
+                    <div><label htmlFor="lead-clearance" className={labelClass}>Gate opening and clearance</label><input id="lead-clearance" name="openingClearance" maxLength={250} placeholder="e.g. inward swing, 2 metres behind each leaf" className={inputClass} /></div>
+                  </fieldset>}
+                </>}
                 <div>
                   <label htmlFor="lead-phone" className={labelClass}>Phone number <span className="text-red-400">*</span></label>
                   <input id="lead-phone" required name="phone" type="tel" placeholder="e.g. 07700 900123" className={inputClass} autoComplete="tel" />
@@ -218,8 +243,8 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   <input id="lead-email" required name="email" type="email" placeholder="e.g. james@example.com" className={inputClass} autoComplete="email" />
                 </div>
                 <div>
-                  <label htmlFor="lead-gate-type" className={labelClass}>Type of gate <span className="text-red-400">*</span></label>
-                  <select id="lead-gate-type" required name="treatment" className={inputClass + ' appearance-none cursor-pointer'} defaultValue="">
+                  <label htmlFor="lead-gate-type" className={labelClass}>{context ? 'Type of gate or work' : 'Type of gate'} <span className="text-red-400">*</span></label>
+                  <select id="lead-gate-type" required name="treatment" className={inputClass + ' appearance-none cursor-pointer'} defaultValue={context?.service || ''}>
                     <option value="" disabled>Select a gate type</option>
                     {GATE_TYPES.map(t => (
                       <option key={t} value={t}>{t}</option>
@@ -231,8 +256,8 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   <input id="lead-location" required name="location" type="text" placeholder="e.g. Maidstone or ME14" className={inputClass} />
                 </div>
                 <div>
-                  <label htmlFor="lead-message" className={labelClass}>Message <span className="font-normal text-gray-400">(optional)</span></label>
-                  <textarea id="lead-message" name="message" rows={3} maxLength={1000} placeholder="Gate width, access, timing or anything else useful" className={inputClass + ' resize-y'} />
+                  <label htmlFor="lead-message" className={labelClass}>{context?.messageLabel || 'Message'} <span className="font-normal text-gray-400">(optional)</span></label>
+                  <textarea id="lead-message" name="message" rows={3} maxLength={1000} placeholder={context?.messagePlaceholder || 'Gate width, access, timing or anything else useful'} className={inputClass + ' resize-y'} />
                 </div>
 
                 <button
@@ -240,11 +265,11 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   disabled={isSubmitting}
                   className="w-full bg-brand-500 hover:bg-brand-600 active:scale-[0.98] disabled:opacity-60 text-white font-bold py-3.5 px-6 rounded-sm transition-all text-base mt-1 shadow-md shadow-brand-500/20"
                 >
-                  {isSubmitting ? 'Sending…' : 'Request a Free Call Back'}
+                  {isSubmitting ? 'Sending…' : 'Get free quotes'}
                 </button>
 
                 <p className="text-center text-xs text-gray-500 leading-relaxed">
-                  Free, with no obligation to go ahead
+                  Free, with no obligation to go ahead. {context && 'We pass your enquiry to independent Kent installers to discuss the work.'}
                 </p>
               </form>
             </>

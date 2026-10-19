@@ -10,10 +10,9 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { LeadFormModal } from '@/components/LeadFormModal';
 import { siteConfig } from '@/data/site';
-
-function BlogCtaBanner({ onOpenModal }: { onOpenModal: () => void }) {
-  return <QuoteBand title="Looking for a Kent gate installer?" onOpenModal={onOpenModal}><p>Up to three Kent installers will arrange a site survey and a written quote. No fee and no obligation.</p></QuoteBand>;
-}
+import { getArticleCta, type ArticleCta } from '@/data/articleCtas';
+import { SetbackChecklist } from '@/components/SetbackChecklist';
+import { trackArticleEvent } from '@/lib/articleEvents';
 
 /* Inline markdown-link parser: [text](url) rendered inline in prose.
    Internal (root-relative) links use next/link; external links open in a new tab.
@@ -39,20 +38,15 @@ function renderInline(text: string): React.ReactNode[] {
   return out;
 }
 
-function ContentRenderer({ blocks, onOpenModal }: { blocks: ContentBlock[]; onOpenModal: () => void }) {
+function ContentRenderer({ blocks, onOpenModal, cta, slug }: { blocks: ContentBlock[]; onOpenModal: () => void; cta: ArticleCta; slug: string }) {
   // Pre-process: pull all image blocks out, map them to the h2 index they follow
-  // Also find index of 2nd h2 for CTA injection
   const imageQueue: { [h2Index: number]: { src: string; alt: string }[] } = {};
-  let h2Count = 0;
   let currentH2Index = -1;
-  let ctaInsertBeforeH2 = -1; // we'll store the block index of the 2nd h2
 
   for (let i = 0; i < blocks.length; i++) {
     const block = blocks[i];
     if (block.type === 'h2') {
-      h2Count++;
       currentH2Index = i;
-      if (h2Count === 2) ctaInsertBeforeH2 = i;
     }
     if (block.type === 'image' && currentH2Index !== -1) {
       if (!imageQueue[currentH2Index]) imageQueue[currentH2Index] = [];
@@ -71,9 +65,9 @@ function ContentRenderer({ blocks, onOpenModal }: { blocks: ContentBlock[]; onOp
 
         const elements: React.ReactNode[] = [];
 
-        // Inject CTA banner just before the 2nd h2
-        if (i === ctaInsertBeforeH2) {
-          elements.push(<BlogCtaBanner key="cta-inject" onOpenModal={onOpenModal} />);
+        // The setback checklist follows the measuring advice, before visibility.
+        if (cta.setback && block.type === 'h2' && block.text === 'Visibility When You Pull Out') {
+          elements.push(<SetbackChecklist key="clearance-checklist" slug={slug} />);
         }
 
         switch (block.type) {
@@ -130,6 +124,7 @@ function ContentRenderer({ blocks, onOpenModal }: { blocks: ContentBlock[]; onOp
 
         return elements.length > 0 ? <React.Fragment key={i}>{elements}</React.Fragment> : null;
       })}
+      <QuoteBand title={cta.heading} onOpenModal={onOpenModal}><p>{cta.body}</p></QuoteBand>
     </div>
   );
 }
@@ -138,6 +133,11 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
   const [isModalOpen, setIsModalOpen] = useState(false);
   const article = getArticleBySlug(params.slug);
   if (!article) notFound();
+  const cta = getArticleCta(article.slug);
+  const openQuote = (placement: 'header' | 'article') => {
+    trackArticleEvent('article_quote_open', article.slug, placement);
+    setIsModalOpen(true);
+  };
 
   const blogPostingSchema = {
     '@context': 'https://schema.org',
@@ -172,8 +172,8 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }} />
-      <LeadFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-      <Header onOpenModal={() => setIsModalOpen(true)} />
+      <LeadFormModal key={article.slug} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} context={{ ...cta, slug: article.slug, articleTitle: article.title }} />
+      <Header onOpenModal={() => openQuote('header')} />
       <main id="main-content" className="subpage article-page">
         <PageIntro eyebrow={article.category} title={article.title} breadcrumbs={[{ label: 'Guides', href: '/blog/' }, { label: article.category }]}>
           <p>{article.excerpt}</p>
@@ -185,7 +185,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
         </figure>
         <div className="container-width article-layout">
           <aside className="article-contents"><nav aria-label="On this page"><p className="eyebrow">In this guide</p>{article.content.map((block, i) => block.type === 'h2' ? <a key={i} href={`#section-${i}`}>{block.text}</a> : null)}<Link href="/blog/" className="text-link">All guides</Link></nav></aside>
-          <article><ContentRenderer blocks={article.content} onOpenModal={() => setIsModalOpen(true)} /><Link href="/blog/" className="text-link article-back">Back to all guides</Link></article>
+          <article><ContentRenderer blocks={article.content} cta={cta} slug={article.slug} onOpenModal={() => openQuote('article')} /><Link href="/blog/" className="text-link article-back">Back to all guides</Link></article>
         </div>
       </main>
       <Footer />
