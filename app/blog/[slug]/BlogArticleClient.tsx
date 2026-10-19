@@ -11,7 +11,6 @@ import { Footer } from '@/components/Footer';
 import { LeadFormModal } from '@/components/LeadFormModal';
 import { siteConfig } from '@/data/site';
 import { getArticleCta, type ArticleCta } from '@/data/articleCtas';
-import { SetbackChecklist } from '@/components/SetbackChecklist';
 import { trackArticleEvent } from '@/lib/articleEvents';
 
 /* Inline markdown-link parser: [text](url) rendered inline in prose.
@@ -38,7 +37,7 @@ function renderInline(text: string): React.ReactNode[] {
   return out;
 }
 
-function ContentRenderer({ blocks, onOpenModal, cta, slug }: { blocks: ContentBlock[]; onOpenModal: () => void; cta: ArticleCta; slug: string }) {
+function ContentRenderer({ blocks, onOpenModal, cta }: { blocks: ContentBlock[]; onOpenModal: () => void; cta: ArticleCta }) {
   // Pre-process: pull all image blocks out, map them to the h2 index they follow
   const imageQueue: { [h2Index: number]: { src: string; alt: string }[] } = {};
   let currentH2Index = -1;
@@ -64,11 +63,6 @@ function ContentRenderer({ blocks, onOpenModal, cta, slug }: { blocks: ContentBl
         if (block.type === 'internal-link' || block.type === 'external-link' || block.type === 'cta') return null;
 
         const elements: React.ReactNode[] = [];
-
-        // The setback checklist follows the measuring advice, before visibility.
-        if (cta.setback && block.type === 'h2' && block.text === 'Visibility When You Pull Out') {
-          elements.push(<SetbackChecklist key="clearance-checklist" slug={slug} />);
-        }
 
         switch (block.type) {
           case 'h2':
@@ -172,7 +166,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }} />
-      <LeadFormModal key={article.slug} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} context={{ ...cta, slug: article.slug, articleTitle: article.title }} />
+      <LeadFormModal key={article.slug} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Header onOpenModal={() => openQuote('header')} />
       <main id="main-content" className="subpage article-page">
         <PageIntro eyebrow={article.category} title={article.title} breadcrumbs={[{ label: 'Guides', href: '/blog/' }, { label: article.category }]}>
@@ -185,7 +179,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
         </figure>
         <div className="container-width article-layout">
           <aside className="article-contents"><nav aria-label="On this page"><p className="eyebrow">In this guide</p>{article.content.map((block, i) => block.type === 'h2' ? <a key={i} href={`#section-${i}`}>{block.text}</a> : null)}<Link href="/blog/" className="text-link">All guides</Link></nav></aside>
-          <article><ContentRenderer blocks={article.content} cta={cta} slug={article.slug} onOpenModal={() => openQuote('article')} /><Link href="/blog/" className="text-link article-back">Back to all guides</Link></article>
+          <article><ContentRenderer blocks={article.content} cta={cta} onOpenModal={() => openQuote('article')} /><Link href="/blog/" className="text-link article-back">Back to all guides</Link></article>
         </div>
       </main>
       <Footer />

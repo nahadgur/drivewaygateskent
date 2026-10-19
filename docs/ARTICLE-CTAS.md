@@ -4,8 +4,8 @@ Requested by the user on 19 October 2026. Every new article needs a reviewed ent
 
 Match the reader's problem and the work an independent installer can quote for. Repairs, servicing, access control and adaptations should not default to a new-gate pitch. Planning and shared-access articles must not promise consent, legal advice or certification. Keep the quote button text “Get free quotes”.
 
-The article CTA follows the advice. Its headline, body, service selection and enquiry prompt carry through to the modal, including when opened from the article's header. The setback guide also has a contact-free clearance checklist after its measuring section and optional measurement fields in its enquiry form. It does not calculate a compliant distance or confirm approval.
+The article CTA follows the advice. Personalise its headline and body only. The user corrected the scope on 19 October: all pages must open the same general enquiry form. Do not change form fields, headings, prompts, defaults, submission data or success messages to match an article. No article-specific checklist or form is included.
 
-Contextual answers go into the existing backend `message` field through `buildEnquiryMessage`; preserve the original payload keys. Do not submit fake leads to production for testing. Run `node --test tests/article-ctas.test.cjs`, build and inspect the relevant forms.
+Preserve the general form and existing payload. Do not submit fake leads to production for testing. Run `node --test tests/article-ctas.test.cjs`, build and verify that article CTAs open the general form.
 
-Article analytics respect the existing accepted-cookie choice. Events: `article_checklist_open`, `article_checklist_complete`, `article_quote_open` and `article_enquiry_success`. Only the article slug and quote placement are sent. Success is recorded only when the existing endpoint returns `ok: true`; contact details, measurements and free text must never be included in analytics.
+The `article_quote_open` event respects the existing accepted-cookie choice. Only the article slug and quote placement are sent. Contact details and free text must never be included in analytics.

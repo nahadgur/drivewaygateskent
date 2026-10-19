@@ -1,4 +1,4 @@
-type ArticleEvent = 'article_checklist_open' | 'article_checklist_complete' | 'article_quote_open' | 'article_enquiry_success';
+type ArticleEvent = 'article_quote_open';
 
 export function trackArticleEvent(event: ArticleEvent, slug: string, placement?: 'header' | 'article') {
   try {
