@@ -1258,7 +1258,140 @@ const coastalLifespanArticle: BlogArticle = {
   ]
 };
 
+const landscapeDesignArticle: BlogArticle = {
+  "slug": "driveway-gates-kent-downs-high-weald-design",
+  "title": "Driveway Gates in the Kent Downs and High Weald: Preparing a Design Proposal",
+  "metaTitle": "Kent Downs & High Weald Gates: Design Proposal Guide",
+  "metaDescription": "Prepare a rural gate proposal with boundary checks, photographs, drawings, material choices and lighting details for the Kent Downs or High Weald.",
+  "category": "Planning",
+  "publishDate": "2026-10-21",
+  "featuredImage": "/images/gates/rural-gate-design-proposal.svg",
+  "excerpt": "A gate catalogue cannot show how an entrance fits a country lane. Build a proposal around the actual boundary, existing landscape and the drawings your council needs.",
+  "content": [
+    {
+      "type": "p",
+      "text": "If you are planning driveway gates in the Kent Downs or High Weald, start with the entrance as a whole: the lane, hedge, bank, posts, surface and views through the opening. A photograph of your preferred gate does not explain what will change on the ground. This guide sets out a practical way to prepare that explanation for your designer, installer and, where an application is needed, the council."
+    },
+    {
+      "type": "p",
+      "text": "First establish whether the work needs permission. National Landscape designation does not, by itself, remove every permitted-development right for gates. Height, highway position, listed-building relationships, planning conditions and Article 4 directions still need checking. The [Planning Portal's gate guidance](https://www.planningportal.co.uk/permission/common-projects/fences-gates-and-garden-walls/planning-permission/) explains those conditions; our [Kent planning guide](/blog/planning-permission-driveway-gates-kent/) covers the wider permission question. The design work below is useful even when an application is unnecessary."
+    },
+    {
+      "type": "h2",
+      "text": "Locate the entrance, then identify the decision-maker"
+    },
+    {
+      "type": "p",
+      "text": "Check the actual gate position on the [Kent Downs boundary map](https://kentdowns.org.uk/boundary-map/) or [High Weald boundary map](https://highweald.org/aonb-boundary/). Do not rely on a village name or postcode covering the whole property. Save a dated map reference and identify the district or borough planning authority for that exact site."
+    },
+    {
+      "type": "p",
+      "text": "Use the council's planning map and property history to check other constraints and previous conditions. Where a boundary is unclear, ask the council to confirm the position. The High Weald Partnership explicitly says it does not determine applications or provide site-specific planning advice to applicants; its [planning guidance](https://highweald.org/guidance/planning-and-development/) directs that enquiry to the local planning authority. Landscape guidance informs a proposal, but is not permission to build it."
+    },
+    {
+      "type": "h2",
+      "text": "Record what the entrance contributes to the lane"
+    },
+    {
+      "type": "p",
+      "text": "Take an approach photograph from each direction where you can stand safely, a view straight towards the entrance, and a view looking out from the drive. Photograph the whole boundary as well as the gate. Label each image with its position, direction and date on a simple sketch. Include visible changes in level and any ditch, bank, mature tree or old wall beside the opening."
+    },
+    {
+      "type": "p",
+      "text": "Then write a short description of what you intend to retain and what you want to change. For example, keeping the opening and hedge while replacing worn gate leaves is a different brief from removing a bank, widening the access and introducing new piers. Keep the survey and proposal separate so a reviewer can see the difference."
+    },
+    {
+      "type": "p",
+      "text": "For the High Weald, the Partnership's [parish information maps and planning resources](https://highweald.org/guidance/planning-and-development/) identify features such as historic routeways, field boundaries and ancient woodland. Use them to decide what needs closer inspection at your entrance. A map layer is a starting point for enquiries, not proof that excavation or hedge removal is acceptable."
+    },
+    {
+      "type": "h2",
+      "text": "Use the right landscape guidance for the design"
+    },
+    {
+      "type": "h3",
+      "text": "Kent Downs: keep the entrance in proportion"
+    },
+    {
+      "type": "p",
+      "text": "The [Kent Downs Landscape Design Handbook](https://kentdowns.org.uk/wp-content/uploads/2018/04/Landscape-Design-Handbook.pdf), particularly pages 7–8 and 69, favours restrained rural entrances, timber gates and widths suited to their purpose. It discourages elaborate high gates and suburban boundary treatments. It also encourages retaining landscape features and using materials that relate to the locality. These are design principles to address in your proposal, not a universal approved gate specification."
+    },
+    {
+      "type": "p",
+      "text": "Show the gate and piers together in a front elevation, with the neighbouring hedge or wall included. Compare the proposed height, openness and finish against the existing boundary. If your brief needs a different material or a wider opening, explain the practical requirement and the alternatives considered rather than calling a catalogue model rural."
+    },
+    {
+      "type": "h3",
+      "text": "High Weald: explain the local character you are responding to"
+    },
+    {
+      "type": "p",
+      "text": "The [High Weald planning resources](https://highweald.org/guidance/planning-and-development/) include a Housing Design Guide, a Colour Study and routeways guidance. The housing guide is written for new housing, so do not present it as a gate-specific rulebook. The colour and routeway resources can help frame questions about the entrance's setting. Describe the actual lane, bank and surrounding materials rather than assuming that any dark gate suits every High Weald site."
+    },
+    {
+      "type": "p",
+      "text": "Ask the fabricator for finish samples or clear product references, and photograph samples against the existing boundary in daylight. Include the gate, posts, hinges and any control cabinet in the same specification. At an older house, our [period-property gate guide](/blog/driveway-gate-ideas-for-older-houses-and-period-properties/) can help with the design brief. If historic fabric may be affected, check the separate [listed-building consent question](/blog/listed-building-consent-driveway-gates-kent/) before ordering."
+    },
+    {
+      "type": "h2",
+      "text": "Draw the access and equipment, not just the gate leaves"
+    },
+    {
+      "type": "p",
+      "text": "Ask your surveyor or designer to show the existing and proposed entrance on comparable drawings. The plan should identify the clear opening, gate position, movement of the leaves, posts, adjacent boundaries and any proposed groundworks. Add an elevation with heights and a section where the ground slopes. Mark the intercom, control cabinet and cable route so they do not become unplanned additions later."
+    },
+    {
+      "type": "p",
+      "text": "Vehicle waiting space, visibility and the road boundary need their own assessment. Do not narrow an access simply to match a landscape illustration or treat a setback dimension from another property as approval. Use our [road-setback guide](/blog/how-far-back-should-driveway-gates-be-from-the-road/) to prepare the questions, and resolve site-specific highway requirements with the relevant authority before fixing the layout."
+    },
+    {
+      "type": "h2",
+      "text": "Decide whether lighting is needed before choosing fittings"
+    },
+    {
+      "type": "p",
+      "text": "Describe the task that needs illumination: finding a latch, using an intercom or walking through the entrance. The High Weald's [dark-skies guidance](https://highweald.org/get-involved/dark-skies/) recommends limiting the area lit, shielding and aiming fittings downwards, using lower brightness, warm light and timers or sensors. Its technical planning advice note is available from the same page. Apply these principles to the actual entrance rather than adding illuminated piers by default."
+    },
+    {
+      "type": "p",
+      "text": "If lighting is proposed, ask the designer to record each fitting's position, mounting height, output, colour temperature, direction and controls. Identify neighbouring windows, hedges and woodland that could receive spill. Ask the council whether a specialist lighting or ecological assessment is needed for the proposal; a product labelled wildlife-friendly is not a site assessment."
+    },
+    {
+      "type": "h2",
+      "text": "Match the documents to your council's requirements"
+    },
+    {
+      "type": "p",
+      "text": "Check the current validation list before paying for final drawings. For example, [Tunbridge Wells Borough Council's validation guidance](https://tunbridgewells.gov.uk/planning/applications/national-planning-requirements-validation-guidance) requires a location plan and proportionate existing and proposed plans. It gives location-plan scales of 1:1250 or 1:2500 and proposed elevation drawings at 1:100. This is a council example, not a single document list for every Kent entrance: agree which drawings and supporting assessments apply to your work."
+    },
+    {
+      "type": "p",
+      "text": "A useful working pack brings together the location reference, labelled photographs, existing and proposed drawings, material and finish details, and a short explanation of the design choices. Add lighting details and any supporting reports the council identifies. Give every drawing a date and revision so the installer prices the same proposal the council considers."
+    },
+    {
+      "type": "p",
+      "text": "For an uncertain proposal, use the relevant council's pre-application service to ask focused questions about the design and information required. [Tunbridge Wells provides this route](https://tunbridgewells.gov.uk/planning/applications/apply); use your own authority's service if the entrance is elsewhere. Advice at this stage does not replace any formal consent that is needed."
+    },
+    {
+      "type": "h2",
+      "text": "Turn the agreed design into a comparable installation quote"
+    },
+    {
+      "type": "p",
+      "text": "Once the planning position and design are settled, send each installer the same drawings, finishes and any conditions. Ask the quote to distinguish gate fabrication, posts and foundations, boundary reinstatement, automation and electrical work. Make clear which existing features must remain. For powered gates, our [automated gate systems page](/services/automated-gate-systems/) explains the installation service."
+    },
+    {
+      "type": "p",
+      "text": "If an installer proposes a wider opening, different piers or added lighting, record the change and check whether it affects the agreed planning position before work starts. A well-defined brief helps you compare the work being offered; it cannot guarantee planning approval."
+    },
+    {
+      "type": "cta"
+    }
+  ]
+};
+
 export const blogArticles: BlogArticle[] = [
+  landscapeDesignArticle,
   coastalLifespanArticle,
   article33,
   article32,

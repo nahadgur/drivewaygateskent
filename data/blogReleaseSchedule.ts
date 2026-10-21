@@ -9,6 +9,8 @@
 // Any post slug NOT listed here stays out of the sitemap until it is added.
 
 export const BLOG_SITEMAP_RELEASE: Record<string, string> = {
+  // New article published 21 October 2026.
+  'driveway-gates-kent-downs-high-weald-design': '2026-10-21',
   // New article published 19 October 2026.
   'how-long-galvanised-gates-last-kent-coast': '2026-10-19',
   // Batch 1 — 2026-06-23 (coastal + cornerstones)

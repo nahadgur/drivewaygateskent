@@ -2,6 +2,10 @@ export interface ArticleCta { heading: string; body: string; }
 
 // Personalise only the article CTA copy. All pages use the unchanged general form.
 export const articleCtas: Record<string, ArticleCta> = {
+  "driveway-gates-kent-downs-high-weald-design": {
+    "heading": "Ready to price a gate design for your rural entrance?",
+    "body": "Share your proposed layout, finishes and any council requirements. Ask Kent installers to quote for the gate work in your agreed design."
+  },
   "how-much-do-driveway-gates-cost-kent": {
     "heading": "Find out what your gate project would cost",
     "body": "Describe your entrance and the work you have in mind. Compare quotes from Kent installers for your own specification."
