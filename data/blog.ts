@@ -1390,7 +1390,148 @@ const landscapeDesignArticle: BlogArticle = {
   ]
 };
 
+const greenBeltEntranceArticle: BlogArticle = {
+  "slug": "driveway-gates-new-entrances-green-belt-kent",
+  "title": "Gates and New Driveway Entrances in Kent's Green Belt",
+  "metaTitle": "Green Belt Driveway Gates and New Entrances in Kent",
+  "metaDescription": "Replacing a gate or forming a new entrance in Kent's Green Belt? Check the designation, keep planning and the dropped kerb separate, and prepare the papers.",
+  "category": "Planning",
+  "publishDate": "2026-10-22",
+  "featuredImage": "/images/gates/green-belt-entrance-decision.svg",
+  "excerpt": "New gate leaves in an existing Green Belt opening are usually a small planning question. Forming or widening an entrance is a different decision, with planning and highways approval assessed separately.",
+  "content": [
+    {
+      "type": "p",
+      "text": "If your property is in the Green Belt in west Kent, the first question is whether the job is a replacement in an existing opening or a change to the access itself. Fitting new leaves between existing posts is usually a modest planning matter. Forming a new entrance, widening one or moving it along the boundary brings in Green Belt policy, highways approval and often a planning application."
+    },
+    {
+      "type": "p",
+      "text": "Green Belt status does not alter the national [height limits for driveway gates](/blog/planning-permission-driveway-gates-kent/), and it does not stop you replacing a worn gate. It changes how the council judges work that needs permission, because national policy treats most Green Belt development as inappropriate unless it fits a listed exception."
+    },
+    {
+      "type": "h2",
+      "text": "Replacement Gate or New Access"
+    },
+    {
+      "type": "p",
+      "text": "Write down what exists today and what will change. Most entrance projects fall into one of four groups:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Like-for-like replacement: new gate leaves in the same opening and on the same line, no taller than the old gate or the permitted limit, whichever is greater.",
+        "Alteration: new piers, a different gate line, automation equipment, or a taller or more solid design in the same opening.",
+        "Widened access: the opening grows, the kerb or verge changes, and more hard surfacing usually follows.",
+        "New access: an entrance where vehicles do not lawfully cross the boundary today, including turning a field gateway into a domestic drive."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "The first group usually needs only a check of the planning history. The last two bring in Green Belt policy and highways approval, and land behind a field gateway that is not already garden may need its own planning assessment. If you are unsure which group fits, show the council the existing and proposed layout."
+    },
+    {
+      "type": "h2",
+      "text": "Checking the Mapped Green Belt Boundary"
+    },
+    {
+      "type": "p",
+      "text": "Councils' returns to the national [Green Belt dataset](https://www.planning.data.gov.uk/dataset/green-belt) show Green Belt land in Dartford, Gravesham, Maidstone, Sevenoaks, Tonbridge and Malling, Tunbridge Wells and Medway. Most of [Sevenoaks District](/location/sevenoaks/) lies within it, while Ashford, Canterbury, Dover, Folkestone and Hythe, Swale and Thanet have none in the dataset."
+    },
+    {
+      "type": "p",
+      "text": "The dataset is a yearly snapshot, so it can lag behind a boundary change. Check your council's adopted policies map for the exact site. Boundaries often follow roads, hedges or village edges, and some villages are inset from the Green Belt, so two houses on one lane can sit under different policies. Save a dated screenshot with your entrance marked."
+    },
+    {
+      "type": "h2",
+      "text": "Other Restrictions at the Same Entrance"
+    },
+    {
+      "type": "p",
+      "text": "Record every designation at the address before anyone draws a gate. Listed status removes the permitted development rights for gates, so a gate at a listed house needs planning permission and, where historic fabric is affected, [listed building consent](/blog/listed-building-consent-driveway-gates-kent/). A conservation area can bring demolition of an existing wall into planning. An Article 4 direction or a condition on an earlier permission can remove the gate rights, as GOV.UK's [guidance on when permission is required](https://www.gov.uk/guidance/when-is-permission-required) explains."
+    },
+    {
+      "type": "p",
+      "text": "Parts of west Kent's Green Belt also lie within the Kent Downs or High Weald National Landscapes, where landscape character is weighed alongside openness. Preparing [a rural design proposal](/blog/driveway-gates-kent-downs-high-weald-design/) there is a separate task from the Green Belt test."
+    },
+    {
+      "type": "h2",
+      "text": "How Green Belt Policy Judges a New Entrance"
+    },
+    {
+      "type": "p",
+      "text": "The National Planning Policy Framework was replaced on 17 August 2026. In its [Green Belt chapter](https://www.gov.uk/guidance/national-planning-policy-framework-chapter-13-protecting-green-belt-land-gb1-8), policy GB6 treats Green Belt development as inappropriate unless it falls within a category in policy GB7. GB7 includes engineering operations among the forms that can be acceptable where the effect on openness is minimised and there is no significant conflict with Green Belt purposes. How your piers, walls and new hard surfacing are classified is for the council to decide, so ask the case officer."
+    },
+    {
+      "type": "p",
+      "text": "The government's [Green Belt guidance](https://www.gov.uk/guidance/green-belt), last updated in February 2025, says openness has spatial and visual aspects and that activity such as traffic generation may be relevant. At an entrance, that points to the width of the opening, the height and solidity of gates and piers, new hardstanding and lost hedge or bank."
+    },
+    {
+      "type": "h2",
+      "text": "Grey Belt and Householder Gates"
+    },
+    {
+      "type": "p",
+      "text": "Grey belt has been the headline Green Belt change since the December 2024 Framework, and the 2026 version keeps it. For a householder gate it is not a general loosening. The GB7 route that relies on grey belt land also requires an evidenced unmet need for the type of development and a sustainable location, tests aimed mainly at housing, traveller sites and similar development. A new domestic entrance is still judged on openness and your council's local plan Green Belt policies."
+    },
+    {
+      "type": "h2",
+      "text": "Planning Approval and Highways Approval"
+    },
+    {
+      "type": "p",
+      "text": "Planning permission and the dropped kerb are separate consents from separate bodies. The district or borough council decides planning. Kent County Council is the highway authority for roads across the county outside Medway, where Medway Council handles both, and trunk roads such as the A21 are managed by National Highways. Vehicle crossings over footways and verges are dealt with under [section 184 of the Highways Act 1980](https://www.legislation.gov.uk/ukpga/1980/66/section/184)."
+    },
+    {
+      "type": "p",
+      "text": "Permitted development helps less than many owners expect. Class B of Part 2 of the General Permitted Development Order covers a new access only onto a road that is not trunk or classified, and only where it is needed for other permitted development. Gate work under Class A of the same Part does not count, so get the council's view in writing."
+    },
+    {
+      "type": "p",
+      "text": "[Kent County Council's dropped kerb application](https://www.kent.gov.uk/roads-and-travel/highway-permits-and-licences/apply-for-a-dropped-kerb-extension-or-access-point) asks for planning permission or written confirmation from the borough council that none is needed. When checked in October 2026 it cost £500, with £76 for each extra inspection a new access point may need and £231 refunded if declined. KCC aims to decide within 28 days, and approval lasts two years. The contractor must hold New Roads and Street Works Act accreditations and £5 million public liability insurance."
+    },
+    {
+      "type": "p",
+      "text": "Approval from one body does not secure the other. A planning permission can still fail the highways criteria, and a highways approval is not permission for the gates or piers behind it. A car also needs to wait off the carriageway, so settle [how far back the gate should sit](/blog/how-far-back-should-driveway-gates-be-from-the-road/) before drawings are final."
+    },
+    {
+      "type": "h2",
+      "text": "Documents for a Site-Specific Decision"
+    },
+    {
+      "type": "p",
+      "text": "Assemble one pack that the planning authority and the highway authority can both read:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "A location plan with the entrance marked and a dated policies map extract showing the Green Belt boundary and other designations.",
+        "The planning history, including any condition removing permitted development rights.",
+        "Dated photographs of the entrance from the road and the drive, including the KCC photograph showing neighbouring properties.",
+        "Existing and proposed plans showing opening width, gate line, piers, hard surfacing and any hedge to be removed.",
+        "An elevation of the gate and piers with heights and materials, plus a sketch of the dropped kerb for KCC.",
+        "A short statement on why a new or wider access is needed and how the design limits the effect on openness."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Where the position is uncertain, a lawful development certificate gives a formal decision on whether the work is permitted development, and most councils offer pre-application advice. Do not let fabrication start until planning and highways approval are both settled."
+    },
+    {
+      "type": "h2",
+      "text": "Quotes Once the Decisions Are Made"
+    },
+    {
+      "type": "p",
+      "text": "Send every installer the agreed drawings and conditions so each price covers the same opening. Ask for separate figures for gate leaves, posts and foundations, groundworks, automation and the dropped kerb. Simple open [timber driveway gates](/services/wooden-driveway-gates/) often sit more easily with openness than a tall solid design, but the council's view on your site is the one that counts."
+    },
+    {
+      "type": "cta"
+    }
+  ]
+};
+
 export const blogArticles: BlogArticle[] = [
+  greenBeltEntranceArticle,
   landscapeDesignArticle,
   coastalLifespanArticle,
   article33,
