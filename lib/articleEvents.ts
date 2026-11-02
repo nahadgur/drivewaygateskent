@@ -1,6 +1,6 @@
 type ArticleEvent = 'article_quote_open';
 
-export function trackArticleEvent(event: ArticleEvent, slug: string, placement?: 'header' | 'article') {
+export function trackArticleEvent(event: ArticleEvent, slug: string, placement?: 'header' | 'article' | 'article-inline') {
   try {
     if (typeof window === 'undefined' || window.localStorage.getItem('cookie-consent-v1') !== 'accepted') return;
     const analytics = window as Window & { gtag?: (command: string, name: string, params: Record<string, string>) => void };

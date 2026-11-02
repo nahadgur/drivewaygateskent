@@ -591,9 +591,10 @@ button,a,input,select { -webkit-tap-highlight-color:transparent; }
 .empty-guides { padding:60px 0 90px; }
 .empty-guides h2 { margin-bottom:20px; }
 .quote-band { background:var(--ink); color:#dadeda; padding:40px; display:flex; align-items:center; justify-content:space-between; gap:35px; margin-top:75px; }
-.quote-band h2 { color:white; font-size:42px; margin-bottom:14px; }
+.quote-band h2,.quote-band .quote-band-title { color:white; font-size:42px; margin-bottom:14px; }
 .quote-band p { font-size:14px; }
 .quote-band .btn-primary { flex-shrink:0; }
+.quote-band p.quote-band-title { font-family:'Barlow Condensed',sans-serif; font-weight:600; text-transform:uppercase; line-height:1.05; }
 .article-page .page-intro-layout { grid-template-columns:1.45fr 1fr; }
 .article-page .page-intro h1 { font-size:clamp(54px,5.5vw,88px); }
 .article-date { display:block; font-size:12px; margin-top:24px; color:var(--ink); }
@@ -612,7 +613,7 @@ button,a,input,select { -webkit-tap-highlight-color:transparent; }
 .article-inline-image { margin:28px 0; }
 .article-inline-image img { aspect-ratio:1.8; width:100%; height:auto; object-fit:cover; }
 .article-prose .quote-band { display:block; margin:40px 0; padding:32px; }
-.article-prose .quote-band h2 { font-size:36px; }
+.article-prose .quote-band h2,.article-prose .quote-band .quote-band-title { font-size:36px; }
 .article-prose .quote-band .btn-primary { margin-top:24px; }
 .article-back { margin-top:35px; }
 .legal-content { border-top:1px solid var(--ink); }

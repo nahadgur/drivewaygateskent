@@ -37,15 +37,20 @@ function renderInline(text: string): React.ReactNode[] {
   return out;
 }
 
-function ContentRenderer({ blocks, onOpenModal, cta }: { blocks: ContentBlock[]; onOpenModal: () => void; cta: ArticleCta }) {
+function ContentRenderer({ blocks, onOpenModal, onOpenInlineModal, cta }: { blocks: ContentBlock[]; onOpenModal: () => void; onOpenInlineModal: () => void; cta: ArticleCta }) {
   // Pre-process: pull all image blocks out, map them to the h2 index they follow
+  // Also find the 2nd h2 so the article CTA can repeat after the first section
   const imageQueue: { [h2Index: number]: { src: string; alt: string }[] } = {};
   let currentH2Index = -1;
+  let h2Count = 0;
+  let ctaInsertBeforeH2 = -1;
 
   for (let i = 0; i < blocks.length; i++) {
     const block = blocks[i];
     if (block.type === 'h2') {
       currentH2Index = i;
+      h2Count++;
+      if (h2Count === 2) ctaInsertBeforeH2 = i;
     }
     if (block.type === 'image' && currentH2Index !== -1) {
       if (!imageQueue[currentH2Index]) imageQueue[currentH2Index] = [];
@@ -63,6 +68,11 @@ function ContentRenderer({ blocks, onOpenModal, cta }: { blocks: ContentBlock[];
         if (block.type === 'internal-link' || block.type === 'external-link' || block.type === 'cta') return null;
 
         const elements: React.ReactNode[] = [];
+
+        // Repeat the article CTA after the first section, not only at the end
+        if (i === ctaInsertBeforeH2) {
+          elements.push(<QuoteBand key="cta-inline" title={cta.heading} headingAs="p" onOpenModal={onOpenInlineModal}><p>{cta.body}</p></QuoteBand>);
+        }
 
         switch (block.type) {
           case 'h2':
@@ -128,7 +138,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
   const article = getArticleBySlug(params.slug);
   if (!article) notFound();
   const cta = getArticleCta(article.slug);
-  const openQuote = (placement: 'header' | 'article') => {
+  const openQuote = (placement: 'header' | 'article' | 'article-inline') => {
     trackArticleEvent('article_quote_open', article.slug, placement);
     setIsModalOpen(true);
   };
@@ -179,7 +189,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
         </figure>
         <div className="container-width article-layout">
           <aside className="article-contents"><nav aria-label="On this page"><p className="eyebrow">In this guide</p>{article.content.map((block, i) => block.type === 'h2' ? <a key={i} href={`#section-${i}`}>{block.text}</a> : null)}<Link href="/blog/" className="text-link">All guides</Link></nav></aside>
-          <article><ContentRenderer blocks={article.content} cta={cta} onOpenModal={() => openQuote('article')} /><Link href="/blog/" className="text-link article-back">Back to all guides</Link></article>
+          <article><ContentRenderer blocks={article.content} cta={cta} onOpenModal={() => openQuote('article')} onOpenInlineModal={() => openQuote('article-inline')} /><Link href="/blog/" className="text-link article-back">Back to all guides</Link></article>
         </div>
       </main>
       <Footer />
