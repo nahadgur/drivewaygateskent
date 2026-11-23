@@ -53,7 +53,7 @@ export function HeroLeadForm({ city, service, layout = 'stacked' }: HeroLeadForm
       };
 
       const res = await fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
+        method: 'POST', signal: AbortSignal.timeout?.(20000),
         body: JSON.stringify(payload),
       });
 
