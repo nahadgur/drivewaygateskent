@@ -58,10 +58,6 @@ export const articleCtas: Record<string, ArticleCta> = {
     "heading": "Get quotes for a motor suited to your gates",
     "body": "Share your gate dimensions, usage and existing equipment. Ask installers to explain the motor specification and aftercare in their quotes."
   },
-  "driveway-gate-ideas-for-older-houses-and-period-properties": {
-    "heading": "Price a gate design that suits your older home",
-    "body": "Share the style, materials and entrance details you want to retain. Kent installers can quote for a design brief that reflects your property."
-  },
   "what-to-do-when-electric-gates-stop-working": {
     "heading": "Need help with a gate fault?",
     "body": "Describe what happens when you try to operate the gate and any safe checks you have made. Request repair quotes from Kent installers."
@@ -69,10 +65,6 @@ export const articleCtas: Record<string, ArticleCta> = {
   "can-you-install-driveway-gates-on-a-sloped-driveway": {
     "heading": "Need a gate layout that works with your slope?",
     "body": "Describe the gradient and available opening space. Ask Kent installers to assess the layout and quote for suitable gate options."
-  },
-  "how-to-look-after-wooden-driveway-gates": {
-    "heading": "Do your wooden gates need repair or replacement?",
-    "body": "Tell us about sticking, damaged joints or deteriorating timber. Request quotes for work on your existing wooden gates."
   },
   "coastal-gate-corrosion-protection": {
     "heading": "Need gate work suited to a coastal entrance?",

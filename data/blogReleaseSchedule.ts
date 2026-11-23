@@ -36,8 +36,6 @@ export const BLOG_SITEMAP_RELEASE: Record<string, string> = {
 
   // Batch 5 — 2026-07-21
   'how-wide-should-driveway-gates-be-measuring-guide': '2026-07-21',
-  'how-to-look-after-wooden-driveway-gates': '2026-07-21',
-  'driveway-gate-ideas-for-older-houses-and-period-properties': '2026-07-21',
 
   // Batch 6 — 2026-07-28
   'how-long-do-electric-gates-last-before-replacing': '2026-07-28',

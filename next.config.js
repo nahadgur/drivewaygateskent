@@ -13,6 +13,9 @@ const nextConfig = {
       { source: '/blog/wooden-vs-metal-driveway-gates-pros-and-cons/', destination: '/blog/best-gate-material-kent-wood-steel-aluminium/', permanent: true },
       { source: '/blog/driveway-gates-kent-aonb-high-weald-north-downs/', destination: '/blog/planning-permission-driveway-gates-kent/', permanent: true },
       { source: '/blog/driveway-gates-west-kent-sevenoaks-tunbridge-wells/', destination: '/location/sevenoaks/', permanent: true },
+      // Generic posts single-owned by a sibling site on 2026-11-23.
+      { source: '/blog/how-to-look-after-wooden-driveway-gates/', destination: '/blog/best-timber-for-a-coastal-driveway-gate-kent/', permanent: true },
+      { source: '/blog/driveway-gate-ideas-for-older-houses-and-period-properties/', destination: '/blog/listed-building-consent-driveway-gates-kent/', permanent: true },
       // Service x town combo pages: handled in middleware.ts (308 to the town page).
     ];
   },
